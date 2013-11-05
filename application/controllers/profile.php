@@ -9,7 +9,7 @@ class Profile extends CI_Controller {
 
 	public function view($id){
 		$data['profile_item'] = $this->user_model->get_user_by_id($id);
-		$data['title'] = 'User Profile'
+		$data['title'] = 'User Profile';
 
 		$this->load->view('templates/header', $data);
 		$this->load->view('profile/view', $data);
