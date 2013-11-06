@@ -47,7 +47,7 @@ class User_model extends CI_Model{
 		);
 
 		$this->db->where('id', $this->input->post('id'));
-		return $this->db->update('ps_users' $data);
+		return $this->db->update('ps_users', $data);
 	}
 
 }
