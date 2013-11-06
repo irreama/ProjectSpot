@@ -35,6 +35,21 @@ class User_model extends CI_Model{
 		return $query->row_array();
 	}
 
+	public function save_user(){
+		$this->load->helper('url');
+
+		$data = array(
+			'user_first_name' => $this->input->post('first_name'),
+			'user_last_name' => $this->input->post('last_name'),
+			'user_gender' => $this->input->post('gender'),
+			'user_grad_year' => $this->input->post('grad_year'),
+			'user_description' => $this->input->post('description')
+		);
+
+		$this->db->where('id', $this->input->post('id'));
+		return $this->db->update('ps_users' $data);
+	}
+
 }
 
 ?>

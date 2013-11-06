@@ -15,6 +15,28 @@ class Profile extends CI_Controller {
 		$this->load->view('profile/view', $data);
 		$this->load->view('templates/footer');
 	}
+
+	public function edit($id){
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+
+		$data['profile_item'] = $this->user_model->get_user_by_id($id);
+		$data['title'] = 'Edit Profile';
+
+		$this->form_validation->set_rules('first_name', 'First Name', 'required');
+		$this->form_validation->set_rules('last_name', 'Last Name', 'required');
+
+		if($this->form_validation->run() === FALSE){
+			$this->load->view('templates/header', $data);
+			$this->load->view('profile/edit', $data);
+			$this->load->view('templates/footer');
+		}
+		else{
+			$this->user_model->save_user();
+			$this->load->view('profile/success');
+		}
+
+	}
 }
 
 ?>
