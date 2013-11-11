@@ -1,4 +1,4 @@
-<h2>Edit Profile</h2>
+<h2><?php echo $profile_item['title']?></h2>
 <pre>
 <?php
 print_r($profile_item);

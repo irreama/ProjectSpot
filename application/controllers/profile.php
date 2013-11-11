@@ -24,6 +24,7 @@ class Profile extends CI_Controller {
 		$data['title'] = 'Edit Profile';
 
 		if($this->form_validation->run() === FALSE){
+			$data['title'] = 'Edit Profile Butts';
 			$this->load->view('templates/header', $data);
 			$this->load->view('profile/edit', $data);
 			$this->load->view('templates/footer');
