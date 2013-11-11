@@ -18,6 +18,7 @@ class Profile extends CI_Controller {
 
 	public function edit($id){
 		$this->load->helper('form');
+		$this->load->helper('url');
 		$this->load->library('form_validation');
 
 		$data['profile_item'] = $this->user_model->get_user_by_id($id);
@@ -31,7 +32,7 @@ class Profile extends CI_Controller {
 		}
 		else{
 			$this->user_model->save_user();
-			view($id);
+			redirect('profile/view/'.$id);
 		}
 
 	}
