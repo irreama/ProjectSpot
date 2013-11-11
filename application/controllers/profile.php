@@ -23,9 +23,6 @@ class Profile extends CI_Controller {
 		$data['profile_item'] = $this->user_model->get_user_by_id($id);
 		$data['title'] = 'Edit Profile';
 
-		$this->form_validation->set_rules('first_name', 'First Name', 'required');
-		$this->form_validation->set_rules('last_name', 'Last Name', 'required');
-
 		if($this->form_validation->run() === FALSE){
 			$this->load->view('templates/header', $data);
 			$this->load->view('profile/edit', $data);
