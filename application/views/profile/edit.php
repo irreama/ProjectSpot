@@ -8,7 +8,7 @@ print_r($profile_item);
 <?php
 
 //Start Generating form fields and their data
-echo form_open('profile/edit');
+echo form_open('profile/edit/'.$profile_item['id']);
 //Hidden ID Field
 echo form_hidden('id', $profile_item['id']);
 
