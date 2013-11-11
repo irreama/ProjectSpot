@@ -33,7 +33,7 @@ class Profile extends CI_Controller {
 		}
 		else{
 			$this->user_model->save_user();
-			$this->load->view('profile/success');
+			view($id);
 		}
 
 	}

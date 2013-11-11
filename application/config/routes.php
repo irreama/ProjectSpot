@@ -41,7 +41,7 @@
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 $route['profile/edit/(:any)'] = 'profile/edit/$1';
-$route['profile/(:any)'] = 'profile/view/$1';
+$route['profile/view/(:any)'] = 'profile/view/$1';
 
 
 /* End of file routes.php */
