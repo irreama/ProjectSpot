@@ -3,8 +3,6 @@
 /**
  * User Model Class
  * @author Anthony Fisher <afisher@wpi.edu>
- * @version  1.0
- * @since November 5, 2013
  */
 class User_model extends CI_Model{
 
@@ -35,6 +33,10 @@ class User_model extends CI_Model{
 		return $query->row_array();
 	}
 
+	/**
+	 * Save the user to the database
+	 * @return True if the user has been saved. False if there was a problem
+	 */
 	public function save_user(){
 		$this->load->helper('url');
 
@@ -44,6 +46,15 @@ class User_model extends CI_Model{
 
 		$this->db->where('id', $this->input->post('id'));
 		return $this->db->update('ps_users', $data);
+	}
+
+	/**
+	 * Add this new user to the database after scraping their information
+	 * @param  String $login The user's login information
+	 * @return Boolean True if the user was saved correctly, false if there was an issue.
+	 */
+	public function new_user($login){
+		return true;
 	}
 
 }
