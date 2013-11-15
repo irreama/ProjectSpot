@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title><?php echo $title ?> - ProjectSpot</title>
-		<link rel="stylesheet" type="text/css" href="/application/views/stylesheets/default.css">
-		<link rel="stylesheet" type="text/css" href="/application/views/stylesheets/student.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/default.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/student.css">
 	</head>
 	
 	<body>
@@ -11,11 +11,11 @@
 			<h1>ProjectSpot</h1>
 			<div class="nav">
 				<ul>
-					<li><a href="/application/views/pages/main.html">Main Menu</a></li> <!--Change to /-->
-					<li><a href="/application/views/pages/browse.html">Browse</a></li>
-					<li><a href="/application/views/pages/student.html">Profile</a></li> <!--student, advisor pages (no profile template?)/-->
-					<li><a href="/application/views/pages/group.html">Group</a></li>
-					<li><a href="/application/views/pages/main.html">Logout</a></li>
+					<li><a href="/index.php/main">Main Menu</a></li> <!--Change to /-->
+					<li><a href="/index.php/browse">Browse</a></li>
+					<li><a href="/index.php/student">Profile</a></li> <!--student, advisor pages (no profile template?)/-->
+					<li><a href="/index.php/group">Group</a></li>
+					<li><a href="/index.php/main">Logout</a></li>
 				</ul>
 			</div>
 			<div>Welcome User</div>
