@@ -1,0 +1,43 @@
+html{font-family:"trebuchet ms", trebuchet ms, sans-serif;}
+body{margin:0px;}
+
+.banner{
+	background-color: gray;
+	padding: 5px 20px;
+	border-bottom:1px solid black;
+	z-index:1;
+}
+.banner h1{
+	display: inline;
+}
+
+.nav{
+	margin-top:40px;
+	display: inline;
+	float: right;
+	/*border: 1px solid white;*/
+	z-index:10;
+}
+.nav ul{
+	display: inline;
+}
+.nav li{
+	text-decoration: none;
+	display: inline-block;
+}
+.nav a{
+	color: white;
+	text-decoration:none;
+	border: 1px solid white;
+	padding: 10px;
+	margin:-3px;
+}
+.nav a:hover{
+	color: black;
+	background-color: white;
+}
+
+.content{
+	width: 65%;
+	margin: 50px auto;
+}

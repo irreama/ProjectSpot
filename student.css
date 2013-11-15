@@ -1,0 +1,30 @@
+button{display:block;}
+textarea{display:block;}
+
+.title{
+	display:inline-block;
+	margin-right:5px;
+	font-weight: bold;
+}
+
+.left_col{
+	float: left;
+	margin-right:50px;
+}
+
+.right_col{
+	float: left;
+	width: 70%;
+}
+
+.button_panel{
+	display: block;
+}
+
+.edit{
+	float:right;
+}
+
+.cancel{
+	float: left;
+}
