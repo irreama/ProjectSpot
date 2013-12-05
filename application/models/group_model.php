@@ -12,7 +12,7 @@ class Group_model extends CI_Model{
 	}
 
 	public function new_group(){
-		
+		return true;
 	}
 
 

@@ -26,12 +26,14 @@ CREATE TABLE `ps_users` (
 	`user_first_name` varchar(50) NOT NULL,
 	`user_last_name` varchar(50) NOT NULL,
 	`user_grad_year` YEAR NOT NULL,
-	`user_status` ENUM('Student', 'Advisor', 'Admin') NOT NULL DEFAULT 'Student',
+	`user_status` ENUM('Student', 'Advisor', 'Other') NOT NULL DEFAULT 'Student',
 	`user_email` varchar(255) NOT NULL DEFAULT '',
 	`user_gender` varchar(20) NOT NULL DEFAULT '',
 	`user_description` text NOT NULL DEFAULT '',
 	`user_major1` int(11) NOT NULL,
 	`user_major2` int(11),
+	'user_avatar' varchar(255) NOT NULL DEFAULT '',
+	'user_is_admin' bit(1) NOT NULL DEFAULT 0,
 	PRIMARY KEY (`id`),
 	FOREIGN KEY (`user_major1`) REFERENCES ps_majors(`id`),
 	FOREIGN KEY (`user_major2`) REFERENCES ps_majors(`id`)
@@ -73,8 +75,46 @@ CREATE TABLE `ps_tags` (
 	PRIMARY KEY (`id`)
 );
 
-INSERT INTO `ps_tags` (tag_text)
-VALUES ('Web Development');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Algorithms');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Networks');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Network Security');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Operating Systems');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Programming Languages');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Artificial Intelligence');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Java');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Javascript');
+INSERT INTO `ps_tags` (tag_text) VALUES ('pHp');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Python');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Ruby');
+INSERT INTO `ps_tags` (tag_text) VALUES ('C/C++');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Web Development');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Human-Computer Interaction');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Software Security');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Computation');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Databases');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Theoretical Computer Science');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Applied Computer Science');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Graphics');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Visualization');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Architecture');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Software Engineering');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Parallel Systems');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Concurrent Systems');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Distributed Systems');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Code Theory');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Data Structures');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Formal Methods');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Cryptography');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Compilers');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Pattern Recognition');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Machine Learning');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Evolutionary Computation');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Natural Language Processing');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Data Mining');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Image Processing');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Information Security');
+INSERT INTO `ps_tags` (tag_text) VALUES ('Information Retrieval');
+
 
 --
 -- Table Structure for ps_group_user_rel
