@@ -25,10 +25,12 @@ class User_tag_rel_model extends CI_Model{
 	/**
 	 * Grab all of the tags associated with a specific user
 	 * @param  int $user_id 	The id of the user we want to search on
-	 * @return array 			An array of tag ids
+	 * @return array 			An array of tags and tag ids
 	 */
 	public function get_all_tags_by_user_id($user_id){
-		$query = $this->db->get_where('ps_user_tag_rel', array('user_id' => $user_id));
+		$this->db->where('user_id', $user_id);
+		$this->db->join('ps_tags', 'ps_user_tag_rel.tag_id = ps_tags.id');
+		$query = $this->db->get();
 		return $query->result_array();
 	}
 

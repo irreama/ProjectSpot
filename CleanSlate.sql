@@ -26,9 +26,9 @@ CREATE TABLE `ps_users` (
 	`user_first_name` varchar(50) NOT NULL,
 	`user_last_name` varchar(50) NOT NULL,
 	`user_grad_year` YEAR NOT NULL,
-	`user_status` ENUM('Student', 'Advisor', 'Other') NOT NULL DEFAULT 'Student',
+	`user_status` ENUM('Student', 'Advisor', 'Other', 'Admin') NOT NULL DEFAULT 'Student',
 	`user_email` varchar(255) NOT NULL DEFAULT '',
-	`user_gender` varchar(20) NOT NULL DEFAULT '',
+	`user_gender` varchar(20) NOT NULL DEFAULT 'Other',
 	`user_description` text NOT NULL DEFAULT '',
 	`user_major1` int(11) NOT NULL,
 	`user_major2` int(11),
@@ -41,6 +41,15 @@ CREATE TABLE `ps_users` (
 
 INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_grad_year, user_status, user_email, user_major1)
 VALUES ('afisher', 'Anthony', 'Fisher', 2014, 'Admin', 'afisher@wpi.edu', 1);
+
+INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_grad_year, user_status, user_email, user_major1)
+VALUES ('mcoryea14', 'Madalyn', 'Coryea', 2014, 'Admin', 'mcoryea14@wpi.edu', 1);
+
+INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_grad_year, user_status, user_email, user_major1)
+VALUES ('dcb', 'David', 'Brown', 2014, 'Advisor', 'dcb@wpi.edu', 1);
+
+INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_grad_year, user_status, user_email, user_major1)
+VALUES ('test', 'Test', 'User', 2015, 'Student', 'test@wpi.edu', 1);
 
 --
 -- Table Structure for ps_groups
