@@ -50,6 +50,12 @@ class User_tag_rel_model extends CI_Model{
 		$this->db->insert('ps_user_tag_rel', $data);
 	}
 
+	public function add_tags_to_user($user_id, $tags){
+		foreach($tags as $tag_id){
+			new_user_tag_rel($user_id, $tag_id);
+		}
+	}
+
 	/**
 	 * Delete a specific user, tag relation from the database
 	 * @param  int $id 		The relation to delete
@@ -57,6 +63,16 @@ class User_tag_rel_model extends CI_Model{
 	 */
 	public function delete($id){
 		$this->db->where('id', $id);
+		$this->db->delete('ps_user_tag_rel');
+	}
+
+	/**
+	 * Delete all of a user's tag relations
+	 * @param  int $user_id The user's id that we're removing the relations of
+	 * @return boolean          True on success, False on failure
+	 */
+	public function delete_user_tags($user_id){
+		$this->db->where('user_id', $user_id);
 		$this->db->delete('ps_user_tag_rel');
 	}
 }

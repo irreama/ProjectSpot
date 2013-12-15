@@ -14,13 +14,22 @@ class Tag_model extends CI_Model{
 	}
 
 	/**
+	 * Grab all the tags in the Database
+	 * @return Array A tag of all the arrays
+	 */
+	public function get_all_tags(){
+		$query = $this->db->get("ps_tags");
+		return $query->result_array();
+	}
+
+	/**
 	 * Get a tag by its id
 	 * @param  [int] $id The id of the tag
 	 * @return [array] The tag itself. Empty on failure.
 	 */
 	public function get_tag_by_id($id){
 		$query = $this->db->get_where('ps_tags', array('id' => $id));
-		return $query->row_array();
+		return $query->result_array();
 	}
 
 	/**
