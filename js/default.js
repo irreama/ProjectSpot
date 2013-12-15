@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 //Handle the Interests Page
 
-$('.tag_item input[type="checkbox"]').on('change', function(){
+$('.tag_listing').on('change', 'input[type="checkbox"]' function(){
 	console.log("Checkbox Changed");
 	if($(this).is(':checked')){
 		//Add it to the form

@@ -10,22 +10,22 @@
 	<div>
 		My Interests
 	</div>
+	<div class="tag_form_container tag_listing">
+	<?php
+	//Open our form
 
-<?php
-//Open our form
+	$attributes = array(
+		'class' => 'tag_form'
+	);
+	echo form_open('/index.php/profile/interests/edit/'.$tag_item['item_id'], $attributes);
+	//Hidden ID Field
+	echo form_hidden('id', $tag_item['item_id']);
+	foreach($tag_item['user_tags'] as $a_user_tag){
 
-$attributes = array(
-	'class' => 'tag_form'
-);
-echo form_open('/index.php/profile/interests/edit/'.$tag_item['item_id'], $attributes);
-//Hidden ID Field
-echo form_hidden('id', $tag_item['item_id']);
-foreach($tag_item['user_tags'] as $a_user_tag){
-
-}
-echo form_close();
-?>
-
+	}
+	echo form_close();
+	?>
+	</div>
 
 </div><!--left column-->
 
@@ -33,6 +33,7 @@ echo form_close();
 	<div>
 		Available Interests
 	</div>
+	<div class="tag_listing">
 	<?php 
 	foreach($tag_item['tags'] as $a_tag){
 	?>
@@ -42,5 +43,6 @@ echo form_close();
 	<?php
 	}
 	?>
+	</div>
 	<a href="/index.php/edit_student"><button class="edit">Save Interests</button></a>
 </div><!--right column-->
