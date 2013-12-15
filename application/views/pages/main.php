@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="/stylesheets/dashboard.css">
-<h2>Dashboard</h2>
+<h2>Dashboard</h2><p class="clear"></p>
 <div class="left">
 	<div id="todo">
 		<h3>To-Do List</h3>
@@ -9,6 +9,8 @@
 			<li>You have a pending invite<br><a href="browse">Check invites now</a></li>
 		</ol>
 	</div>
+	
+	<div class="help">Need help?</div>
 </div>
 
 <div class="right">
