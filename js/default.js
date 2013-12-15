@@ -7,7 +7,7 @@ $('.tag_listing').on('change', 'input[type="checkbox"]', function(){
 	if($(this).is(':checked')){
 		//Add it to the form
 		
-		var new_box = '<input type="checkbox" data-id="' + $(this).data('id') + '" value="' + $(this).data('id')+'" checked>' + $(this).data('text');
+		var new_box = '<input type="checkbox" name="tags[]" data-id="' + $(this).data('id') + '" value="' + $(this).data('id')+'" checked>' + $(this).data('text');
 		console.log(new_box);
 		$('.tag_form').append('<div class="tag_item">' + new_box +"</div>");
 	}

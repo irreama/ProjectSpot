@@ -23,6 +23,9 @@
 	foreach($tag_item['user_tags'] as $a_user_tag){
 
 	}
+	?>
+	<input type="submit" name="submit" value="Save Interests" />
+	<?php
 	echo form_close();
 	?>
 	</div>
@@ -44,5 +47,4 @@
 	}
 	?>
 	</div>
-	<a href="/index.php/edit_student"><button class="edit">Save Interests</button></a>
 </div><!--right column-->
