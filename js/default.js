@@ -3,9 +3,10 @@ $(document).ready(function(){
 //Handle the Interests Page
 
 $('.tag_item input[type="checkbox"]').change(function(){
+	console.log("Checkbox Changed");
 	if($(this).checked){
 		//Add it to the form
-		alert($(this).parent().html());
+		console.log($(this).parent().html());
 		$('.tag_form').append('<div class="tag_item">' + $(this).parent().html() +"</div>");
 	}
 	else{
