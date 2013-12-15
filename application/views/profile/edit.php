@@ -34,7 +34,7 @@ echo form_hidden('id', $profile_item['id']);
 		<label class="title">Contact:</label><label><?php echo $profile_item['user_email']?></label>
 		
 		<div class="button_panel">
-			<a href="profile/view/<?php echo $profile_item['id']?>"><button class="cancel">Cancel</button></a>
+			<a href="index.php/profile/view/<?php echo $profile_item['id']?>"><button class="cancel">Cancel</button></a>
 			<input type="submit" name="submit" value="Save" />
 		</div>
 	</div>

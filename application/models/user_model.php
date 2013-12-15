@@ -41,7 +41,8 @@ class User_model extends CI_Model{
 		$this->load->helper('url');
 
 		$data = array(
-			'user_description' => $this->input->post('user_description')
+			'user_description' => $this->input->post('user_description'),
+			'user_gender' => $this->input->post('user_gender')
 		);
 
 		$this->db->where('id', $this->input->post('id'));
