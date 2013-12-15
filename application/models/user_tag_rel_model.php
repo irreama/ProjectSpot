@@ -50,7 +50,7 @@ class User_tag_rel_model extends CI_Model{
 		$this->db->insert('ps_user_tag_rel', $data);
 	}
 
-	public function add_tags_to_user($user_id, $tags){
+	public function add_tags_to_user(){
 		$this->load->helper('url');
 
 		$tags = $this->input->post('tags');
