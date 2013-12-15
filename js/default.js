@@ -5,7 +5,7 @@ $(document).ready(function(){
 $('.tag_item input[type="checkbox"]').change(function(){
 	if($(this).checked){
 		//Add it to the form
-		
+		alert($(this).parent().html());
 		$('.tag_form').append('<div class="tag_item">' + $(this).parent().html() +"</div>");
 	}
 	else{
