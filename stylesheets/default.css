@@ -12,6 +12,10 @@ html,body {
 	background: -moz-linear-gradient(white, #d7d7d7, white); /* For Firefox 3.6 to 15 */
 	background: linear-gradient(white, #d7d7d7, white); /* Standard syntax */
 }
+#container{
+	height:100%;
+}
+
 .banner{
 	background-color: red; /*#C40000;/*AC2B37 WPI Red Color*/
 	color: #FFFFFF;
@@ -92,13 +96,13 @@ html,body {
 
 .content{
 	width: 65%;
+	min-height: 100%;
 	margin: 50px auto;
 	margin-bottom: 0;
 	background-color: white;
 	padding:50px;
 	border-radius:20px;
 	border: 2px solid #d7d7d7;
-	padding-bottom:200px;   /* Height of the footer */
 }
 
 .page-title{
@@ -108,7 +112,7 @@ html,body {
 .clear {
 	clear: both;
 }
-.clearfix:after{
+.clearfix::after{
 	content: " ";
 	visibility: hidden;
 	display: block;
@@ -116,25 +120,8 @@ html,body {
 	clear: both;
 }
 
-
-
-#container {
-   min-height:100%;
-   position:relative;
-}
 .footer{
-	position:absolute;
-	bottom:0;
-	width:100%;
-	height:200px;   /* Height of the footer */
-	background-color:#555555; /*#A9B0B7;*/
-	color:#ffffff;
-	/*margin-top:30px;*/
-}
-
-.footer_content {
-	padding: 40px;
-	border-top:2px #000000 solid;
+	background-color:gray;
 }
 
 .login{
@@ -146,4 +133,30 @@ html,body {
 	font-size:14pt;
 	border-radius:15px;
 	margin:30px auto;
+}
+
+.button-element{
+	color:gray;
+	background-color: #d7d7d7;
+	display:block;
+	width:200px;
+	text-align:center;
+	padding: 10px;
+	/*padding: 10px 100px;*/
+	border: 2px solid #aaaaaa;
+	text-decoration:none;
+	font-size:14pt;
+	border-radius:15px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:70px;
+}
+.button-element:hover{
+	color: #ffffff;
+	background-color: #aaaaaa;
+}
+.button-element:active{
+	color: #d7d7d7;
+	background-color: #ffffff;
+	border: 2px solid #d7d7d7;
 }

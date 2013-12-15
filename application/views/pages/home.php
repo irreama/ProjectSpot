@@ -17,4 +17,4 @@
 <p>
 	Just click login below to get started!
 </p>
-<a class="login" href="/index.php/main">Login</a>
+<a class="button-element" href="/index.php/main">Login</a>
