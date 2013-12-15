@@ -38,7 +38,7 @@ print_r($profile_item);
 		<?php
 			foreach ($profile_item['ps_tags'] as $tag){
 				?>
-				<p><?php echo $tag['text']?></p>
+				<p><?php echo $tag['tag_text']?></p>
 				<?php
 			}
 		?>
