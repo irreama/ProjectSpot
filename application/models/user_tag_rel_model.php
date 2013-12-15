@@ -56,7 +56,12 @@ class User_tag_rel_model extends CI_Model{
 		$tags = $this->input->post('tags');
 		$user_id = $this->input->post('id');
 		foreach($tags as $tag_id){
-			new_user_tag_rel($user_id, $tag_id);
+			$data = array(
+			'user_id' => $user_id,
+			'tag_id' => $tag_id
+			);
+
+			$this->db->insert('ps_user_tag_rel', $data);
 		}
 	}
 

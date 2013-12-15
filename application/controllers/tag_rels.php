@@ -38,6 +38,7 @@ class Tag_rels extends CI_Controller {
 		}
 		else{
 			//Save the relations
+			$this->user_tag_rel_model->delete_user_tags($id);
 			$this->user_tag_rel_model->add_tags_to_user();
 
 			//Head back to the user view pages
