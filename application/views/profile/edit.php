@@ -18,9 +18,9 @@ echo form_hidden('id', $profile_item['id']);
 		<label class="title">Major 2:</label><label><?php echo $profile_item['user_major2']?></label><br/>
 		<label class="title">Graduation Year:</label><label><?php echo $profile_item['user_grad_year']?></label><br/>
 		<label class="title">Gender:</label>
-			<input name="user_gender" type="radio" value="Female"<? echo($profile_item['user_gender'] == "Female" ? " checked" : "")?>/><label>Female</label>
-			<input name="user_gender" type="radio" value="Male"<? echo($profile_item['user_gender'] == "Female" ? " checked" : "")?>/><label>Male</label>
-			<input name="user_gender" type="radio" value="Other"<? echo($profile_item['user_gender'] == "Other" ? " checked" : "")?>/><label>Other/No Answer</label><br/>
+			<input name="user_gender" type="radio" value="Female"<?php echo($profile_item['user_gender'] == "Female" ? " checked" : "")?>/><label>Female</label>
+			<input name="user_gender" type="radio" value="Male"<?php echo($profile_item['user_gender'] == "Female" ? " checked" : "")?>/><label>Male</label>
+			<input name="user_gender" type="radio" value="Other"<?php echo($profile_item['user_gender'] == "Other" ? " checked" : "")?>/><label>Other/No Answer</label><br/>
 		<br/>
 		<label class="title">MQP:</label>None<br/>
 		<br/>
