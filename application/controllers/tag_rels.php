@@ -16,7 +16,7 @@ class Tag_rels extends CI_Controller {
 	 * Load the view for editing user interests
 	 * @param  int $id The id of the user to edit interests
 	 */
-	public function edit_users($id){
+	public function edit_user($id){
 		//Load our helpers
 		$this->load->helper('form');
 		$this->load->helper('url');
