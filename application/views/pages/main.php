@@ -21,6 +21,6 @@
 	<div id="resources">
 		<h3>Resources</h3>
 	</div>
-</div>
+</div><p class="clear"></p>
 
 <!--New Invites can go in todo list?-->

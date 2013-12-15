@@ -119,6 +119,20 @@ html,body {
 
 .footer{
 	background-color:gray;
+	border-top:1px solid black;
+	margin-top:10px;
+	padding: 10px 50px;
+}
+.left-foot{
+	float:left;
+}
+.right-foot{
+	float:left;
+}
+.wpi{
+	width: 220px;
+	height: 70px;
+	margin-right:100px;
 }
 
 .login{
