@@ -21,7 +21,11 @@
 	//Hidden ID Field
 	echo form_hidden('id', $tag_item['item_id']);
 	foreach($tag_item['user_tags'] as $a_user_tag){
-
+	?>
+	<div class="tag_item">
+		<input type="checkbox" name="tags[]" data-id="<?php echo $a_user_tag['tag_id'];?>" value="<?php echo $a_user_tag['tag_id'];?>" checked><?php echo $a_user_tag['tag_text'];?>
+	</div>
+	<?php
 	}
 	?>
 	<input type="submit" name="submit" value="Save Interests" />
