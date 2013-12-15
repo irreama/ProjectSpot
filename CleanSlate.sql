@@ -1,6 +1,9 @@
 -- Clean Slate for the ProjectSpot MQP ProjectSpot
 -- Please DO NOT include this file with production
 
+--Lets me delete things normally
+SET FOREIGN_KEY_CHECKS=0;
+
 --
 -- Table Structure for ps_majors
 --
@@ -193,3 +196,6 @@ CREATE TABLE `ps_user_tag_rel` (
 
 INSERT INTO `ps_user_tag_rel` (user_id, tag_id)
 VALUES (1, 1);
+
+--Check keys once more
+SET FOREIGN_KEY_CHECKS=1;
