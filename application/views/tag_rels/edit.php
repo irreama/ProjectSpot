@@ -7,6 +7,9 @@
 	<h2>Edit Interests</h2>
 </div>
 <div class="left_col">
+	<div>
+		My Interests
+	</div>
 
 <?php
 echo form_open('/index.php/profile/interests/edit/'.$tag_item['item_id']);
@@ -22,6 +25,9 @@ echo form_close();
 </div><!--left column-->
 
 <div class="right_col">
+	<div>
+		Available Interests
+	</div>
 	<?php 
 	foreach($tag_item['tags'] as $a_tag){
 	?>
