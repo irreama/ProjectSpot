@@ -41,8 +41,8 @@ class Tag_rels extends CI_Controller {
 			$this->user_tag_rel_model->delete_user_tags($id);
 			$this->user_tag_rel_model->add_tags_to_user();
 
-			//Head back to the user view pages
-			redirect('profile/view/'.$id);
+			//Head back to the user edit pages
+			redirect('profile/edit/'.$id);
 		}
 	}
 }
