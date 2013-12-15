@@ -7,7 +7,8 @@ $('.tag_listing').on('change', 'input[type="checkbox"]', function(){
 	if($(this).is(':checked')){
 		//Add it to the form
 		console.log($(this).parent().html());
-		$('.tag_form').append('<div class="tag_item">' + $(this).parent().html() +"</div>");
+		var new_box = '<input type="checkbox" data-id="' + $(this).data('id') + '" value="' + $(this).data('id')+'" checked>' + $(this).data('text');
+		$('.tag_form').append('<div class="tag_item">' + new_box +"</div>");
 	}
 	else{
 		//Remove it from the form
