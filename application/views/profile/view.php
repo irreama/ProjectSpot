@@ -19,7 +19,7 @@ print_r($profile_item);
 		//Change this when we really go live. Use real authentication
 		if($profile_item['id'] == 4){
 		?>
-		<a class="edit" href="/profile/view/<?php echo $profile_item['id']?>">Edit Page</a>
+		<a class="edit" href="/profile/edit/<?php echo $profile_item['id']?>">Edit Page</a>
 		<?php
 		}
 	?>
