@@ -23,12 +23,12 @@ class Tag_rels extends CI_Controller {
 		$this->load->library('form_validation');
 
 		//Grab the tags this user already has
-		$data['tag_item']['item_id'] = $id
+		$data['tag_item']['item_id'] = $id;
 		$data['tag_item']['user_tags'] = $this->user_tag_rel_model->get_all_tags_by_user_id($id);
 		$data['tag_item']['tags'] = $this->tag_model->get_all_tags();
 
 		$this->form_validation->set_rules('id', 'id', 'required');
-		
+
 		if($this->form_validation->run() == FALSE){
 		//Load our views
 			$this->load->view('templates/header', $data);

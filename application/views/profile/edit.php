@@ -25,7 +25,7 @@
 		<label class="title">MQP:</label>None<br/>
 		<br/>
 		<label class="title">Interests:</label><br/>
-		<a href="/index.php/profile/interests/edit/<?php echo $profile_item['id']?>"><button class="edit">Edit Interests</button></a>
+		<a href="/index.php/profile/interests/edit/<?php echo $profile_item['id']?>">Edit Interests</a>
 		
 		<label class="title">Description:</label>
 		<textarea name="user_description" rows=5 cols=50><?php echo $profile_item['user_description']?></textarea>
