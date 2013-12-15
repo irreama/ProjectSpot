@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 $('.tag_item input[type="checkbox"]').change(function(){
 	console.log("Checkbox Changed");
-	if($(this).checked){
+	if($(this).is(':checked')){
 		//Add it to the form
 		console.log($(this).parent().html());
 		$('.tag_form').append('<div class="tag_item">' + $(this).parent().html() +"</div>");
