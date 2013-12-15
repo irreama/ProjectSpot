@@ -1,6 +1,6 @@
 <pre>
 <?php
-	print_r($tag_item);
+	//print_r($tag_item);
 ?>
 </pre>
 <div class="page-title">
