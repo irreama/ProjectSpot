@@ -3,7 +3,6 @@
 	<head>
 		<title><?php echo $title ?> - ProjectSpot</title>
 		<link rel="stylesheet" type="text/css" href="/stylesheets/default.css">
-		<link rel="stylesheet" type="text/css" href="/stylesheets/student.css">
 	</head>
 	
 	<body>

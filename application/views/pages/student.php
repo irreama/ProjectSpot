@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/student.css">
+
 <div class="page-title">
 	<h2>This is a student page</h2>
 </div>
