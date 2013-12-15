@@ -26,7 +26,7 @@ echo form_close();
 	foreach($tag_item['tags'] as $a_tag){
 	?>
 	<div>
-		<input type="checkbox" name="tag" data-id="<?php echo $a_tag['id'];?>" data-text="<?php echo $a_tag['tag_text'];?>">
+		<input type="checkbox" name="tag" data-id="<?php echo $a_tag['id'];?>" data-text="<?php echo $a_tag['tag_text'];?>"><?php echo $a_tag['tag_text'];?>
 	</div>
 	<?php
 	}
