@@ -17,7 +17,7 @@
 	$attributes = array(
 		'class' => 'tag_form'
 	);
-	echo form_open('/index.php/profile/interests/edit/'.$tag_item['item_id'], $attributes);
+	echo form_open('profile/interests/edit/'.$tag_item['item_id'], $attributes);
 	//Hidden ID Field
 	echo form_hidden('id', $tag_item['item_id']);
 	foreach($tag_item['user_tags'] as $a_user_tag){
