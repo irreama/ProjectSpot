@@ -12,7 +12,12 @@
 	</div>
 
 <?php
-echo form_open('/index.php/profile/interests/edit/'.$tag_item['item_id']);
+//Open our form
+
+$attributes = array(
+	'class' => 'tag_form'
+);
+echo form_open('/index.php/profile/interests/edit/'.$tag_item['item_id'], $attributes);
 //Hidden ID Field
 echo form_hidden('id', $tag_item['item_id']);
 foreach($tag_item['user_tags'] as $a_user_tag){
@@ -31,7 +36,7 @@ echo form_close();
 	<?php 
 	foreach($tag_item['tags'] as $a_tag){
 	?>
-	<div>
+	<div class="tag_item">
 		<input type="checkbox" name="tag" data-id="<?php echo $a_tag['id'];?>" data-text="<?php echo $a_tag['tag_text'];?>"><?php echo $a_tag['tag_text'];?>
 	</div>
 	<?php
