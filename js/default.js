@@ -15,6 +15,7 @@ $('.tag_listing').on('change', 'input[type="checkbox"]', function(){
 		//Remove it from the form
 		var id = $(this).data('id');
 		$('.tag_form div input[type="checkbox"][data-id="' + id +'"]').parent().remove();
+		$('input[type="checkbox"][data-id="' + id +'"]').prop('checked', false);
 	}
 })
 
