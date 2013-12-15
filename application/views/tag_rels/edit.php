@@ -1,6 +1,6 @@
 <pre>
 <?php
-	print_r($tag_item);
+	//print_r($tag_item);
 ?>
 </pre>
 <div class="page-title">
@@ -9,15 +9,27 @@
 <div class="left_col">
 
 <?php
-echo form_open('profile/edit/'.$profile_item['id']);
+echo form_open('/index.php/profile/interests/edit/'.$tag_item['item_id']);
 //Hidden ID Field
 echo form_hidden('id', $tag_item['item_id']);
-foreach($tag_item['user_tags'] as $a_user_tag);
+foreach($tag_item['user_tags'] as $a_user_tag){
+
+}
+echo form_close();
 ?>
 
 
 </div><!--left column-->
 
 <div class="right_col">
+	<?php 
+	foreach($tag_item['tags'] as $a_tag){
+	?>
+	<div>
+		<input type="checkbox" name="tag" data-id="<?php echo $a_tag['id'];?>" data-text="<?php echo $a_tag['tag_text'];?>">
+	</div>
+	<?php
+	}
+	?>
 	<a href="/index.php/edit_student"><button class="edit">Save Interests</button></a>
 </div><!--right column-->
