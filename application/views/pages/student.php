@@ -1,9 +1,13 @@
+<div class="page-title">
+	<h2>This is a student page</h2>
+</div>
+		
 <div class="left_col">
 	<img src="unknown.png" width=200 height=200 alt="profile image"/>
 </div><!--left column-->
 
 <div class="right_col">
-	<a href="edit_student.html"><button class="edit">Edit Page</button></a>
+	<a class="edit" href="/index.php/edit_student">Edit Page</a>
 	<div class="info">
 		<label class="title">Name:</label><label>Madalyn Coryea</label><br/>
 		<label class="title">Major 1:</label><label>Computer Science</label><br/>
@@ -22,3 +26,4 @@
 		<label class="title">Contact:</label><label>mcoryea14@wpi.edu</label>
 	</div>
 </div><!--right column-->
+<p class="clear"></p>

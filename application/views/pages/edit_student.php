@@ -18,7 +18,7 @@
 		<label class="title">MQP:</label><a href="group.html">ProjectSpot</a><br/>
 		<br/>
 		<label class="title">Interests:</label><br/>
-		<a href="interests.html"><button class="edit">Edit Interests</button></a>
+		<a href="interests"><button class="edit">Edit Interests</button></a>
 		
 		<label class="title">Description:</label>
 		<textarea rows=5 cols=50>I like graphics, and I really want to work with upbeat, spirited people who are passionate about the Web!
@@ -27,8 +27,9 @@
 		<label class="title">Contact:</label><label>mcoryea14@wpi.edu</label>
 		
 		<div class="button_panel">
-			<a href="student.html"><button class="cancel">Cancel</button></a>
-			<a href="student.html"><button class="edit">Save</button></a>
+			<a href="student"><button class="cancel">Cancel</button></a>
+			<a href="student"><button class="edit">Save</button></a>
 		</div>
 	</div>
 </div><!--right column-->
+<p class="clear"></p>

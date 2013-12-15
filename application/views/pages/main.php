@@ -1,10 +1,4 @@
-<h2>Main Menu</h2>
-<p>
-	Welcome to ProjectSpot! ProjectSpot is a place for you to find MQP groups. 
-	Search through individual students looking for MQPs, or search through project 
-	groups that still need members. You can also see advisors and the projects they 
-	are offering that they need students for.
-</p>
+<h2>Dashboard</h2>
 <p>
 	To start searching, go to <strong>Browse</strong>.<br/>
 	To create and update your personal profile to improve your chances of others 
