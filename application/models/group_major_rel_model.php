@@ -39,7 +39,7 @@ class Group_major_rel_mode extends CI_Model{
 	 * @param  int  $major_id 	The major we want to tie to a group
 	 * @return boolean 			True on successful add, false if issues
 	 */
-	public function new($group_id, $major_id){
+	public function new_group_major_rel($group_id, $major_id){
 		$data = array(
 			'group_id' => $group_id,
 			'major_id' => $major_id

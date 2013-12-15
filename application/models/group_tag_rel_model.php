@@ -39,7 +39,7 @@ class Group_tag_rel_model extends CI_Model{
 	 * @param  int $tag_id 		The tag we want to tie to a group
 	 * @return boolean			True on success, False on failure
 	 */
-	public function new($group_id, $tag_id){
+	public function new_group_tag_rel($group_id, $tag_id){
 		$data = array(
 			'group_id' => $group_id,
 			'tag_id' => $tag_id

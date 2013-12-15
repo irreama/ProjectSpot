@@ -39,7 +39,7 @@ class Group_user_rel_model extends CI_Model{
 	 * @param  [String] $status   		[The invitation status of the user. ENUM in the Database. Accepted values are 'Invited', 'Confirmation Needed', 'Accepted']
 	 * @return [boolean]           		[True if successful. False if not.]
 	 */	
-	public function new($group_id, $user_id, $status){
+	public function new_group_user_rel($group_id, $user_id, $status){
 		$data = array(
 			'group_id' => $group_id,
 			'user_id' => $user_id,

@@ -40,7 +40,7 @@ class User_tag_rel_model extends CI_Model{
 	 * @param  int $tag_id 		The tag we want to tie to a user
 	 * @return boolean 			True on success, false on failure
 	 */
-	public function new($user_id, $tag_id){
+	public function new_user_tag_rel($user_id, $tag_id){
 		$data = array(
 			'user_id' => $user_id,
 			'tag_id' => $tag_id

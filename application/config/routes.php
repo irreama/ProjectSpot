@@ -44,7 +44,7 @@ $route['profile/edit/(:any)'] = 'profile/edit/$1';
 $route['profile/view/(:any)'] = 'profile/view/$1';
 $route['group/view/(:any)'] = 'group/view/$1';
 $route['group/edit/(:any)'] = 'group/view/$1';
-$route['group/new/'] = 'group/create/';
+$route['group/new'] = 'group/create/';
 
 
 
