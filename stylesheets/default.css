@@ -187,3 +187,7 @@ html,body {
 .help:active{
 	background-color:#5cb6f3
 }
+
+.row{
+	display:inline-block;
+}
