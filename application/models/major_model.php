@@ -18,7 +18,7 @@ class Major_model extends CI_Model{
 	 * Grab a major by its id
 	 * @return Array The Major Model
 	 */
-	public function get_major_by_id(){
+	public function get_major_by_id($id){
 
 		$query = $this->db->get_where('ps_majors', array('id' => $id));
 		return $query->row_array();
