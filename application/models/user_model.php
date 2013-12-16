@@ -58,6 +58,11 @@ class User_model extends CI_Model{
 		return true;
 	}
 
+	public function get_all_users(){
+		$query = $this->db->get('ps_users');
+		return $query->result_array();
+	}
+
 }
 
 ?>

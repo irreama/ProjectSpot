@@ -38,8 +38,10 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "home/home";
 $route['404_override'] = '';
+$route['main'] = "home/dashboard";
+$route['browse'] = "home/browse";
 $route['profile/edit/(:any)'] = 'profile/edit/$1';
 $route['profile/view/(:any)'] = 'profile/view/$1';
 $route['profile/interests/edit/(:any)'] = 'tag_rels/edit_user/$1';
