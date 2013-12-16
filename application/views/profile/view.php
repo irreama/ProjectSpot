@@ -28,14 +28,30 @@ print_r($profile_item);
 		<label class="title">Graduation Year:</label><label><?php echo $profile_item['user_grad_year'] ?></label><br/>
 		<label class="title">Gender:</label><label><?php echo $profile_item['user_gender'] ?></label><br/>
 		<br/>
-		<label class="title">MQP:</label><a href="group.html">ProjectSpot</a><br/>
+		<?php
+		if($profile_item['user_status'] == 'Advisor'){
+		?>
+		<label class="title">MQPs Advising:</label><br/>
+		<?php
+			foreach($profile_item['ps_groups'] as $a_group){
+			?>
+			<a href="/index.php/group/view/<?php echo $a_group['group_id'];?>"><?php echo $a_group['group_name'];?></a><br/>
+			<?
+			}
+		}
+		else{
+		?>
+		<label class="title">MQP:</label><a href="/index.php/group/view/<?php echo $profile_item['ps_groups'][0]['group_id'];?>"><?php echo $profile_item['ps_groups'][0]['group_name'];?></a><br/>
+		<?php
+		}
+		?>
 		<br/>
 		<label class="title">Interests:</label><br/>
 		<label>
 		<?php
 			foreach ($profile_item['ps_tags'] as $tag){
 				?>
-				<p><?php echo $tag['tag_text']?></p>
+				<label><?php echo $tag['tag_text']?></label><br/>
 				<?php
 			}
 		?>
