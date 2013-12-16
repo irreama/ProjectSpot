@@ -19,7 +19,7 @@ class Group_model extends CI_Model{
 		$this->load->helper('url');
 
 		$data = array(
-			'group_title' => $this->input->post('group_title'),
+			'group_name' => $this->input->post('group_name'),
 			'group_description' => $this->input->post('group_description'),
 			'group_contact' => $this->input->post('group_contact')
 		);
