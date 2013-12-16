@@ -1,6 +1,6 @@
 <pre>
 <?php
-print_r($group_item);
+//print_r($group_item);
 ?>
 </pre>
 
@@ -18,7 +18,7 @@ print_r($group_item);
 		<?php
 		foreach($group_item['users'] as $a_user){
 		?>
-		<label class="title"><?php //echo($a_user['user_status'] == "Advisor" ? "Advisor" : $a_user['user_major1']);?>:</label><label>Madalyn Coryea</label><br/>
+		<label class="title"><?php echo($a_user['user_status'] == "Advisor" ? "Advisor" : $a_user['user_major1']['major_text']);?>:</label><label><?php echo $a_user['user_first_name'];?> <?php echo $a_user['user_last_name'];?></label><br/>
 		<?php
 		}
 		?>
