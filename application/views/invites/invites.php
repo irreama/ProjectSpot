@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/invites.css">
 <h2>Invites</h2>
 	<div id="received">	
 		<h3>Received Invites</h3>
