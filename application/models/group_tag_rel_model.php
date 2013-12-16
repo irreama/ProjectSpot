@@ -77,5 +77,15 @@ class Group_tag_rel_model extends CI_Model{
 		$this->db->where('id', $id);
 		$this->db->delete('ps_group_tag_rel');
 	}
+
+	/**
+	 * Delete all of a group's tag relations
+	 * @param  int $group_id The group's id that we're removing the relations of
+	 * @return boolean          True on success, False on failure
+	 */
+	public function delete_group_tags($group_id){
+		$this->db->where('group_id', $group_id);
+		$this->db->delete('ps_group_tag_rel');
+	}
 }
 ?>
