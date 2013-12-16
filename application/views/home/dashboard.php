@@ -27,7 +27,7 @@
 			<li><a href="https://www.wpi.edu/offices/registrar/forms.html">Registrar Forms</a></li>
 			<li><a href="http://www.wpi.edu/Pubs/E-project/browse/mqp_by_department/c.html">Electronic Projects Collection</a></li>
 		</ul>	
-		<a href="/index.php/resources">View all Reources</a>
+		<a href="/index.php/resources">View all Resources</a>
 		
 	</div>
 </div><p class="clear"></p>
