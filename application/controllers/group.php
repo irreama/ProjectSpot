@@ -50,7 +50,6 @@ class Group extends CI_Controller{
 
 		$data['title'] = "Edit Group";
 
-		$this->form_validation->set_rules('group_creator', 'group_creator', 'required');
 		$this->form_validation->set_rules('group_name', 'Group Name', 'required');
 
 		if($this->form_validation->run() == FALSE){
