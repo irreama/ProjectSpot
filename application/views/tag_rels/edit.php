@@ -23,11 +23,12 @@ print_r($tag_item);
 	foreach($tag_item['item_tags'] as $a_tag){
 	?>
 	<div class="tag_item">
-		<input type="checkbox" name="tags[]" data-id="<?php echo $a_tag['tag_id'];?>" value="<?php echo $a_tag['tag_id'];?>" checked><?php echo $a_tag['tag_text'];?>
+		<input type="checkbox" name="tags[]" data-id="<?php echo $a_tag['id'];?>" value="<?php echo $a_tag['id'];?>" checked><?php echo $a_tag['tag_text'];?>
 	</div>
 	<?php
 	}
 	?>
+	<div class="chk_buff"></div>
 	<input type="submit" name="submit" value="Save Interests" />
 	<?php
 	echo form_close();

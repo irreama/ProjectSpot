@@ -27,7 +27,14 @@ class Tag_rels extends CI_Controller {
 		//Grab the tags this user already has
 		$data['tag_item']['item_id'] = $id;
 		$data['tag_item']['type'] = 'user';
-		$data['tag_item']['item_tags'] = $this->user_tag_rel_model->get_all_tags_by_user_id($id);
+		$sel_tags = $this->user_tag_rel_model->get_all_tags_by_user_id($id);
+		foreach($sel_tags as $a_sel_tag){
+			
+			$data['tag_item']['item_tags'][] = array(
+				'id' => $a_sel_tag['tag_id'],
+				'tag_text' => $a_sel_tag['tag_text']
+			);
+		}
 		$data['tag_item']['tags'] = $this->tag_model->get_all_tags();
 
 		$this->form_validation->set_rules('id', 'id', 'required');
