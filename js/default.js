@@ -9,7 +9,7 @@ $('.tag_listing').on('change', 'input[type="checkbox"]', function(){
 		
 		var new_box = '<input type="checkbox" name="tags[]" data-id="' + $(this).data('id') + '" value="' + $(this).data('id')+'" checked>' + $(this).data('text');
 		console.log(new_box);
-		$('.tag_form').append('<div class="tag_item">' + new_box +"</div>");
+		$('.chk_buff').before('<div class="tag_item">' + new_box +"</div>");
 	}
 	else{
 		//Remove it from the form
