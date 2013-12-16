@@ -38,10 +38,10 @@ class Home extends CI_Controller {
 		$this->load('templates/footer');
 	}
 
-	public function help(){
+	public function main_help(){
 		$data['title'] = "Help";
 		$this->load('templates/header');
-		$this->load->view('home/help');
+		$this->load->view('home/main_help');
 		$this->load('templates/footer');
 	}
 
