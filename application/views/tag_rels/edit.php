@@ -15,12 +15,14 @@
 	echo form_open($tag_item['type'].'/interests/edit/'.$tag_item['item_id'], $attributes);
 	//Hidden ID Field
 	echo form_hidden('id', $tag_item['item_id']);
-	foreach($tag_item['item_tags'] as $a_tag){
+	if(!empty($tag_item['item_tags'])){
+		foreach($tag_item['item_tags'] as $a_tag){
 	?>
 	<div class="tag_item">
 		<input type="checkbox" name="tags[]" data-id="<?php echo $a_tag['id'];?>" value="<?php echo $a_tag['id'];?>" checked><?php echo $a_tag['tag_text'];?>
 	</div>
 	<?php
+		}
 	}
 	?>
 	<div class="chk_buff"></div>
@@ -41,7 +43,11 @@
 	foreach($tag_item['tags'] as $a_tag){
 	?>
 	<div class="tag_item">
-		<input type="checkbox" name="tag" data-id="<?php echo $a_tag['id'];?>" data-text="<?php echo $a_tag['tag_text'];?>"<?php echo (in_array($a_tag, $tag_item['item_tags']) ? "checked" : "");?>><?php echo $a_tag['tag_text'];?>
+		<input type="checkbox" name="tag" data-id="<?php echo $a_tag['id'];?>" data-text="<?php echo $a_tag['tag_text'];?>"<?php
+		if(!empty($tag_item['item_tags'])){
+			echo (in_array($a_tag, $tag_item['item_tags']) ? "checked" : "");
+		}
+		?>><?php echo $a_tag['tag_text'];?>
 	</div>
 	<?php
 	}
