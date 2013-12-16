@@ -48,3 +48,4 @@
 	</div>
 	</form>
 </div><!--right column-->
+<p class="clear"></p>

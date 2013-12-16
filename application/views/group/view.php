@@ -34,3 +34,4 @@
 		<label class="title">Contact:</label><label><?php echo $group_item['group_contact'];?></label>
 	</div>
 </div><!--right column-->
+<p class="clear"></p>

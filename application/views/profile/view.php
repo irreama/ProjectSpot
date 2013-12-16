@@ -1,11 +1,3 @@
-<pre>
-<?php
-
-print_r($profile_item);
-
-?>
-</pre>
-
 <div class="page-title">
 	<h2>This is a student page</h2>
 </div>
