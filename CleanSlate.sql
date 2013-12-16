@@ -28,7 +28,7 @@ CREATE TABLE `ps_users` (
 	`user_grad_year` YEAR NOT NULL,
 	`user_status` ENUM('Student', 'Advisor', 'Other', 'Admin') NOT NULL DEFAULT 'Student',
 	`user_email` varchar(255) NOT NULL DEFAULT '',
-	`user_gender` varchar(20) NOT NULL DEFAULT 'Other',
+	`user_gender` varchar(20) NOT NULL DEFAULT 'Not Provided',
 	`user_description` text NOT NULL DEFAULT '',
 	`user_major1` int(11) NOT NULL,
 	`user_major2` int(11),
