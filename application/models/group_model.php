@@ -15,6 +15,10 @@ class Group_model extends CI_Model{
 		return true;
 	}
 
+	public function update_group(){
+		
+	}
+
 
 
 }
