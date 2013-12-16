@@ -10,6 +10,13 @@ class Group extends CI_Controller{
 		$this->load->model('major_model');
 	}
 
+	public function landing(){
+		$data['title'] = "Groups";
+		$this->load->view('templates/header', $data);
+		$this->load->view('group/landing');
+		$this->load->view('templates/footer');
+	}
+
 	public function view($id){
 		$data['group_item'] = $this->group_model->get_group_by_id($id);
 		$users = $this->group_user_rel_model->get_all_users_by_group_id($id);

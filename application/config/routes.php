@@ -43,6 +43,7 @@ $route['404_override'] = '';
 $route['profile/edit/(:any)'] = 'profile/edit/$1';
 $route['profile/view/(:any)'] = 'profile/view/$1';
 $route['profile/interests/edit/(:any)'] = 'tag_rels/edit_user/$1';
+$route['group'] = 'group/landing';
 $route['group/view/(:any)'] = 'group/view/$1';
 $route['group/edit/(:any)'] = 'group/edit/$1';
 $route['group/new'] = 'group/create/';
