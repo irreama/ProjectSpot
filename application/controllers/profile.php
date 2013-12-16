@@ -24,6 +24,11 @@ class Profile extends CI_Controller {
 	public function view($id){
 		//Generate the data used in the view
 		$data['profile_item'] = $this->user_model->get_user_by_id($id);
+		$data['profile_item']['user_major1'] = $this->major_model->get_major_by_id($user['profile_item']['user_major1']);
+		if(!is_null($data['profile_item']['user_major2'])){
+			$data['profile_item']['user_major2'] = $this->major_model->get_major_by_id($user['profile_item']['user_major2']);
+		}
+		
 		$data['profile_item']['ps_tags'] = $this->user_tag_rel_model->get_all_tags_by_user_id($id);
 		$data['profile_item']['ps_groups'] = $this->group_user_rel_model->get_all_groups_by_user_id($id);
 		$data['title'] = 'User Profile';
@@ -48,6 +53,10 @@ class Profile extends CI_Controller {
 
 		//Generate the data used in the views
 		$data['profile_item'] = $this->user_model->get_user_by_id($id);
+		$data['profile_item']['user_major1'] = $this->major_model->get_major_by_id($user['profile_item']['user_major1']);
+		if(!is_null($data['profile_item']['user_major2'])){
+			$data['profile_item']['user_major2'] = $this->major_model->get_major_by_id($user['profile_item']['user_major2']);
+		}
 		$data['profile_item']['ps_tags'] = $this->user_tag_rel_model->get_all_tags_by_user_id($id);
 		$data['title'] = 'Edit Profile';
 
