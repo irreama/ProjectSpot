@@ -199,3 +199,6 @@ html,body {
 	display:block;
 	margin-top:50px;
 }
+.centered{
+	text-align:center;
+}
