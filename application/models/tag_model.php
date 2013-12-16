@@ -18,6 +18,7 @@ class Tag_model extends CI_Model{
 	 * @return Array A tag of all the arrays
 	 */
 	public function get_all_tags(){
+		$this->db->order_by("tag_text", "asc"); 
 		$query = $this->db->get("ps_tags");
 		return $query->result_array();
 	}
