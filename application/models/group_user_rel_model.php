@@ -20,7 +20,7 @@ class Group_user_rel_model extends CI_Model{
 	public function get_all_users_by_group_id($group_id){
 		$this->db->from('ps_group_user_rel');
 		$this->db->where('group_id', $group_id);
-		$this->db->join('ps_groups', 'ps_groups.id = ps_group_user_rel.group_id');
+		$this->db->join('ps_users', 'ps_users.id = ps_group_user_rel.user_id');
 		$query = $this->db->get();
 		return $query->result_array();
 	}
