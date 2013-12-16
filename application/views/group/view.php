@@ -1,6 +1,6 @@
 <pre>
 <?php
-print_r($group_item);
+//print_r($group_item);
 ?>
 </pre>
 
@@ -25,6 +25,13 @@ print_r($group_item);
 		
 		<br/>
 		<label class="title">Interests:</label><br/>
+		<?php
+			foreach ($group['tags'] as $tag){
+				?>
+				<p><?php echo $tag['tag_text']?></p>
+				<?php
+			}
+		?>
 		<label class="title">Description:</label>
 		<label>
 			<?php echo $group_item['group_description'];?>
