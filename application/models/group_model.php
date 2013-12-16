@@ -18,10 +18,10 @@ class Group_model extends CI_Model{
 		$creator = $this->user_model->get_user_by_id($this->input->post('group_creator'));
 
 		$data = array(
-			'group_creator' = $this->input->post('group_creator'),
-			'group_description' = $this->input->post('group_description'),
-			'group_name' = $this->input->post('group_name'),
-			'group_contact' = $creator['user_email']
+			'group_creator' => $this->input->post('group_creator'),
+			'group_description' => $this->input->post('group_description'),
+			'group_name' => $this->input->post('group_name'),
+			'group_contact' => $creator['user_email']
 		);
 
 		$query = $this->db->insert($data);
