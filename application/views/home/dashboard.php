@@ -24,9 +24,9 @@
 	<div id="resources">
 		<h3>Resources</h3>
 		<ul>
-			<li><a href="http://www.wpi.edu/academics/cs/mqp.html">The Computer Science MQP</a></li>
-			<li><a href="https://www.wpi.edu/offices/registrar/forms.html">Registrar Forms</a></li>
-			<li><a href="http://www.wpi.edu/Pubs/E-project/browse/mqp_by_department/c.html">Electronic Projects Collection</a></li>
+			<li><a href="http://www.wpi.edu/academics/cs/mqp.html" target="_blank">The Computer Science MQP</a></li>
+			<li><a href="https://www.wpi.edu/offices/registrar/forms.html" target="_blank">Registrar Forms</a></li>
+			<li><a href="http://www.wpi.edu/Pubs/E-project/browse/mqp_by_department/c.html" target="_blank">Electronic Projects Collection</a></li>
 		</ul>	
 		<a href="/index.php/resources">View all Resources</a>
 		
