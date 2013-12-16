@@ -12,11 +12,20 @@ class Group extends CI_Controller{
 
 	public function landing(){
 		//check to see if the user is in a group
+		//Fix this for live
+		$data['group_item'] = $this->group_user_rel_model->get_all_groups_by_user_id(4);
+
+		if(is_empty($data['group_item'])){
+			$data['title'] = "Groups";
+			$this->load->view('templates/header', $data);
+			$this->load->view('group/landing', $data);
+			$this->load->view('templates/footer');
+		}
+		else{
+			redirect($data['group_item'][0]['id']);
+		}
 		
-		$data['title'] = "Groups";
-		$this->load->view('templates/header', $data);
-		$this->load->view('group/landing');
-		$this->load->view('templates/footer');
+		
 	}
 
 	public function view($id){
