@@ -10,7 +10,7 @@
 		</ol>
 	</div>
 	
-	<div class="help">Need help?</div>
+	<div class="help-div"><a class="help" href="main">Need help?</a></div>
 </div>
 
 <div class="right">

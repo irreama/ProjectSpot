@@ -171,9 +171,19 @@ html,body {
 	background-color: #ffffff;
 	border: 2px solid #d7d7d7;
 }
-
+.help-div{
+	margin-top: 50px;
+}
 .help{
 	background-color:#0f84d3;
 	padding: 10px 20px;
 	border-radius:10px;
+	text-decoration:none;
+	color:white;
+}
+.help:hover{
+	background-color:#1777b8;
+}
+.help:active{
+	background-color:#5cb6f3
 }
