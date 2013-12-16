@@ -8,7 +8,7 @@ class Invites extends CI_Controller {
 	public function index(){
 		$data['title'] = 'Invites';
 		//Load our views
-		$this->load->view('templates/homeheader');
+		$this->load->view('templates/header');
 		$this->load->view('invites/invites');
 		$this->load->view('templates/footer');
 	}
