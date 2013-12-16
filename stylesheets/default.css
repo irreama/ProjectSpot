@@ -192,3 +192,6 @@ html,body {
 .row{
 	display:inline-block;
 }
+.enter{
+	display:block;
+}
