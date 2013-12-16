@@ -20,7 +20,14 @@
 		<label class="title">Name:</label><label><?php echo $profile_item['user_first_name'] ?> <?php echo $profile_item['user_last_name'] ?></label><br/>
 		<label class="title">Major 1:</label><label><?php echo $profile_item['user_major1']['major_text'] ?></label><br/>
 		<label class="title">Major 2:</label><label><?php echo $profile_item['user_major2']['major_text'] ?></label><br/>
+		<?php
+		if($profile_item['user_status'] != 'Advisor'){
+		?>
 		<label class="title">Graduation Year:</label><label><?php echo $profile_item['user_grad_year'] ?></label><br/>
+		<?php
+		}
+		?>
+		
 		<label class="title">Gender:</label><label><?php echo $profile_item['user_gender'] ?></label><br/>
 		<br/>
 		<?php
