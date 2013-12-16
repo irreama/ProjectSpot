@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
-
+<link rel="stylesheet" type="text/css" href="/stylesheets/default.css">
 <h1>Welcome to ProjectSpot</h1>
 <img class="gompei" src="/images/gompei_pspot_firstdraft.png" alt="pspot logo"/>
 <div class="welcome-text">
