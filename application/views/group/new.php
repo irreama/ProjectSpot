@@ -15,7 +15,7 @@
 		<textarea name="group_description"></textarea><br/>
 		<br/>
 		<label class="title">Group Contact:</label><input type="text" name="group_contact" value="test@wpi.edu"/>
-		<input type="submit" name="submit" value="Create Group"/>
+		<input class="enter" type="submit" name="submit" value="Create Group"/>
 	</div>
 	</form>
 </div><!--right column-->
