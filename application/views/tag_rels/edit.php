@@ -1,6 +1,8 @@
+<pre>
 <?php
 print_r($tag_item);
 ?>
+</pre>
 <div class="page-title">
 	<h2>Edit Interests</h2>
 </div>
