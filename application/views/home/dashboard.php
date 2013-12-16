@@ -16,12 +16,16 @@
 <div class="right">
 	<div id="dates">
 		<h3>Important Dates</h3>
-		<a href="/index.php/important_dates">Important Dates</a>
+		<p>No upcoming important dates.</p>
+		<a href="/index.php/important_dates">View all Important Dates</a>
 	</div>
 
 	<div id="resources">
 		<h3>Resources</h3>
-		<a href="/index.php/resources">Reources</a>
+		<a href="http://www.wpi.edu/academics/cs/mqp.html">The Computer Science MQP</a>
+		<a href="https://www.wpi.edu/offices/registrar/forms.html">Registrar Forms</a>
+		<a href="http://www.wpi.edu/Pubs/E-project/browse/mqp_by_department/c.html">Electronic Projects Collection</a>
+		<a href="/index.php/resources">View all Reources</a>
 	</div>
 </div><p class="clear"></p>
 
