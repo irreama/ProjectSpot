@@ -9,7 +9,7 @@
 	echo form_open('group/new/');
 	?>
 	<div class="info">
-		<inpt type="hidden" name="group_creator" value="4"/>
+		<input type="hidden" name="group_creator" value="4"/>
 		<label class="title">Title:</label><input type="text" name="group_name"/><br/>
 		<label class="title">Description:</label>
 		<textarea name="group_description"></textarea><br/>
