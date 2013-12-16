@@ -1,5 +1,5 @@
 <div class="page-title">
-	<h2>This is a student page</h2>
+	<h2>This is a<?php echo ($profile_item['user_status'] == 'Advisor' ? "n advisor" : "student"); ?> page</h2>
 </div>
 		
 <div class="left_col">
