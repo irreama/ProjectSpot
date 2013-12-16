@@ -1,9 +1,3 @@
-<pre>
-<?php
-//print_r($group_item);
-?>
-</pre>
-
 <div class="page-title">
 	<h2>This is a group page</h2>
 </div>
