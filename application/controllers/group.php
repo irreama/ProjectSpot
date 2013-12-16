@@ -11,6 +11,8 @@ class Group extends CI_Controller{
 	}
 
 	public function landing(){
+		//check to see if the user is in a group
+		
 		$data['title'] = "Groups";
 		$this->load->view('templates/header', $data);
 		$this->load->view('group/landing');
