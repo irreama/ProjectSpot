@@ -36,7 +36,7 @@
 		<label class="title">Gender:</label>
 			<input name="user_gender" type="radio" value="Female"<?php echo($profile_item['user_gender'] == "Female" ? " checked" : "")?>/><label>Female</label>
 			<input name="user_gender" type="radio" value="Male"<?php echo($profile_item['user_gender'] == "Male" ? " checked" : "")?>/><label>Male</label>
-			<input name="user_gender" type="radio" value="Other"<?php echo($profile_item['user_gender'] == "Other" ? " checked" : "")?>/><label>Other/No Answer</label><br/>
+			<input name="user_gender" type="radio" value="Not Provided"<?php echo($profile_item['user_gender'] == "Not Provided" ? " checked" : "")?>/><label>Other/No Answer</label><br/>
 		<br/>
 		<label class="title">MQP:</label>None<br/>
 		<br/>
