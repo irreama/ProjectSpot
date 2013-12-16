@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/interests.css">
 <div class="page-title">
 	<h2>Edit Interests</h2>
 </div>
