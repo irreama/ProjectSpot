@@ -13,6 +13,7 @@ class Profile extends CI_Controller {
 		parent::__construct();
 		$this->load->model('user_model');
 		$this->load->model('user_tag_rel_model');
+		$this->load->model('group_user_rel_model');
 	}
 
 	/**
@@ -24,6 +25,7 @@ class Profile extends CI_Controller {
 		//Generate the data used in the view
 		$data['profile_item'] = $this->user_model->get_user_by_id($id);
 		$data['profile_item']['ps_tags'] = $this->user_tag_rel_model->get_all_tags_by_user_id($id);
+		$data['profile_item']['ps_groups'] = $this->group_user_rel_model->get_all_groups_by_user_id($id);
 		$data['title'] = 'User Profile';
 
 		//Load our views
