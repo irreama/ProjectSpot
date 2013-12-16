@@ -1,11 +1,11 @@
 <div class="page-title">
 	<h2>This is a group page</h2>
 </div>
-<div class="left_col">
-	<img src="unknown.png" width=200 height=200 alt="profile image"/>
+<div class="left_col clearfix">
+	<img src="/images/no_profile_icon2.png" width=200 height=200 alt="profile image"/>
 </div><!--left column-->
 
-<div class="right_col">
+<div class="right_col clearfix">
 	<a href="/index.php/group/edit/<?php echo $group_item['id'];?>"><button class="edit">Edit Page</button></a>
 	<div class="info">
 		<label class="title">Title:</label><label><?php echo $group_item['group_name'];?></label><br/>

@@ -46,6 +46,7 @@ class Profile extends CI_Controller {
 
 		//Generate the data used in the views
 		$data['profile_item'] = $this->user_model->get_user_by_id($id);
+		$data['profile_item']['ps_tags'] = $this->user_tag_rel_model->get_all_tags_by_user_id($id);
 		$data['title'] = 'Edit Profile';
 
 		//Require ID to save the form

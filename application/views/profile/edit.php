@@ -1,5 +1,5 @@
 <div class="left_col">
-	<img src="unknown.png" width=200 height=200 alt="profile image"/>
+	<img src="/images/no_profile_icon2.png" width=200 height=200 alt="profile image"/>
 	<button>Clear Image</button>
 	<button>Upload an Image</button>
 </div><!--left column-->
@@ -25,6 +25,13 @@
 		<label class="title">MQP:</label>None<br/>
 		<br/>
 		<label class="title">Interests:</label><br/>
+		<?php
+			foreach ($profile_item['ps_tags'] as $tag){
+				?>
+				<p><?php echo $tag['tag_text']?></p>
+				<?php
+			}
+		?>
 		<a href="/index.php/profile/interests/edit/<?php echo $profile_item['id']?>"><button class="edit" type="button">Edit Interests</button></a>
 		
 		<label class="title">Description:</label>
@@ -33,8 +40,8 @@
 		<label class="title">Contact:</label><label><?php echo $profile_item['user_email']?></label>
 		
 		<div class="button_panel">
-			<a href="/index.php/profile/view/<?php echo $profile_item['id']?>"><button class="cancel">Cancel</button></a>
-			<input type="submit" name="submit" value="Save" />
+			<a href="/index.php/profile/view/<?php echo $profile_item['id']?>"><button type="button" class="cancel">Cancel</button></a>
+			<input class="edit" type="submit" name="submit" value="Save" />
 		</div>
 
 		<?php
