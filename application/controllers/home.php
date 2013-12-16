@@ -26,35 +26,35 @@ class Home extends CI_Controller {
 	public function index(){
 		$data['title'] = 'Home';
 		//Load our views
-		$this->load->view('templates/homeheader');
+		$this->load->view('templates/homeheader', $data);
 		$this->load->view('home/home');
 		$this->load->view('templates/footer');
 	}
 
 	public function resources(){
 		$data['title'] = "Resources";
-		$this->load->view('templates/header');
+		$this->load->view('templates/header', $data);
 		$this->load->view('home/resources');
 		$this->load->view('templates/footer');
 	}
 
 	public function main_help(){
 		$data['title'] = "Help";
-		$this->load->view('templates/header');
+		$this->load->view('templates/header', $data);
 		$this->load->view('home/main_help');
 		$this->load->view('templates/footer');
 	}
 
 	public function important_dates(){
 		$data['title'] = "Important Dates";
-		$this->load->view('templates/header');
+		$this->load->view('templates/header', $data);
 		$this->load->view('home/important_dates');
 		$this->load->view('templates/footer');
 	}
 
 	public function general_help(){
 		$data['title'] = "General Help";
-		$this->load->view('templates/header');
+		$this->load->view('templates/header', $data);
 		$this->load->view('home/general_help');
 		$this->load->view('templates/footer');
 	}
