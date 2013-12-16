@@ -29,6 +29,9 @@ class Profile extends CI_Controller {
 		if(!is_null($data['profile_item']['user_major2'])){
 			$data['profile_item']['user_major2'] = $this->major_model->get_major_by_id($data['profile_item']['user_major2']);
 		}
+		else{
+			$data['profile_item']['user_major2']['major_text'] = "";
+		}
 		
 		$data['profile_item']['ps_tags'] = $this->user_tag_rel_model->get_all_tags_by_user_id($id);
 		$data['profile_item']['ps_groups'] = $this->group_user_rel_model->get_all_groups_by_user_id($id);
@@ -57,6 +60,9 @@ class Profile extends CI_Controller {
 		$data['profile_item']['user_major1'] = $this->major_model->get_major_by_id($data['profile_item']['user_major1']);
 		if(!is_null($data['profile_item']['user_major2'])){
 			$data['profile_item']['user_major2'] = $this->major_model->get_major_by_id($data['profile_item']['user_major2']);
+		}
+		else{
+			$data['profile_item']['user_major2']['major_text'] = "";
 		}
 		$data['profile_item']['ps_tags'] = $this->user_tag_rel_model->get_all_tags_by_user_id($id);
 		$data['title'] = 'Edit Profile';
