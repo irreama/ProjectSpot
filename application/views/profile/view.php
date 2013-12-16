@@ -40,9 +40,11 @@ print_r($profile_item);
 			}
 		}
 		else{
+			if(!empty($profile_item['ps_groups'])){
 		?>
 		<label class="title">MQP:</label><a href="/index.php/group/view/<?php echo $profile_item['ps_groups'][0]['group_id'];?>"><?php echo $profile_item['ps_groups'][0]['group_name'];?></a><br/>
 		<?php
+			}
 		}
 		?>
 		<br/>

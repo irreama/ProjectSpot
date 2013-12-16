@@ -1,6 +1,3 @@
-<?php
-print_r($users);
-?>
 <div class="page-title">
 	<h2>Browse</h2>
 </div>
