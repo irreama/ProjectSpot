@@ -23,6 +23,6 @@
 					</ul>
 				</div>
 			</div>
-			<div class="welcome">Welcome User, <a href="/index.php/home">Logout</a></div>
+			<div class="welcome">Welcome Test User, <a href="/index.php/home">Logout</a></div>
 			
 			<div class="content">
