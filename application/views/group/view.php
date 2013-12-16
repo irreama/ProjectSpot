@@ -26,7 +26,7 @@
 		<br/>
 		<label class="title">Interests:</label><br/>
 		<?php
-			foreach ($group['tags'] as $tag){
+			foreach ($group_item['tags'] as $tag){
 				?>
 				<p><?php echo $tag['tag_text']?></p>
 				<?php
