@@ -16,7 +16,16 @@ class Group_model extends CI_Model{
 	}
 
 	public function update_group(){
-		
+		$this->load->helper('url');
+
+		$data = array(
+			'group_title' => $this->input->post('group_title'),
+			'group_description' => $this->input->post('group_description'),
+			'group_contact' => $this->input->post('group_contact')
+		);
+
+		$this->db->where('id', $this->input->post('id'));
+		return $this->db->update('ps_groups', $data);
 	}
 
 
