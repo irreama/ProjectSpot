@@ -36,7 +36,7 @@ print_r($profile_item);
 			foreach($profile_item['ps_groups'] as $a_group){
 			?>
 			<a href="/index.php/group/view/<?php echo $a_group['group_id'];?>"><?php echo $a_group['group_name'];?></a><br/>
-			<?
+			<?php
 			}
 		}
 		else{
@@ -51,7 +51,7 @@ print_r($profile_item);
 		<?php
 			foreach ($profile_item['ps_tags'] as $tag){
 				?>
-				<label><?php echo $tag['tag_text']?></label><br/>
+				<label><?php echo $tag['tag_text'];?></label><br/>
 				<?php
 			}
 		?>
@@ -61,7 +61,7 @@ print_r($profile_item);
 			<?php echo $profile_item['user_description'] ?>
 		</label><br/>
 		<br/>
-		<label class="title">Contact:</label><label><?php echo $profile_item['user_email'] ?></label>
+		<label class="title">Contact:</label><label><?php echo $profile_item['user_email'];?></label>
 	</div>
 </div><!--right column-->
 <p class="clear"></p>
