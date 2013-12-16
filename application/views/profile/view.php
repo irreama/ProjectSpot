@@ -3,7 +3,7 @@
 </div>
 		
 <div class="left_col">
-	<img src="unknown.png" width=200 height=200 alt="profile image"/>
+	<img src="/images/no_profile_icon2.png" width=200 height=200 alt="profile image"/>
 </div><!--left column-->
 
 <div class="right_col">
