@@ -27,6 +27,7 @@
 	?>
 	<div class="chk_buff"></div>
 	<input type="submit" name="submit" value="Save Interests" />
+	<a href="/index.php/<?php echo $tag_item['type'];?>/edit/<?php echo $tag_item['item_id'];?>"><button type="button">Cancel</button></a>
 	<?php
 	echo form_close();
 	?>
