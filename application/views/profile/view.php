@@ -1,8 +1,3 @@
-<pre>
-<?php
-print_r($profile_item);
-?>
-</pre>
 <div class="page-title">
 	<h2>This is a student page</h2>
 </div>
@@ -44,6 +39,9 @@ print_r($profile_item);
 		?>
 		<label class="title">MQP:</label><a href="/index.php/group/view/<?php echo $profile_item['ps_groups'][0]['group_id'];?>"><?php echo $profile_item['ps_groups'][0]['group_name'];?></a><br/>
 		<?php
+			}
+			else{
+				?>
 			}
 		}
 		?>
