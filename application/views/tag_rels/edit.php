@@ -28,7 +28,7 @@
 	?>
 	<div class="chk_buff"></div>
 	<div class="interest-buttons">
-		<a href="/index.php/<?php echo $tag_item['type'];?>/edit/<?php echo $tag_item['item_id'];?>"><button class="edit" type="button">Cancel</button></a>
+		<a href="/index.php/<?php echo $tag_item['type'];?>/edit/<?php echo $tag_item['item_id'];?>"><button type="button">Cancel</button></a>
 		<input type="submit" name="submit" value="Save Interests" />
 	</div>
 	<?php
