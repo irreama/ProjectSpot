@@ -22,10 +22,12 @@
 
 	<div id="resources">
 		<h3>Resources</h3>
-		<a href="http://www.wpi.edu/academics/cs/mqp.html">The Computer Science MQP</a>
-		<a href="https://www.wpi.edu/offices/registrar/forms.html">Registrar Forms</a>
-		<a href="http://www.wpi.edu/Pubs/E-project/browse/mqp_by_department/c.html">Electronic Projects Collection</a>
-		<a href="/index.php/resources">View all Reources</a>
+		<ul>
+			<li><a href="http://www.wpi.edu/academics/cs/mqp.html">The Computer Science MQP</a></li>
+			<li><a href="https://www.wpi.edu/offices/registrar/forms.html">Registrar Forms</a></li>
+			<li><a href="http://www.wpi.edu/Pubs/E-project/browse/mqp_by_department/c.html">Electronic Projects Collection</a></li>
+			<li><a href="/index.php/resources">View all Reources</a></li>
+		</ul>
 	</div>
 </div><p class="clear"></p>
 
