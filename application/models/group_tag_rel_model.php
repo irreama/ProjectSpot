@@ -29,7 +29,10 @@ class Group_tag_rel_model extends CI_Model{
 	 * @return array 			An array of tag ids
 	 */
 	public function get_all_tags_by_group_id($group_id){
-		$query = $this->db->get_where('ps_group_tag_rel', array('group_id' => $group_id));
+		$this->db->from("ps_group_tag_rel");
+		$this->db->where('group_id', $group_id);
+		$this->db->join('ps_tags', 'ps_group_tag_rel.tag_id = ps_tags.id');
+		$query = $this->db->get();
 		return $query->result_array();
 	}
 

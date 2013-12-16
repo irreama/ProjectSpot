@@ -12,12 +12,17 @@ print_r($group_item);
 </div><!--left column-->
 
 <div class="right_col">
-	<a href="edit_group.html"><button class="edit">Edit Page</button></a>
+	<a href="/index.php/group/edit/<?php echo $group_item['id'];?>"><button class="edit">Edit Page</button></a>
 	<div class="info">
 		<label class="title">Title:</label><label><?php echo $group_item['group_name'];?></label><br/>
-		<label class="title">Major 1:</label><label>Madalyn Coryea</label><br/>
-		<label class="title">Major 2:</label><label>Anthony Fisher</label><br/>
-		<label class="title">Advisor:</label><label>David C. Brown</label><br/>
+		<?php
+		foreach($group_item['users'] as $a_user){
+		?>
+		<label class="title"><?php echo($a_user['user_status'] == "Advisor" ? "Advisor" : $a_user['user_major1']);?>:</label><label>Madalyn Coryea</label><br/>
+		<?php
+		}
+		?>
+		
 		<br/>
 		<label class="title">Interests:</label><br/>
 		<label class="title">Description:</label>
