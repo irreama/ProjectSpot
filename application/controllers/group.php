@@ -68,7 +68,7 @@ class Group extends CI_Controller{
 		}
 	}
 
-		public function create(){
+	public function create(){
 		$this->load->helper('form');
 		$this->load->helper('url');
 		$this->load->library('form_validation');

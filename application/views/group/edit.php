@@ -37,9 +37,9 @@
 				<?php
 			}
 		?>
-		<a href="/index.php/group/interests/edit/<?php echo $group_item['id']?>"><button type="button">Edit Interests</button></a>
+		<a href="/index.php/group/interests/edit/<?php echo $group_item['id']?>"><button class="edit" type="button">Edit Interests</button></a>
 		<label class="title">Description:</label>
-		<textarea name="group_description"><?php echo $group_item['group_description'];?></textarea name="group_description"><br/>
+		<textarea rows=5 cols=50 name="group_description"><?php echo $group_item['group_description'];?></textarea name="group_description"><br/>
 		<br/>
 		<label class="title">Contact:</label><input type="text" name="group_contact" value="<?php echo $group_item['group_contact'];?>"/>
 		<div class="button_panel">
