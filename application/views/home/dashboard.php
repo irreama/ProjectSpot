@@ -10,18 +10,18 @@
 		</ol>
 	</div>
 	
-	<div class="help">Need help?</div>
+	<div class="help"><a href="/index.php/help">Need help?<a/></div>
 </div>
 
 <div class="right">
 	<div id="dates">
 		<h3>Important Dates</h3>
-		<a src="/index.php/important_dates">Important Dates</a>
+		<a href="/index.php/important_dates">Important Dates</a>
 	</div>
 
 	<div id="resources">
 		<h3>Resources</h3>
-		<a src="/index.php/resources">Reources</a>
+		<a href="/index.php/resources">Reources</a>
 	</div>
 </div><p class="clear"></p>
 
