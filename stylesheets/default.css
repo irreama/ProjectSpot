@@ -195,3 +195,7 @@ html,body {
 .enter{
 	display:block;
 }
+.wrap{
+	display:block;
+	margin-top:50px;
+}

@@ -9,8 +9,9 @@
 			<li>You have a pending invite<br><a href="/index.php/invites">Check invites now</a></li>
 		</ol>
 	</div>
-	
-	<a class="help" href="/index.php/help">Need help?</a>
+	<div class="wrap">
+		<a class="help" href="/index.php/help">Need help?</a>
+	</div>
 </div>
 
 <div class="right">
