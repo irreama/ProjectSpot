@@ -48,7 +48,11 @@ print_r($tag_item);
 	foreach($tag_item['tags'] as $a_tag){
 	?>
 	<div class="tag_item">
-		<input type="checkbox" name="tag" data-id="<?php echo $a_tag['id'];?>" data-text="<?php echo $a_tag['tag_text'];?>"<?php echo (in_array($a_tag, $tag_item['item_tags']) ? "checked" : "");?>><?php echo $a_tag['tag_text'];?>
+		<input type="checkbox" name="tag" data-id="<?php echo $a_tag['id'];?>" data-text="<?php echo $a_tag['tag_text'];?>"<?php
+		if(!empty($tag_item['item_tags'])){
+			echo (in_array($a_tag, $tag_item['item_tags']) ? "checked" : "");
+		}
+		?>><?php echo $a_tag['tag_text'];?>
 	</div>
 	<?php
 	}
