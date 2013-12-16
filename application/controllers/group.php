@@ -22,6 +22,7 @@ class Group extends CI_Controller{
 			$this->load->view('templates/footer');
 		}
 		else{
+			$this->load->helper('url');
 			redirect($data['group_item'][0]['id']);
 		}
 		
