@@ -10,7 +10,7 @@
 		</ol>
 	</div>
 	
-	<div class="help"><a href="/index.php/help">Need help?<a/></div>
+	<a class="help" href="/index.php/help">Need help?</a>
 </div>
 
 <div class="right">
