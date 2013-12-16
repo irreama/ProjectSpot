@@ -25,7 +25,7 @@ class Group_model extends CI_Model{
 		);
 
 		$query = $this->db->insert($data);
-		$result = $query->row_array():
+		$result = $query->row_array();
 
 		return $result['id'];
 	}
