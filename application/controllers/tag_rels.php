@@ -9,6 +9,7 @@ class Tag_rels extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('user_tag_rel_model');
+		$this->load->model('group_tag_rel_model');
 		$this->load->model('tag_model');
 	}
 
