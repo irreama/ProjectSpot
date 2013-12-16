@@ -19,7 +19,7 @@
 						<li><a href="/index.php/profile/view/4"><img class="nav-image" src="/images/profile_icon.png"><span>Profile</span></a></li> <!--student, advisor pages (no profile template?)/-->
 						<li><a href="/index.php/group"><img class="nav-image" src="/images/group_icon.png"><span>Group</span></a></li>
 						<li><a href="/index.php/browse"><img class="nav-image" src="/images/find_icon.png"><span>Find</span></a></li>
-						<li><a href="/index.php/browse"><img class="nav-image" src="/images/mail_icon.png"><span>Invites</span></a></li>
+						<li><a href="/index.php/invites"><img class="nav-image" src="/images/mail_icon.png"><span>Invites</span></a></li>
 					</ul>
 				</div>
 			</div>
