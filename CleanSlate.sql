@@ -51,6 +51,9 @@ VALUES ('dcb', 'David', 'Brown', 2014, 'Advisor', 'dcb@wpi.edu', 1);
 INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_grad_year, user_status, user_email, user_major1)
 VALUES ('test', 'Test', 'User', 2015, 'Student', 'test@wpi.edu', 1);
 
+INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_grad_year, user_status, user_email, user_major1)
+VALUES ('pollice', 'Gary', 'Pollice', 2014, 'Advisor', 'pollice@wpi.edu', 1);
+
 --
 -- Table Structure for ps_groups
 --
