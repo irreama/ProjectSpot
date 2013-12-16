@@ -86,10 +86,13 @@ class Group extends CI_Controller{
 			$this->load->view('templates/footer');
 		}
 		else{
-			//Save the user
+			//Save the group
 			$new_id = $this->group_model->new_group();
 
-			//Head back to the user view pages
+			$this->group_user_rel_model->new_group_user_rel($new_id, $this->input->post('group_creator'), 'Accepted');
+
+
+			//Head to the group view page
 			redirect('group/view/'.$new_id);
 		}
 	}

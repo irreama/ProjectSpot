@@ -25,9 +25,8 @@ class Group_model extends CI_Model{
 		);
 
 		$query = $this->db->insert('ps_groups', $data);
-		$result = $query->row_array();
 
-		return $result['id'];
+		return $this->db->insert_id();
 	}
 
 	public function update_group(){
