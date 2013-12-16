@@ -32,6 +32,7 @@ html,body {
 .welcome{
 	margin:10px;
 	z-index:10;
+	font-weight:bold;
 }
 
 .nav{
@@ -190,4 +191,7 @@ html,body {
 
 .row{
 	display:inline-block;
+}
+.enter{
+	display:block;
 }
