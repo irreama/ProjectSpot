@@ -15,7 +15,7 @@ class Group extends CI_Controller{
 		//Fix this for live
 		$data['group_item'] = $this->group_user_rel_model->get_all_groups_by_user_id(4);
 
-		if(is_empty($data['group_item'])){
+		if(empty($data['group_item'])){
 			$data['title'] = "Groups";
 			$this->load->view('templates/header', $data);
 			$this->load->view('group/landing', $data);
