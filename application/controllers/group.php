@@ -23,7 +23,7 @@ class Group extends CI_Controller{
 		}
 		else{
 			$this->load->helper('url');
-			redirect($data['group_item'][0]['id']);
+			redirect('group/view/'.$data['group_item'][0]['id']);
 		}
 		
 		
