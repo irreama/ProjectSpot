@@ -8,13 +8,19 @@
 }
 
 #todo{
-
+	border:1px solid black;
+	padding:10px;
+	margin:10px;
 }
 
 #dates{
-
+	border:1px solid black;
+	padding:10px;
+	margin:10px;
 }
 
 #resources{
-
+	border:1px solid black;
+	padding:10px;
+	margin:10px;
 }

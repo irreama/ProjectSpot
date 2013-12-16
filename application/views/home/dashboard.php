@@ -9,8 +9,9 @@
 			<li>You have a pending invite<br><a href="/index.php/invites">Check invites now</a></li>
 		</ol>
 	</div>
-	
-	<a class="help" href="/index.php/help">Need help?</a>
+	<div class="wrap">
+		<a class="help" href="/index.php/help">Need help?</a>
+	</div>
 </div>
 
 <div class="right">
@@ -26,8 +27,9 @@
 			<li><a href="http://www.wpi.edu/academics/cs/mqp.html">The Computer Science MQP</a></li>
 			<li><a href="https://www.wpi.edu/offices/registrar/forms.html">Registrar Forms</a></li>
 			<li><a href="http://www.wpi.edu/Pubs/E-project/browse/mqp_by_department/c.html">Electronic Projects Collection</a></li>
-			<li><a href="/index.php/resources">View all Reources</a></li>
-		</ul>
+		</ul>	
+		<a href="/index.php/resources">View all Resources</a>
+		
 	</div>
 </div><p class="clear"></p>
 
