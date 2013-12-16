@@ -24,7 +24,7 @@ class Group_model extends CI_Model{
 			'group_contact' => $creator['user_email']
 		);
 
-		$query = $this->db->insert($data);
+		$query = $this->db->insert('ps_groups', $data);
 		$result = $query->row_array();
 
 		return $result['id'];
