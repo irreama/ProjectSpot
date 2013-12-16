@@ -52,6 +52,24 @@ class Group_tag_rel_model extends CI_Model{
 	}
 
 	/**
+	 * Add the given tags to the group
+	 */
+	public function add_tags_to_group(){
+		$this->load->helper('url');
+
+		$tags = $this->input->post('tags');
+		$group_id = $this->input->post('id');
+		foreach($tags as $tag_id){
+			$data = array(
+			'group_id' => $group_id,
+			'tag_id' => $tag_id
+			);
+
+			$this->db->insert('ps_group_tag_rel', $data);
+		}
+	}
+
+	/**
 	 * Delete a specific group, tag relation from the database
 	 * @return boolean 	True on success, False on failure
 	 */
