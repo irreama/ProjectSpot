@@ -6,7 +6,7 @@
 </div><!--left column-->
 
 <div class="right_col clearfix">
-	<a href="/index.php/group/edit/<?php echo $group_item['id'];?>"><button class="edit">Edit Page</button></a>
+	<a class="edit button-element-small" href="/index.php/group/edit/<?php echo $group_item['id'];?>">Edit Page</a>
 	<div class="info">
 		<label class="title">Title:</label><label><?php echo $group_item['group_name'];?></label><br/>
 		<?php
