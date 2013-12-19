@@ -11,7 +11,7 @@
 		//Change this when we really go live. Use real authentication
 		if($profile_item['id'] == 4){
 		?>
-		<a class="edit button-element" href="/index.php/profile/edit/<?php echo $profile_item['id']?>">Edit Page</a>
+		<a class="edit button-element-small" href="/index.php/profile/edit/<?php echo $profile_item['id']?>">Edit Page</a>
 		<?php
 		}
 	?>
