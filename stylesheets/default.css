@@ -222,3 +222,6 @@ html,body {
 .centered{
 	text-align:center;
 }
+.full_width{
+	width:100%;
+}

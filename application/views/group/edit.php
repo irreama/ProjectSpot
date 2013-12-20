@@ -20,7 +20,8 @@
 	?>
 	<div class="info">
 		<div class="basic_info">
-			<label class="title">Project Title:</label><input type="text" name="group_name" value="<?php echo $group_item['group_name'];?>"/>
+			<label class="title">Project Title:</label>
+			<input class="full_width" type="text" name="group_name" value="<?php echo $group_item['group_name'];?>"/>
 			<div>
 				<?php
 				foreach($group_item['users'] as $a_user){
@@ -44,10 +45,10 @@
 		</div>
 		<div class="description">
 			<label class="title">Description:</label>
-			<textarea rows=5 cols=50 name="group_description"><?php echo $group_item['group_description'];?></textarea name="group_description">
+			<textarea class="full_width" rows=5 cols=50 name="group_description"><?php echo $group_item['group_description'];?></textarea name="group_description">
 		</div>
 		<div class="contact">
-			<label class="title">Contact:</label><input type="text" name="group_contact" value="<?php echo $group_item['group_contact'];?>"/>
+			<label class="title">Contact:</label><input class="full_width" type="text" name="group_contact" value="<?php echo $group_item['group_contact'];?>"/>
 		</div>
 		<div class="button_panel">
 			<a class="button-element-small cancel" href="/index.php/group/view/<?php echo $group_item['id']?>">Cancel</a>
