@@ -49,8 +49,7 @@
 		
 		<div class="description">
 			<label class="title">Give a description of your group:</label>
-			<textarea class="input_field full_width" rows=5 name="group_description">
-				<?php echo $group_item['group_description'];?>
+			<textarea class="input_field full_width" rows=5 name="group_description"><?php echo $group_item['group_description'];?>
 			</textarea>
 		</div>
 		
