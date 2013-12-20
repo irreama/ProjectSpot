@@ -163,6 +163,15 @@ html,body {
 	margin-right:auto;
 	margin-top:70px;
 }
+.button-element:hover{
+	color: #ffffff;
+	background-color: #aaaaaa;
+}
+.button-element:active{
+	color: #d7d7d7;
+	background-color: #ffffff;
+	border: 2px solid #d7d7d7;
+}
 .button-element-small{
 	color:gray;
 	background-color: #d7d7d7;
@@ -175,11 +184,11 @@ html,body {
 	font-size:12pt;
 	border-radius:15px;
 }
-.button-element:hover{
+.button-element-small:hover{
 	color: #ffffff;
 	background-color: #aaaaaa;
 }
-.button-element:active{
+.button-element-small:active{
 	color: #d7d7d7;
 	background-color: #ffffff;
 	border: 2px solid #d7d7d7;
