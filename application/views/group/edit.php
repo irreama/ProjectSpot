@@ -34,11 +34,12 @@
 		<div class="interests">
 			<label class="title">Interests:</label>
 			<?php
-				foreach ($group_item['tags'] as $tag){
+				/*foreach ($group_item['tags'] as $tag){
 					?>
 					<span><?php echo $tag['tag_text']?>,&nbsp;</span>
 					<?php
-				}
+				}*/
+				echo implode(',&nbsp;', $tag['tag_text']);
 			?>
 			<a class="button-element-small" href="/index.php/group/interests/edit/<?php echo $group_item['id']?>">Edit Interests</a>
 		</div>
