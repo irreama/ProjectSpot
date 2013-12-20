@@ -1,1 +1,8 @@
 button{display:inline-block;}
+.inline{
+	display:inline-block;
+	margin-right:5px;
+}
+.sent{
+	margin-top:50px;
+}

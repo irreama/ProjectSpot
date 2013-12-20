@@ -9,8 +9,8 @@
 					You have been invited by <a href="#">ProjectSpot</a>
 					to join their MQP Group
 				</label>
-				<a class="button-element-small">&#10003; Accept</a>
-				<a class="button-element-small">X Reject</a>
+				<a class="button-element-small inline">&#10003; Accept</a>
+				<a class="button-element-small inline">X Reject</a>
 			</div>
 		</div>
 	</div>
@@ -23,7 +23,7 @@
 					You have invited <a href="#">Madalyn Coryea</a>
 					to join your MQP group 
 				</label>
-				<a class="button-element-small">X Revoke</a>
+				<a class="button-element-small inline">X Revoke</a>
 			</div>
 		</div>
 		<div class="advisor">
@@ -33,14 +33,14 @@
 					You have invited <a href="#">David C. Brown</a>
 					to advise your MQP group 
 				</label>
-				<a class="button-element-small">X Revoke</a>
+				<a class="button-element-small inline">X Revoke</a>
 			</div>
 			<div class="invite">
 				<label>
 					Anthony Fisher has invited <a href="#">Gary Pollice</a>
 					to advise your MQP group 
 				</label>
-				<a class="button-element-small">X Revoke</a>
+				<a class="button-element-small inline">X Revoke</a>
 			</div>
 		</div>
 	</div>
