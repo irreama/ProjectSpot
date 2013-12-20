@@ -41,6 +41,7 @@ textarea{display:block;}
 }
 .button_panel{
 	display: block;
+	margin-top: 40px;
 }
 
 .edit{

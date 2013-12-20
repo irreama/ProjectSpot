@@ -51,7 +51,7 @@
 		</div>
 		<div class="button_panel">
 			<a class="button-element-small cancel" href="/index.php/group/view/<?php echo $group_item['id']?>">Cancel</a>
-			<input class="edit" type="submit" name="submit" value="Save" />
+			<input class="button-element-small edit" type="submit" name="submit" value="Save" />
 		</div>
 	</div>
 	</form>
