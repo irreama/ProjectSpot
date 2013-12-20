@@ -3,6 +3,6 @@ button{display:inline-block;}
 	display:inline-block;
 	margin-right:5px;
 }
-.sent{
-	margin-top:50px;
+#sent{
+	margin-top:100px;
 }
