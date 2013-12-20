@@ -12,6 +12,15 @@ html,body {
 #container{
 	height:100%;
 }
+a:link{
+	color:red;
+}
+a:hover{
+	color:brown;
+}
+a:active{
+	color:black;
+}
 
 .banner{
 	background-color: red; /*#C40000;/*AC2B37 WPI Red Color*/
