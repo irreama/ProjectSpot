@@ -10,5 +10,9 @@
 	</head>
 	
 	<body>
-		<div id="container">			
+		<div id="container">
+			<div class="banner">
+				<h1 class="clearfix">ProjectSpot</h1>
+			</div>
+					
 			<div class="content">
