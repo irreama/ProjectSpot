@@ -86,7 +86,7 @@
 		
 		<div class="description">
 			<label class="title">Describe yourself:</label>
-			<textarea class="input_field full_width" name="user_description" rows=5 cols=50>
+			<textarea class="input_field full_width" name="user_description" rows=5>
 				<?php echo $profile_item['user_description']?>
 			</textarea>
 		</div>
