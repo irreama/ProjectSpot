@@ -51,7 +51,7 @@
 			<label class="title">Give a description of your group:</label>
 			<textarea class="input_field full_width" rows=5 cols=50 name="group_description">
 				<?php echo $group_item['group_description'];?>
-			</textarea>
+			</textarea name="group_description">
 		</div>
 		
 		<div class="contact">
