@@ -208,7 +208,7 @@ a:active{
 .help-div{
 	margin-top: 50px;
 }
-.help{
+.help a{
 	background-color:#0f84d3;
 	padding: 10px 20px;
 	border-radius:10px;
