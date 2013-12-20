@@ -158,7 +158,21 @@ a:active{
 	border-radius:15px;
 	margin:30px auto;
 }
-
+.button-element{
+	color:gray;
+	background-color: #d7d7d7;
+	display:block;
+	width:200px;
+	text-align:center;
+	padding: 10px;
+	border: 2px solid #aaaaaa;
+	text-decoration:none;
+	font-size:14pt;
+	border-radius:15px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:70px;
+}
 .button-element:link{
 	color:gray;
 	background-color: #d7d7d7;
@@ -197,6 +211,18 @@ a:active{
 	color: #d7d7d7;
 	background-color: #ffffff;
 	border: 2px solid #d7d7d7;
+}
+.button-element-small{
+	color:gray;
+	background-color: #d7d7d7;
+	display:block;
+	text-align:center;
+	padding: 5px 10px;
+	border: 1px solid #aaaaaa;
+	text-decoration:none;
+	font-size:12pt;
+	border-radius:10px;
+	margin-top:5px;
 }
 .button-element-small:link{
 	color:gray;
