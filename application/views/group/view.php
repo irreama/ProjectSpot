@@ -10,20 +10,22 @@
 	<div class="info">
 		<div class="basic_info">
 			<label class="title">Project Title:</label>
-			<label><?php echo $group_item['group_name'];?></label>
-			<?php
-				foreach($group_item['users'] as $a_user){
+			<div class="members">
+				<label><?php echo $group_item['group_name'];?></label>
+				<?php
+					foreach($group_item['users'] as $a_user){
+					?>
+					<label class="title">
+						<?php echo($a_user['user_status'] == "Advisor" ? "Advisor" : $a_user['user_major1']['major_text']);?>:
+					</label>
+					<label>
+						<?php echo $a_user['user_first_name'];?> 
+						<?php echo $a_user['user_last_name'];?>
+					</label>
+				<?php
+				}
 				?>
-				<label class="title">
-					<?php echo($a_user['user_status'] == "Advisor" ? "Advisor" : $a_user['user_major1']['major_text']);?>:
-				</label>
-				<label>
-					<?php echo $a_user['user_first_name'];?> 
-					<?php echo $a_user['user_last_name'];?>
-				</label>
-			<?php
-			}
-			?>
+			</div>
 		</div>
 		<div class="interests">
 			<label class="title">Interests:</label>
