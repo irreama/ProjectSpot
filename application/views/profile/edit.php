@@ -66,7 +66,7 @@
 			</div>
 		</div>
 		
-		<div class="MQP">
+		<div class="mqp">
 			<label class="title">MQP:</label>
 		<div>
 		
