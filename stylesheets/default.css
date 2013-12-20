@@ -159,7 +159,7 @@ a:active{
 	margin:30px auto;
 }
 
-.button-element{
+.button-element:link{
 	color:gray;
 	background-color: #d7d7d7;
 	display:block;
