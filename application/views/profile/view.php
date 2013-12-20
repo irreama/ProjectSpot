@@ -35,10 +35,15 @@
 				}
 				else{
 				?>
-				<label class="title">Major 1:</label>
-				<label><?php echo $profile_item['user_major1']['major_text'] ?></label>
-				<label class="title">Major 2:</label>
-				<label><?php echo $profile_item['user_major2']['major_text'] ?></label>
+				<div>
+					<label class="title">Major 1:</label>
+					<label><?php echo $profile_item['user_major1']['major_text'] ?></label>
+				</div>
+				<div>
+					<label class="title">Major 2:</label>
+					<label><?php echo $profile_item['user_major2']['major_text'] ?></label>
+				</div>
+				
 				<?php
 				}
 				?>
