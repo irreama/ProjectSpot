@@ -221,7 +221,7 @@ a:active{
 	border: 1px solid #aaaaaa;
 	text-decoration:none;
 	font-size:12pt;
-	border-radius:10px;
+
 	margin-top:5px;
 }
 .button-element-small:link{
@@ -233,7 +233,7 @@ a:active{
 	border: 1px solid #aaaaaa;
 	text-decoration:none;
 	font-size:12pt;
-	border-radius:10px;
+
 	margin-top:5px;
 }
 .button-element-small:visited{
@@ -245,7 +245,7 @@ a:active{
 	border: 1px solid #aaaaaa;
 	text-decoration:none;
 	font-size:12pt;
-	border-radius:10px;
+
 	margin-top:5px;
 }
 .button-element-small:hover{
