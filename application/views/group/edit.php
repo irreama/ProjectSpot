@@ -39,7 +39,7 @@
 					<span><?php echo $tag['tag_text']?>,&nbsp;</span>
 					<?php
 				}*/
-				echo implode(',&nbsp;', $tag['tag_text']);
+				echo implode(',&nbsp;', $group_item['tags']);
 			?>
 			<a class="button-element-small" href="/index.php/group/interests/edit/<?php echo $group_item['id']?>">Edit Interests</a>
 		</div>
