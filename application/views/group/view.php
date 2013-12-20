@@ -20,11 +20,11 @@
 		<br/>
 		<label class="title">Interests:</label><br/>
 		<?php
+			$tag_array = array();
 			foreach ($group_item['tags'] as $tag){
-				?>
-				<p><?php echo $tag['tag_text']?></p>
-				<?php
+				$tag_array[] = $tag['tag_text'];
 			}
+			echo implode(',&nbsp;', $tag_array);
 		?>
 		<label class="title">Description:</label>
 		<label>

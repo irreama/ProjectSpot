@@ -67,11 +67,11 @@
 		<label class="title">Interests:</label><br/>
 		<label>
 		<?php
-			foreach ($profile_item['ps_tags'] as $tag){
-				?>
-				<label><?php echo $tag['tag_text'];?></label><br/>
-				<?php
+			$tag_array = array();
+			foreach ($group_item['tags'] as $tag){
+				$tag_array[] = $tag['tag_text'];
 			}
+			echo implode(',&nbsp;', $tag_array);
 		?>
 		</label>
 		<label class="title">Description:</label>

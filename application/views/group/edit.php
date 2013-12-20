@@ -34,11 +34,6 @@
 		<div class="interests">
 			<label class="title">Interests:</label>
 			<?php
-				/*foreach ($group_item['tags'] as $tag){
-					?>
-					<span><?php echo $tag['tag_text']?>,&nbsp;</span>
-					<?php
-				}*/
 				$tag_array = array();
 				foreach ($group_item['tags'] as $tag){
 					$tag_array[] = $tag['tag_text'];

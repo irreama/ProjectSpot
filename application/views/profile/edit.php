@@ -42,11 +42,11 @@
 		<br/>
 		<label class="title">Interests:</label><br/>
 		<?php
-			foreach ($profile_item['ps_tags'] as $tag){
-				?>
-				<p><?php echo $tag['tag_text']?></p>
-				<?php
+			$tag_array = array();
+			foreach ($group_item['tags'] as $tag){
+				$tag_array[] = $tag['tag_text'];
 			}
+			echo implode(',&nbsp;', $tag_array);
 		?>
 		<a href="/index.php/profile/interests/edit/<?php echo $profile_item['id']?>"><button class="edit" type="button">Edit Interests</button></a>
 		
