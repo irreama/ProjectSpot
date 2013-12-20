@@ -225,3 +225,6 @@ html,body {
 .full_width{
 	width:100%;
 }
+.input_field{
+	width:200px;
+}
