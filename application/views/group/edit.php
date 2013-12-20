@@ -43,8 +43,8 @@
 		<br/>
 		<label class="title">Contact:</label><input type="text" name="group_contact" value="<?php echo $group_item['group_contact'];?>"/>
 		<div class="button_panel">
-			<a class="button-element-small" href="/index.php/group/view/<?php echo $group_item['id']?>">Cancel</a>
-			<input type="submit" name="submit" value="Save" />
+			<a class="button-element-small cancel" href="/index.php/group/view/<?php echo $group_item['id']?>">Cancel</a>
+			<input class="edit" type="submit" name="submit" value="Save" />
 		</div>
 	</div>
 	</form>
