@@ -28,7 +28,17 @@ textarea{display:block;}
 .info{
 	margin-bottom:50px;
 }
-
+.basic_info{
+}
+.interests{
+	margin-top:30px;
+}
+.description{
+	margin-top:30px;
+}
+.contact{
+	margin-top:30px;
+}
 .button_panel{
 	display: block;
 }

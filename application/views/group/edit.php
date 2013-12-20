@@ -19,17 +19,19 @@
 	echo form_hidden('id', $group_item['id']);
 	?>
 	<div class="info">
-		<div>
+		<div class="basic_info">
 			<label class="title">Project Title:</label><input type="text" name="group_name" value="<?php echo $group_item['group_name'];?>"/>
-			<?php
-			foreach($group_item['users'] as $a_user){
+			<div>
+				<?php
+				foreach($group_item['users'] as $a_user){
+				?>
+				<label class="title"><?php echo($a_user['user_status'] == "Advisor" ? "Advisor" : $a_user['user_major1']['major_text']);?>:</label><label><?php echo $a_user['user_first_name'];?> <?php echo $a_user['user_last_name'];?></label>
+				<?php
+				}
 			?>
-			<label class="title"><?php echo($a_user['user_status'] == "Advisor" ? "Advisor" : $a_user['user_major1']['major_text']);?>:</label><label><?php echo $a_user['user_first_name'];?> <?php echo $a_user['user_last_name'];?></label>
-			<?php
-			}
-			?>
+			</div>
 		</div>
-		<div>
+		<div class="interests">
 			<label class="title">Interests:</label>
 			<?php
 				foreach ($group_item['tags'] as $tag){
@@ -40,11 +42,11 @@
 			?>
 			<a class="button-element-small" href="/index.php/group/interests/edit/<?php echo $group_item['id']?>">Edit Interests</a>
 		</div>
-		<div>
+		<div class="description">
 			<label class="title">Description:</label>
 			<textarea rows=5 cols=50 name="group_description"><?php echo $group_item['group_description'];?></textarea name="group_description">
 		</div>
-		<div>
+		<div class="contact">
 			<label class="title">Contact:</label><input type="text" name="group_contact" value="<?php echo $group_item['group_contact'];?>"/>
 		</div>
 		<div class="button_panel">
