@@ -17,69 +17,104 @@
 	?>
 	
 	<div class="info">
-		<label class="title">Name:</label><label><?php echo $profile_item['user_first_name'] ?> <?php echo $profile_item['user_last_name'] ?></label><br/>
-		<?php
-		if($profile_item['user_status'] == 'Advisor'){
-		?>
-		<label class="title">Department:</label><label><?php echo $profile_item['user_major1']['major_text'] ?></label><br/>
-		<?php
-		}
-		else{
-		?>
-		<label class="title">Major 1:</label><label><?php echo $profile_item['user_major1']['major_text'] ?></label><br/>
-		<label class="title">Major 2:</label><label><?php echo $profile_item['user_major2']['major_text'] ?></label><br/>
-		<?php
-		}
+		<div class="basic_info">
+			<div class="name">
+				<label class="title">Name:</label>
+				<label>
+					<?php echo $profile_item['user_first_name'] ?> <?php echo $profile_item['user_last_name'] ?>
+				</label>
+			</div>
+			
+			<div class="major">
+				<?php
+				if($profile_item['user_status'] == 'Advisor'){
+				?>
+				<label class="title">Department:</label>
+				<label><?php echo $profile_item['user_major1']['major_text'] ?></label>
+				<?php
+				}
+				else{
+				?>
+				<label class="title">Major 1:</label>
+				<label><?php echo $profile_item['user_major1']['major_text'] ?></label>
+				<label class="title">Major 2:</label>
+				<label><?php echo $profile_item['user_major2']['major_text'] ?></label>
+				<?php
+				}
+				?>
+			</div>
+			
+			<div class="grad_year">
+				<?php
+				if($profile_item['user_status'] != 'Advisor'){
+				?>
+				<label class="title">Graduation Year:</label>
+				<label><?php echo $profile_item['user_grad_year'] ?></label>
+				<?php
+				}
+				?>
+			</div>
+			
+			<div class="gender">
+				<label class="title">Gender:</label>
+				<label><?php echo $profile_item['user_gender'] ?></label>
+			</div>
+		</div>
 		
-		if($profile_item['user_status'] != 'Advisor'){
-		?>
-		<label class="title">Graduation Year:</label><label><?php echo $profile_item['user_grad_year'] ?></label><br/>
-		<?php
-		}
-		?>
-		
-		<label class="title">Gender:</label><label><?php echo $profile_item['user_gender'] ?></label><br/>
-		<br/>
-		<?php
-		if($profile_item['user_status'] == 'Advisor'){
-		?>
-		<label class="title">MQPs Advising:</label><br/>
-		<?php
-			foreach($profile_item['ps_groups'] as $a_group){
-			?>
-			<a href="/index.php/group/view/<?php echo $a_group['group_id'];?>"><?php echo $a_group['group_name'];?></a><br/>
+		<div class="mqp">
 			<?php
-			}
-		}
-		else{
-			if(!empty($profile_item['ps_groups'])){
-		?>
-		<label class="title">MQP:</label><a href="/index.php/group/view/<?php echo $profile_item['ps_groups'][0]['group_id'];?>"><?php echo $profile_item['ps_groups'][0]['group_name'];?></a><br/>
-		<?php
+			if($profile_item['user_status'] == 'Advisor'){
+			?>
+			<label class="title">MQPs Advising:</label>
+			<?php
+				foreach($profile_item['ps_groups'] as $a_group){
+				?>
+				<a href="/index.php/group/view/<?php echo $a_group['group_id'];?>"><?php echo $a_group['group_name'];?></a>
+				<?php
+				}
 			}
 			else{
-				?>
+				if(!empty($profile_item['ps_groups'])){
+			?>
+			<label class="title">MQP:</label>
+			<a href="/index.php/group/view/<?php echo $profile_item['ps_groups'][0]['group_id'];?>">
+				<?php echo $profile_item['ps_groups'][0]['group_name'];?>
+			</a>
+			
 			<?php
+				}
+				else{
+					?>
+				<?php
+				}
 			}
-		}
-		?>
-		<br/>
-		<label class="title">Interests:</label><br/>
-		<label>
-		<?php
-			$tag_array = array();
-			foreach ($profile_item['ps_tags'] as $tag){
-				$tag_array[] = $tag['tag_text'];
-			}
-			echo implode(',&nbsp;', $tag_array);
-		?>
-		</label>
-		<label class="title">Description:</label>
-		<label>
-			<?php echo $profile_item['user_description'] ?>
-		</label><br/>
-		<br/>
-		<label class="title">Contact:</label><label><?php echo $profile_item['user_email'];?></label>
+			?>
+		</div>
+		
+		<div class="interests">
+			<label class="title">Interests:</label>
+			<label>
+				<?php
+					$tag_array = array();
+					foreach ($profile_item['ps_tags'] as $tag){
+						$tag_array[] = $tag['tag_text'];
+					}
+					echo implode(',&nbsp;', $tag_array);
+				?>
+			</label>
+		</div>
+		
+		<div class="description">
+			<label class="title">Description:</label>
+			<label>
+				<?php echo $profile_item['user_description'] ?>
+			</label>
+		</div>
+		
+		<div class="contact">
+			<label class="title">Contact:</label>
+			<label><?php echo $profile_item['user_email'];?></label>
+		</div>
 	</div>
 </div><!--right column-->
 <p class="clear"></p>

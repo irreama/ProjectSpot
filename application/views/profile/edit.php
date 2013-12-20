@@ -42,15 +42,15 @@
 					<label class="title">Major 2:</label>
 					<label><?php echo $profile_item['user_major2']['major_text'] ?></label>
 				</div>
-				
-				<?php
+					<?php
 				}
-
-				if($profile_item['user_status'] != 'Advisor'){
 				?>
 			</div>
 			
 			<div class="grad_year">
+				<?php
+				if($profile_item['user_status'] != 'Advisor'){
+				?>
 				<label class="title">Graduation Year:</label>
 				<label><?php echo $profile_item['user_grad_year'] ?></label>
 				<?php
