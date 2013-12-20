@@ -28,8 +28,8 @@
 	?>
 	<div class="chk_buff"></div>
 	<div class="interest-buttons">
-		<a class="button-element-small" href="/index.php/<?php echo $tag_item['type'];?>/edit/<?php echo $tag_item['item_id'];?>">Cancel</a>
-		<input class="button-element-small" type="submit" name="submit" value="Save Interests" />
+		<a class="button-element-small cancel" href="/index.php/<?php echo $tag_item['type'];?>/edit/<?php echo $tag_item['item_id'];?>">Cancel</a>
+		<input class="button-element-small edit" type="submit" name="submit" value="Save Interests" />
 	</div>
 	<?php
 	echo form_close();
