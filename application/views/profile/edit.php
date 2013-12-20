@@ -50,8 +50,8 @@
 		?>
 		<a href="/index.php/profile/interests/edit/<?php echo $profile_item['id']?>"><button class="edit" type="button">Edit Interests</button></a>
 		
-		<label class="title">Description:</label>
-		<textarea name="user_description" rows=5 cols=50><?php echo $profile_item['user_description']?></textarea>
+		<label class="title">Describe yourself:</label>
+		<textarea class="input_field full_width" name="user_description" rows=5 cols=50><?php echo $profile_item['user_description']?></textarea>
 		<br/>
 		<label class="title">Contact:</label><label><?php echo $profile_item['user_email']?></label>
 		

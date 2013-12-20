@@ -225,11 +225,13 @@ html,body {
 .full_width{
 	width:100%;
 }
-.input_field{
+.input_width{
 	width:300px;
+}
+.input_field{
 	font-size:12pt;
 	border-radius:5px;
-	border:1px solid #d7d7d7;
+	border:1px solid #aaaaaa;
 	padding:2px 3px;
 	font-family:"trebuchet ms", trebuchet ms, sans-serif;
 }
