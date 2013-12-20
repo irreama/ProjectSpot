@@ -68,7 +68,7 @@
 		
 		<div class="mqp">
 			<label class="title">MQP:</label>
-		<div>
+		</div>
 		
 		<div class="interests">
 			<label class="title">Interests:</label>
