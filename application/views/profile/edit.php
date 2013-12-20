@@ -1,7 +1,7 @@
 <div class="left_col">
 	<img src="/images/no_profile_icon2.png" width=200 height=200 alt="profile image"/>
-	<button>Clear Image</button>
-	<button>Upload an Image</button>
+	<a class="button-element-small">Clear Image</a>
+	<a class="button-element-small">Upload an Image</a>
 </div><!--left column-->
 
 <div class="right_col">
