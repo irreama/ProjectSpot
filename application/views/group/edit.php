@@ -36,7 +36,7 @@
 			<?php
 				foreach ($group_item['tags'] as $tag){
 					?>
-					<p><?php echo $tag['tag_text']?></p>
+					<span><?php echo $tag['tag_text']?>,&nbsp;</span>
 					<?php
 				}
 			?>
