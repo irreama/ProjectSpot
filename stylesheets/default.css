@@ -208,23 +208,23 @@ a:active{
 .help-div{
 	margin-top: 50px;
 }
-.help a{
+.help{
 	background-color:#0f84d3;
 	padding: 10px 20px;
 	border-radius:10px;
 	text-decoration:none;
 	color:white;
 }
-.help a:link{
+.help:link{
 	color:white;
 }
-.help a:visited{
+.help:visited{
 	color:white;
 }
-.help a:hover{
+.help:hover{
 	background-color:#1777b8;
 }
-.help a:active{
+.help:active{
 	background-color:#5cb6f3
 }
 
