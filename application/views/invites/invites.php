@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="/stylesheets/invites.css">
 <h2>Invites</h2>
 	<div id="received">	
-		<h3>Received Invites</h3>
+		<h3>Received Invites</h3><hr>
 		<div class="group">
 			<h4>Group Invites</h4>
 			<div id="invite">
@@ -9,13 +9,13 @@
 					You have been invited by <a href="#">ProjectSpot</a>
 					to join their MQP Group
 				</label>
-				<button type="button">&#10003; Accept</button>
-				<button type="button">X Reject</button>
+				<a class="button-element-small">&#10003; Accept</a>
+				<a class="button-element-small">X Reject</a>
 			</div>
 		</div>
 	</div>
 	<div id="sent">
-		<h3>Sent Invites</h3>
+		<h3>Sent Invites</h3><hr>
 		<div class="student">
 			<h4>Student Invites</h4>
 			<div class="invite">
@@ -23,7 +23,7 @@
 					You have invited <a href="#">Madalyn Coryea</a>
 					to join your MQP group 
 				</label>
-				<button type="button">X Revoke</button>
+				<a class="button-element-small">X Revoke</a>
 			</div>
 		</div>
 		<div class="advisor">
@@ -33,14 +33,14 @@
 					You have invited <a href="#">David C. Brown</a>
 					to advise your MQP group 
 				</label>
-				<button type="button">X Revoke</button>
+				<a class="button-element-small">X Revoke</a>
 			</div>
 			<div class="invite">
 				<label>
 					Anthony Fisher has invited <a href="#">Gary Pollice</a>
 					to advise your MQP group 
 				</label>
-				<button type="button">X Revoke</button>
+				<a class="button-element-small">X Revoke</a>
 			</div>
 		</div>
 	</div>
