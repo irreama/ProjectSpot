@@ -8,7 +8,7 @@
 <div class="right_col clearfix">
 	<a class="edit button-element-small" href="/index.php/group/edit/<?php echo $group_item['id'];?>">Edit Page</a>
 	<div class="info">
-		<label class="title">Title:</label><label><?php echo $group_item['group_name'];?></label><br/>
+		<label class="title">Project Title:</label><label><?php echo $group_item['group_name'];?></label><br/>
 		<?php
 		foreach($group_item['users'] as $a_user){
 		?>

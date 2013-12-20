@@ -43,7 +43,7 @@
 		<label class="title">Interests:</label><br/>
 		<?php
 			$tag_array = array();
-			foreach ($group_item['tags'] as $tag){
+			foreach ($profile_item['ps_tags'] as $tag){
 				$tag_array[] = $tag['tag_text'];
 			}
 			echo implode(',&nbsp;', $tag_array);
