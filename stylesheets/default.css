@@ -177,12 +177,11 @@ html,body {
 	background-color: #d7d7d7;
 	display:block;
 	text-align:center;
-	padding: 10px;
-	/*padding: 10px 100px;*/
-	border: 2px solid #aaaaaa;
+	padding: 5px 10px;
+	border: 1px solid #aaaaaa;
 	text-decoration:none;
 	font-size:12pt;
-	border-radius:15px;
+	border-radius:10px;
 }
 .button-element-small:hover{
 	color: #ffffff;
