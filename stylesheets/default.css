@@ -182,6 +182,7 @@ html,body {
 	text-decoration:none;
 	font-size:12pt;
 	border-radius:10px;
+	margin-top:5px;
 }
 .button-element-small:hover{
 	color: #ffffff;
