@@ -1,5 +1,13 @@
 <link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
 <link rel="stylesheet" type="text/css" href="/stylesheets/default.css">
+<div class="banner">
+	<h1 class="clearfix">ProjectSpot</h1>
+	<div class="nav clearfix">
+		<ul>
+			<li><a href="/index.php/main"><img class="nav-image" src="/images/home_icon.png"><span>Dashboard</span></a></li> <!--Change to /-->
+		</ul>
+	</div>
+</div>
 <h1>Welcome to ProjectSpot</h1>
 <img class="gompei" src="/images/gompei_pspot_firstdraft.png" alt="pspot logo"/>
 <div class="welcome-text">
