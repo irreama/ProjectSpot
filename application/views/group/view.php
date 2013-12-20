@@ -10,8 +10,8 @@
 	<div class="info">
 		<div class="basic_info">
 			<label class="title">Project Title:</label>
+			<label><?php echo $group_item['group_name'];?></label>
 			<div class="members">
-				<label><?php echo $group_item['group_name'];?></label>
 				<?php
 					foreach($group_item['users'] as $a_user){
 					?>
