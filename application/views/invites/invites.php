@@ -37,7 +37,7 @@
 			</div>
 			<div class="invite">
 				<label>
-					Anthony Fisher has invited <a href="#">Gary Pollice</a>
+					<a href="#">Anthony Fisher</a> has invited <a href="#">Gary Pollice</a>
 					to advise your MQP group 
 				</label>
 				<a class="button-element-small inline">X Revoke</a>
