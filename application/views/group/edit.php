@@ -5,7 +5,8 @@
 </pre>
 
 <div class="page-title">
-	<h2>This is a group page</h2>
+	<h2>Edit Group Page</h2>
+	<hr>
 </div>
 <div class="left_col">
 	<img src="/images/no_profile_icon2.png" width=200 height=200 alt="profile image"/>

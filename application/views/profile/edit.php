@@ -1,3 +1,7 @@
+<div class="page-title">
+	<h2>Edit Profile Page</h2>
+	<hr>
+</div>
 <div class="left_col">
 	<img src="/images/no_profile_icon2.png" width=200 height=200 alt="profile image"/>
 	<a class="button-element-small">Clear Image</a>
