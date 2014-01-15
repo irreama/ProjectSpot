@@ -8,17 +8,43 @@ textarea{display:block;}
 }
 
 .left_col{
-	float: left;
+	/*clear:both;
+	position:relative;
+	float:left;
+	display:inline;*/
 	margin-right:50px;
+	float:left;
 }
 
 .right_col{
+	/*clear:both;
+	position:relative;
+	display:inline;*/
 	float: left;
-	width: 70%;
+	max-width: 65%;
+	min-width: 50%;
 }
 
+.info{
+	margin-bottom:50px;
+}
+.basic_info{
+}
+.mqp{
+	margin-top:30px;
+}
+.interests{
+	margin-top:30px;
+}
+.description{
+	margin-top:30px;
+}
+.contact{
+	margin-top:30px;
+}
 .button_panel{
 	display: block;
+	margin-top: 40px;
 }
 
 .edit{

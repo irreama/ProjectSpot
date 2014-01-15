@@ -38,9 +38,28 @@
 |
 */
 
+/*
 $route['default_controller'] = "pages/view";
 $route['(:any)'] = 'pages/view/$1';
+*/
+$route['default_controller'] = "home";
 $route['404_override'] = '';
+$route['main'] = "home/dashboard";
+$route['browse'] = "home/browse";
+$route['important_dates'] = "home/important_dates";
+$route['resources'] = "home/resources";
+$route['help'] = "home/main_help";
+$route['general_help'] = "home/general_help";
+$route['invites'] = "invites";
+$route['profile/edit/(:any)'] = 'profile/edit/$1';
+$route['profile/view/(:any)'] = 'profile/view/$1';
+$route['profile/interests/edit/(:any)'] = 'tag_rels/edit_user/$1';
+$route['group'] = 'group/landing';
+$route['group/view/(:any)'] = 'group/view/$1';
+$route['group/edit/(:any)'] = 'group/edit/$1';
+$route['group/new'] = 'group/create/';
+$route['group/interests/edit/(:any)'] = 'tag_rels/edit_group/$1';
+
 
 
 /* End of file routes.php */
