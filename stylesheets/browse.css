@@ -1,0 +1,7 @@
+.search-bar input[type=text]{
+	width:400px;
+	border-radius:5px;
+	border:1px solid #999;
+	padding: 2px 3px;
+	font-size:18pt;
+}
