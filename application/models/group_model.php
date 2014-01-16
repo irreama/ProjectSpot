@@ -39,6 +39,10 @@ class Group_model extends CI_Model{
 		return $this->db->update('ps_groups', $data);
 	}
 
+	public function get_all_groups(){
+		$query = $this->db->get('ps_groups');
+		return $query->result_array();
+	}
 
 
 }

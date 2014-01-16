@@ -73,12 +73,12 @@
 		</tr>
 		<tr>
 		<?php
-			foreach($users as $user){
+			foreach($groups as $group){
 			?>
 			<tr>
 				<td>
-				<a href="/index.php/profile/view/<?php echo $user['id'];?>">
-				<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
+				<a href="/index.php/profile/view/<?php echo $group['id'];?>">
+				<?php echo $group['group_name'];?></a>
 				</td>
 			</tr>
 			<?php

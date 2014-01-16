@@ -4,6 +4,7 @@ class Home extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('user_model');
+		$this->load->model('group_model');
 	}
 
 	public function dashboard(){
@@ -17,6 +18,7 @@ class Home extends CI_Controller {
 	public function browse(){
 		$data['title'] = 'Browse';
 		$data['users'] = $this->user_model->get_all_users();
+		$data['groups'] = $this->group_model->get_all_groups();
 		//Load our views
 		$this->load->view('templates/header', $data);
 		$this->load->view('home/browse', $data);
