@@ -29,6 +29,9 @@
 			?>
 			<tr>
 				<td>
+					<?php echo $user['user_status'];?>
+				</td>
+				<td>
 				<a href="/index.php/profile/view/<?php echo $user['id'];?>">
 				<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
 				</td>
@@ -51,12 +54,18 @@
 		<?php
 			foreach($users as $user){
 			?>
-			<tr>
-				<td>
-				<a href="/index.php/profile/view/<?php echo $user['id'];?>">
-				<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
-				</td>
-			</tr>
+			<?php //if user_status = ENUM "Advisor"
+			if($user_status = "Advisor") : ?>
+				<tr>
+					<td>
+						<?php echo $user['user_status'];?>
+					</td>
+					<td>
+					<a href="/index.php/profile/view/<?php echo $user['id'];?>">
+					<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
+					</td>
+				</tr>
+			<?php endif; ?>
 			<?php
 			}
 		?>
@@ -76,6 +85,9 @@
 			foreach($groups as $group){
 			?>
 			<tr>
+				<td>
+					<?php echo $user['user_status'];?>
+				</td>
 				<td>
 				<a href="/index.php/profile/view/<?php echo $group['id'];?>">
 				<?php echo $group['group_name'];?></a>
