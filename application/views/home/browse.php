@@ -3,21 +3,36 @@
 	<h2>Find students, groups, advisors</h2>
 </div>
 
-<a href="/index.php/browse"><h3>Students</h3></a>
-<a href="/index.php/browse"><h3>Groups</h3></a>
-<a href="/index.php/browse"><h3>Advisors</h3></a>
-
 <div class="search-bar">
 	<input type="text"/>
 	<input type="button" value="Filter"/>
 </div>
 
-<ul>
-<?php
-	foreach($users as $user){
-	?>
-	<a href="/index.php/profile/view/<?php echo $user['id'];?>"><li><?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></li></a>
+<input type="checkbox" checked/><label>Students without MQPs</label>
+<input type="checkbox" checked/><label>Students with MQPs</label>
+<input type="checkbox" checked/><label>MQPs</label>
+<input type="checkbox" checked/><label>Advisors</label>
+
+<div>
+<table>
+	<tr>
+		<th>Status</th>
+		<th>Name</th>
+		<th>Description</th>
+	</tr>
+	<tr>
 	<?php
-	}
-?>
-</ul>
+		foreach($users as $user){
+		?>
+		<tr>
+			<td>
+			<a href="/index.php/profile/view/<?php echo $user['id'];?>">
+			<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
+			</td>
+		</tr>
+		<?php
+		}
+	?>
+	</tr>
+</table>
+</div>
