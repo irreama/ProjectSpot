@@ -14,25 +14,76 @@
 <input type="checkbox" checked/><label>Advisors</label>
 
 <div>
-<table>
-	<tr>
-		<th>Status</th>
-		<th>Name</th>
-		<th>Description</th>
-	</tr>
-	<tr>
-	<?php
-		foreach($users as $user){
-		?>
+	<h3>Students</h3>
+	<table>
 		<tr>
-			<td>
-			<a href="/index.php/profile/view/<?php echo $user['id'];?>">
-			<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
-			</td>
+			<th>Status</th>
+			<th>Name</th>
+			<th>Major</th>
+			<th>Interests</th>
+			<th>MQP</th>
 		</tr>
+		<tr>
 		<?php
-		}
-	?>
-	</tr>
-</table>
+			foreach($users as $user){
+			?>
+			<tr>
+				<td>
+				<a href="/index.php/profile/view/<?php echo $user['id'];?>">
+				<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
+				</td>
+			</tr>
+			<?php
+			}
+		?>
+		</tr>
+	</table>
+	<h3>Advisors</h3>
+	<table>
+		<tr>
+			<th>Status</th>
+			<th>Name</th>
+			<th>Department</th>
+			<th>Interests</th>
+			<th>MQPs</th>
+		</tr>
+		<tr>
+		<?php
+			foreach($users as $user){
+			?>
+			<tr>
+				<td>
+				<a href="/index.php/profile/view/<?php echo $user['id'];?>">
+				<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
+				</td>
+			</tr>
+			<?php
+			}
+		?>
+		</tr>
+	</table>
+	<h3>MQP Groups</h3>
+	<table>
+		<tr>
+			<th>Status</th>
+			<th>Title</th>
+			<th>Department</th>
+			<th>Areas</th>
+			<th>Students</th>
+		</tr>
+		<tr>
+		<?php
+			foreach($users as $user){
+			?>
+			<tr>
+				<td>
+				<a href="/index.php/profile/view/<?php echo $user['id'];?>">
+				<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
+				</td>
+			</tr>
+			<?php
+			}
+		?>
+		</tr>
+	</table>
 </div>
