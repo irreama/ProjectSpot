@@ -54,19 +54,19 @@
 		<?php
 			foreach($users as $user){
 			?>
-			<?php //if user_status = ENUM "Advisor"
-			if($user_status = "Advisor") : ?>
-				<tr>
-					<td>
-						<?php echo $user['user_status'];?>
-					</td>
-					<td>
-					<a href="/index.php/profile/view/<?php echo $user['id'];?>">
-					<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
-					</td>
-				</tr>
-			<?php endif; ?>
-			<?php
+				<?php //if user_status = ENUM "Advisor"
+				if($user['user_status'] == "Advisor"){ ?>
+					<tr>
+						<td>
+							<?php echo $user['user_status'];?>
+						</td>
+						<td>
+						<a href="/index.php/profile/view/<?php echo $user['id'];?>">
+						<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
+						</td>
+					</tr>
+				<?php
+				}
 			}
 		?>
 		</tr>
@@ -86,10 +86,10 @@
 			?>
 			<tr>
 				<td>
-					<?php echo $user['user_status'];?>
+					MQP Group
 				</td>
 				<td>
-				<a href="/index.php/profile/view/<?php echo $group['id'];?>">
+				<a href="/index.php/group/view/<?php echo $group['id'];?>">
 				<?php echo $group['group_name'];?></a>
 				</td>
 			</tr>
