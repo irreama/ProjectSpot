@@ -27,16 +27,19 @@
 		<?php
 			foreach($users as $user){
 			?>
-			<tr>
-				<td>
-					<?php echo $user['user_status'];?>
-				</td>
-				<td>
-				<a href="/index.php/profile/view/<?php echo $user['id'];?>">
-				<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
-				</td>
-			</tr>
+				<?php //if user_status = ENUM "Student" --> what do we do about "Admins" who have roles???
+				if($user['user_status'] == "Student"){ ?>
+					<tr>
+						<td>
+							<?php echo $user['user_status'];?>
+						</td>
+						<td>
+						<a href="/index.php/profile/view/<?php echo $user['id'];?>">
+						<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
+						</td>
+					</tr>
 			<?php
+				}
 			}
 		?>
 		</tr>
