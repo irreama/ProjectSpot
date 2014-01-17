@@ -37,6 +37,9 @@
 						<a href="/index.php/profile/view/<?php echo $user['id'];?>">
 						<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
 						</td>
+						<td>
+							<?php echo $user['user_major1'];?> <?php echo $user['user_major2'];?>
+						</td>
 					</tr>
 			<?php
 				}
@@ -64,8 +67,11 @@
 							<?php echo $user['user_status'];?>
 						</td>
 						<td>
-						<a href="/index.php/profile/view/<?php echo $user['id'];?>">
-						<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
+							<a href="/index.php/profile/view/<?php echo $user['id'];?>">
+							<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
+						</td>
+						<td>
+							<?php echo $user['user_major1'];?>
 						</td>
 					</tr>
 				<?php
@@ -81,7 +87,7 @@
 			<th>Title</th>
 			<th>Department</th>
 			<th>Areas</th>
-			<th>Students</th>
+			<th>Members</th>
 		</tr>
 		<tr>
 		<?php
