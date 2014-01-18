@@ -58,11 +58,64 @@ class User_model extends CI_Model{
 		return true;
 	}
 
+	/**
+	 * Grab all of the users in the system
+	 * @return array An array of users
+	 */
 	public function get_all_users(){
 		$query = $this->db->get('ps_users');
 		return $query->result_array();
 	}
 
+	public function getUserProfile($id){
+		//Snag the main profile Data
+		$uQuery = $this->db->get_where('ps_users', array('id' => $id));
+		$user = $uQuery->row_array();
+
+		//Snag the user's tags
+		$this->db->select('ps_tags.tag_text');
+		$this->db->from('ps_user_tag_rel');
+		$this->db->where('user_id', $id);
+		$this->db->join('ps_tags', 'ps_tags.id = ps_user_tag_rel.tag_id');
+		$tQuery = $this->db->get();
+		$user['tags'] = $tQuery->row_array();
+
+		//Load up the group model
+		$this->load->model("group_model");
+
+		//Snag this user's groups
+		$this->db->select('group_id');
+		$this->db->from('ps_group_user_rel');
+		$this->db->where('user_id', $id);
+		$gQuery = $this->db->get();
+
+		//Make the group Array
+		$gArr = Array();
+
+		//Fill it in
+		foreach($gQuery->result() as $group){
+			$gArr[] = $this->group_model->get_group_by_id($group->group_id);
+		}
+
+		$user['groups'] = $gArr;
+
+		//Snag the user's majors. Major 1 is always present. major 2 is not.
+
+		//Load up the major model
+		$this->load->model("major_model");
+
+		$major1 = $this->major_model->get_major_by_id($user['user_major1']);
+
+		$user['user_major1'] = $major1['major_text'];
+
+		if($user['user_major2']){
+			$major2 = $this->major_model->get_major_by_id($user['user_major2']);
+
+			$user['user_major2'] = $major2['major_text'];
+		}
+
+		return $user;
+	}
 }
 
 ?>
