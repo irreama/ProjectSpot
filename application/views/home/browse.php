@@ -5,7 +5,7 @@
 
 <div class="search-bar">
 	<input type="text"/>
-	<input type="button" value="Filter"/>
+	<input class="button-element-small" type="button" value="Filter"/>
 </div>
 
 <input type="checkbox" checked/><label>Students without MQPs</label>
