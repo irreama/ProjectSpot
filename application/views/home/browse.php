@@ -34,17 +34,22 @@
 				//Load the major Model in (Only needs to be done once in scope)
 				$CI =& get_instance();
 				$CI->load->model('major_model');
+				$CI->load->model('user_model');
 	 
 				//Obtain the id of the major you want
 				$majorId = $user['user_major1'];
 	 
-				 //Get the major
+				//Get the major
 				$major1 = $CI->major_model->get_major_by_id($majorId);
 				$major2 = $CI->major_model->get_major_by_id($majorId);
+				
+				//get the group
+				$userProfile = $CI->user_model->getUserProfile($user['id']);
+				//$groups = $userProfile[1];
 			
 			?>
 				<?php //if user_status = ENUM "Student" --> what do we do about "Admins" who have roles???
-				if($user['user_status'] == "Student"){ ?>
+				if($user['user_status'] == "Admin"){ ?>
 					<tr>
 						<td>
 							<?php echo $user['user_status'];?>
@@ -58,6 +63,13 @@
 						</td>
 						<td>
 							<?php echo $major2['major_text'];?>
+						</td>
+						<td>
+							Databases
+						</td>
+						<td>
+							<a href="/index.php/group/view/<?php echo $user['id'];?>">
+							<?php echo $userProfile;?></a>
 						</td>
 					</tr>
 			<?php
