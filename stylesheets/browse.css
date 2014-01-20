@@ -1,5 +1,6 @@
 table, td, tr, th{
 	border:1px solid #999;
+	margin-bottom:70px;
 }
 
 .search-bar{
