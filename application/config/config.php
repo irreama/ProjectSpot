@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://p-spot.cs.wpi.edu/';
+$config['base_url']	= '';
 
 /*
 |--------------------------------------------------------------------------
