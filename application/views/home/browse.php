@@ -19,13 +19,25 @@
 		<tr>
 			<th>Status</th>
 			<th>Name</th>
-			<th>Major</th>
+			<th>Major 1</th>
+			<th>Major 2</th>
 			<th>Interests</th>
 			<th>MQP</th>
 		</tr>
 		<tr>
-		<?php
+		<?php 
 			foreach($users as $user){
+				//Load the major Model in (Only needs to be done once in scope)
+				$CI =& get_instance();
+				$CI->load->model('major_model');
+	 
+				//Obtain the id of the major you want
+				$majorId = $user['user_major1'];
+	 
+				 //Get the major
+				$major1 = $CI->major_model->get_major_by_id($majorId);
+				$major2 = $CI->major_model->get_major_by_id($majorId);
+			
 			?>
 				<?php //if user_status = ENUM "Student" --> what do we do about "Admins" who have roles???
 				if($user['user_status'] == "Student"){ ?>
@@ -38,7 +50,10 @@
 						<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
 						</td>
 						<td>
-							<?php echo $user['user_major1'];?> <?php echo $user['user_major2'];?>
+							<?php echo $major1['major_text'];?>
+						</td>
+						<td>
+							<?php echo $major2['major_text'];?>
 						</td>
 					</tr>
 			<?php
@@ -58,7 +73,12 @@
 		</tr>
 		<tr>
 		<?php
-			foreach($users as $user){
+			foreach($users as $user){	 
+				//Obtain the id of the major you want
+				$majorId = $user['user_major1'];
+	 
+				 //Get the major
+				$department = $CI->major_model->get_major_by_id($majorId);
 			?>
 				<?php //if user_status = ENUM "Advisor"
 				if($user['user_status'] == "Advisor"){ ?>
@@ -71,7 +91,7 @@
 							<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
 						</td>
 						<td>
-							<?php echo $user['user_major1'];?>
+							<?php echo $department['major_text'];?>
 						</td>
 					</tr>
 				<?php
