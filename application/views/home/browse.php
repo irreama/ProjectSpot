@@ -6,12 +6,16 @@
 <div class="search-bar">
 	<input type="text"/>
 	<input class="button-element-small" type="button" value="Filter"/>
+
+	<div class="search-filters">
+		<input type="checkbox" checked/><label>Students without MQPs</label>
+		<input type="checkbox" checked/><label>Students with MQPs</label>
+		<input type="checkbox" checked/><label>MQPs</label>
+		<input type="checkbox" checked/><label>Advisors</label>
+	</div>
 </div>
 
-<input type="checkbox" checked/><label>Students without MQPs</label>
-<input type="checkbox" checked/><label>Students with MQPs</label>
-<input type="checkbox" checked/><label>MQPs</label>
-<input type="checkbox" checked/><label>Advisors</label>
+<hr>
 
 <div>
 	<h3>Students</h3>
