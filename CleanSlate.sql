@@ -197,4 +197,16 @@ CREATE TABLE `ps_user_tag_rel` (
 INSERT INTO `ps_user_tag_rel` (user_id, tag_id)
 VALUES (1, 1);
 
+DROP TABLE IF EXISTS  `ci_sessions`;
+
+CREATE TABLE `ci_sessions` (
+	session_id varchar(40) DEFAULT '0' NOT NULL,
+	ip_address varchar(45) DEFAULT '0' NOT NULL,
+	user_agent varchar(120) NOT NULL,
+	last_activity int(10) unsigned DEFAULT 0 NOT NULL,
+	user_data text NOT NULL,
+	PRIMARY KEY (session_id),
+	KEY `last_activity_idx` (`last_activity`)
+);
+
 SET FOREIGN_KEY_CHECKS=1; 
