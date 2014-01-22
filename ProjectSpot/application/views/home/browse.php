@@ -58,7 +58,7 @@
 							<?php echo $user['user_status'];?>
 						</td>
 						<td>
-						<a href="/index.php/profile/view/<?php echo $user['id'];?>">
+						<a href="<?=base_url()?>/index.php/profile/view/<?php echo $user['id'];?>">
 						<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
 						</td>
 						<td>
@@ -71,7 +71,7 @@
 							Databases
 						</td>
 						<td>
-							<a href="/index.php/group/view/<?php echo $userGroupID;?>">
+							<a href="<?=base_url()?>/index.php/group/view/<?php echo $userGroupID;?>">
 							<?php echo $userGroupName;?></a>
 						</td>
 					</tr>
@@ -106,7 +106,7 @@
 							<?php echo $user['user_status'];?>
 						</td>
 						<td>
-							<a href="/index.php/profile/view/<?php echo $user['id'];?>">
+							<a href="<?=base_url()?>/index.php/profile/view/<?php echo $user['id'];?>">
 							<?php echo $user['user_first_name'];?> <?php echo $user['user_last_name'];?></a>
 						</td>
 						<td>
@@ -137,7 +137,7 @@
 					MQP Group
 				</td>
 				<td>
-				<a href="/index.php/group/view/<?php echo $group['id'];?>">
+				<a href="<?=base_url()?>/index.php/group/view/<?php echo $group['id'];?>">
 				<?php echo $group['group_name'];?></a>
 				</td>
 			</tr>
