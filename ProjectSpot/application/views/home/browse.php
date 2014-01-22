@@ -46,11 +46,8 @@
 				//get the group
 				$userProfile = $CI->user_model->getUserProfile($user['id']);
 				$userGroupID = !empty($userProfile['groups'][0]['id']) ? $userProfile['groups'][0]['id'] : "";
-				$userGroupName = !empty($userProfile['groups'][0]['group_name']) ? $userProfile['groups'][0]['group_name'] : "";
-				
-				
-			
-			?>
+				$userGroupName = !empty($userProfile['groups'][0]['group_name']) ? $userProfile['groups'][0]['group_name'] : "";	
+		?>
 				<?php //if user_status = ENUM "Student" --> what do we do about "Admins" who have roles???
 				if($user['user_status'] == "Admin"){ ?>
 					<tr>
@@ -98,6 +95,12 @@
 	 
 				 //Get the major
 				$department = $CI->major_model->get_major_by_id($majorId);
+				
+				//get the groups
+				$userProfile = $CI->user_model->getUserProfile($user['id']);
+				$userGroupID = !empty($userProfile['groups'][0]['id']) ? $userProfile['groups'][0]['id'] : "";
+				$userGroupName = !empty($userProfile['groups'][0]['group_name']) ? $userProfile['groups'][0]['group_name'] : "";
+				
 			?>
 				<?php //if user_status = ENUM "Advisor"
 				if($user['user_status'] == "Advisor"){ ?>
@@ -111,6 +114,13 @@
 						</td>
 						<td>
 							<?php echo $department['major_text'];?>
+						</td>
+						<td>
+							Databases
+						</td>
+						<td>
+							<a href="<?=base_url()?>/index.php/group/view/<?php echo $userGroupID;?>">
+							<?php echo $userGroupName;?></a>
 						</td>
 					</tr>
 				<?php
