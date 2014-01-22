@@ -52,7 +52,7 @@
 				$userTags = !empty($userProfile['tags'][0]['tag_text']) ? $userProfile['tags'][0]['tag_text'] : "";
 		?>
 				<?php //if user_status = ENUM "Student" --> what do we do about "Admins" who have roles???
-				if($user['user_status'] == "Admin"){ ?>
+				if($user['user_status'] == "Admin" || $user['user_status'] == "Student"){ ?>
 					<tr>
 						<td>
 							<?php echo $user['user_status'];?>
