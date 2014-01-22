@@ -49,7 +49,8 @@
 				$userGroupName = !empty($userProfile['groups'][0]['group_name']) ? $userProfile['groups'][0]['group_name'] : "";
 
 				//get the tags
-				$userTags = !empty($userProfile['tags'][0]['tag_text']) ? $userProfile['tags'][0]['tag_text'] : "";
+				$userTags = !empty($userProfile['tags']['tag_text']) ? $userProfile['tags']['tag_text'] : "";
+				
 		?>
 				<?php //if user_status = ENUM "Student" --> what do we do about "Admins" who have roles???
 				if($user['user_status'] == "Admin" || $user['user_status'] == "Student"){ ?>
