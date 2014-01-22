@@ -45,7 +45,10 @@
 				
 				//get the group
 				$userProfile = $CI->user_model->getUserProfile($user['id']);
-				//$groups = $userProfile[1];
+				$userGroupID = !empty($userProfile['groups'][0]['id']) ? $userProfile['groups'][0]['id'] : "";
+				$userGroupName = !empty($userProfile['groups'][0]['group_name']) ? $userProfile['groups'][0]['group_name'] : "";
+				
+				
 			
 			?>
 				<?php //if user_status = ENUM "Student" --> what do we do about "Admins" who have roles???
@@ -68,8 +71,8 @@
 							Databases
 						</td>
 						<td>
-							<a href="/index.php/group/view/<?php echo $user['id'];?>">
-							<?php echo $userProfile;?></a>
+							<a href="/index.php/group/view/<?php echo $userGroupID;?>">
+							<?php echo $userGroupName;?></a>
 						</td>
 					</tr>
 			<?php
