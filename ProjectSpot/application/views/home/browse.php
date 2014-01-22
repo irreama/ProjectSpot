@@ -37,14 +37,17 @@
 				$CI->load->model('user_model');
 	 
 				//Obtain the id of the major you want
-				$majorId = $user['user_major1'];
+				$userProfile = $CI->user_model->getUserProfile($user['id']);
+				$majorId1 = $user['user_major1'];
+				$majorId2 = $user['user_major2'];
 	 
 				//Get the major
-				$major1 = $CI->major_model->get_major_by_id($majorId);
-				$major2 = $CI->major_model->get_major_by_id($majorId);
+				$major1 = $CI->major_model->get_major_by_id($majorId1);
+				$major2 = $CI->major_model->get_major_by_id($majorId2);
+				
+				$major2Text = !empty($major2['major_text']) ? $major2['major_text'] : "";
 				
 				//get the group
-				$userProfile = $CI->user_model->getUserProfile($user['id']);
 				$userGroupID = !empty($userProfile['groups'][0]['id']) ? $userProfile['groups'][0]['id'] : "";
 				$userGroupName = !empty($userProfile['groups'][0]['group_name']) ? $userProfile['groups'][0]['group_name'] : "";
 
@@ -66,7 +69,7 @@
 							<?php echo $major1['major_text'];?>
 						</td>
 						<td>
-							<?php echo $major2['major_text'];?>
+							<?php echo $major2Text;?>
 						</td>
 						<td>
 							<?php echo $userTags;?>
