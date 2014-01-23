@@ -180,6 +180,9 @@
 				$groupMemberFirstName = $groupProfile['users'][0]['user_first_name'];
 				$groupMemberLastName = $groupProfile['users'][0]['user_last_name'];
 				//$groupMembers = $groupMemberFirstName + $groupMemberLastName;
+				
+				//get the departments
+				$groupDepartment = $groupProfile['majors']['major_text'];
 			?>
 			<tr>
 				<td>
@@ -190,7 +193,7 @@
 				<?php echo $group['group_name'];?></a>
 				</td>
 				<td>
-					Unk
+					<?php echo $groupDepartment ?>
 				</td>
 				<td>
 					Dbs
