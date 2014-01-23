@@ -35,6 +35,7 @@
 				$CI =& get_instance();
 				$CI->load->model('major_model');
 				$CI->load->model('user_model');
+				$CI->load->model('user_tag_rel_model');
 	 
 				//Obtain the id of the major you want
 				$userProfile = $CI->user_model->getUserProfile($user['id']);
@@ -52,7 +53,8 @@
 				$userGroupName = !empty($userProfile['groups'][0]['group_name']) ? $userProfile['groups'][0]['group_name'] : "";
 
 				//get the tags
-				$userTags = !empty($userProfile['tags']['tag_text']) ? $userProfile['tags']['tag_text'] : "";
+				$userTags = $CI->user_tag_rel_model->get_all_tags_by_user_id($user['id']);
+				//!empty($userProfile['tags']['tag_text']) ? $userProfile['tags']['tag_text'] : "";
 				
 		?>
 				<?php //if user_status = ENUM "Student" --> what do we do about "Admins" who have roles???
@@ -72,7 +74,16 @@
 							<?php echo $major2Text;?>
 						</td>
 						<td>
-							<?php echo $userTags;?>
+							<?php 
+								$totalTags = count($userTags);
+								foreach($userTags as $i => $tag){
+									if ($i != $totalTags - 1){
+										echo $tag['tag_text'].', ';
+									}else{
+										echo $tag['tag_text'];
+									}
+								}
+							?>
 						</td>
 						<td>
 							<a href="<?=base_url()?>/index.php/group/view/<?php echo $userGroupID;?>">
