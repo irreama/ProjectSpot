@@ -172,6 +172,7 @@
 		<?php
 			foreach($groups as $group){
 				$CI->load->model('group_model');
+				$CI->load->model('group_tag_rel_model');
 				
 				//Obtain the id of the group
 				$groupProfile = $CI->group_model->getGroupProfile($group['id']);
@@ -180,12 +181,12 @@
 				$groupDepartment = $groupProfile['majors']['major_text'];
 				
 				//get the tags
-				$groupTags = $groupProfile['tags']['tag_text'];
+				$groupTags = $CI->group_tag_rel_model->get_all_tags_by_group_id($group['id']);
+				//$groupProfile['tags']['tag_text'];
 				
 				//get the group members
 				$groupMemberFirstName = $groupProfile['users'][0]['user_first_name'];
 				$groupMemberLastName = $groupProfile['users'][0]['user_last_name'];
-				//$groupMembers = $groupMemberFirstName + $groupMemberLastName;
 			?>
 			<tr>
 				<td>
@@ -199,7 +200,16 @@
 					<?php echo $groupDepartment ?>
 				</td>
 				<td>
-					<?php echo $groupTags ?>
+					<?php 
+						$totalTags = count($groupTags);
+						foreach($groupTags as $i => $tag){
+							if ($i != $totalTags - 1){
+								echo $tag['tag_text'].', ';
+							}else{
+								echo $tag['tag_text'];
+							}
+						}
+					?>
 				</td>
 				<td>
 					<?php echo $groupMemberFirstName.' ';?><?php echo $groupMemberLastName;?>
