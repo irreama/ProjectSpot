@@ -157,6 +157,7 @@
 		?>
 		</tr>
 	</table>
+	
 	<h3>MQP Groups</h3>
 	<table>
 		<tr>
@@ -165,10 +166,20 @@
 			<th>Department</th>
 			<th>Areas</th>
 			<th>Members</th>
+			<th>Advisors</th>
 		</tr>
 		<tr>
 		<?php
 			foreach($groups as $group){
+				$CI->load->model('group_model');
+				
+				//Obtain the id of the group
+				$groupProfile = $CI->group_model->getGroupProfile($group['id']);
+				
+				//get the group members
+				$groupMemberFirstName = $groupProfile['users'][0]['user_first_name'];
+				$groupMemberLastName = $groupProfile['users'][0]['user_last_name'];
+				//$groupMembers = $groupMemberFirstName + $groupMemberLastName;
 			?>
 			<tr>
 				<td>
@@ -177,6 +188,15 @@
 				<td>
 				<a href="<?=base_url()?>/index.php/group/view/<?php echo $group['id'];?>">
 				<?php echo $group['group_name'];?></a>
+				</td>
+				<td>
+					Unk
+				</td>
+				<td>
+					Dbs
+				</td>
+				<td>
+					<?php echo $groupMemberFirstName.' ';?><?php echo $groupMemberLastName;?>
 				</td>
 			</tr>
 			<?php
