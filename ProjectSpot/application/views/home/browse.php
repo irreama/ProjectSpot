@@ -176,13 +176,16 @@
 				//Obtain the id of the group
 				$groupProfile = $CI->group_model->getGroupProfile($group['id']);
 				
+				//get the departments
+				$groupDepartment = $groupProfile['majors']['major_text'];
+				
+				//get the tags
+				$groupTags = $groupProfile['tags']['tag_text'];
+				
 				//get the group members
 				$groupMemberFirstName = $groupProfile['users'][0]['user_first_name'];
 				$groupMemberLastName = $groupProfile['users'][0]['user_last_name'];
 				//$groupMembers = $groupMemberFirstName + $groupMemberLastName;
-				
-				//get the departments
-				$groupDepartment = $groupProfile['majors']['major_text'];
 			?>
 			<tr>
 				<td>
@@ -196,7 +199,7 @@
 					<?php echo $groupDepartment ?>
 				</td>
 				<td>
-					Dbs
+					<?php echo $groupTags ?>
 				</td>
 				<td>
 					<?php echo $groupMemberFirstName.' ';?><?php echo $groupMemberLastName;?>
