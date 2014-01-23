@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>stylesheets/browse.css">
 <div class="page-title">
-	<h2>Find students, groups, advisors</h2>
+	<h2>Find students, advisors, and groups</h2>
 </div>
 
 <div class="search-bar">
