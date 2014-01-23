@@ -53,9 +53,7 @@
 				$userGroupName = !empty($userProfile['groups'][0]['group_name']) ? $userProfile['groups'][0]['group_name'] : "";
 
 				//get the tags
-				$userTags = $CI->user_tag_rel_model->get_all_tags_by_user_id($user['id']);
-				//!empty($userProfile['tags']['tag_text']) ? $userProfile['tags']['tag_text'] : "";
-				
+				$userTags = $CI->user_tag_rel_model->get_all_tags_by_user_id($user['id']);				
 		?>
 				<?php //if user_status = ENUM "Student" --> what do we do about "Admins" who have roles???
 				if($user['user_status'] == "Admin" || $user['user_status'] == "Student"){ ?>
@@ -119,6 +117,9 @@
 				$userGroupID = !empty($userProfile['groups'][0]['id']) ? $userProfile['groups'][0]['id'] : "";
 				$userGroupName = !empty($userProfile['groups'][0]['group_name']) ? $userProfile['groups'][0]['group_name'] : "";
 				
+				//get the tags
+				$userTags = $CI->user_tag_rel_model->get_all_tags_by_user_id($user['id']);
+				
 			?>
 				<?php //if user_status = ENUM "Advisor"
 				if($user['user_status'] == "Advisor"){ ?>
@@ -134,7 +135,16 @@
 							<?php echo $department['major_text'];?>
 						</td>
 						<td>
-							Databases
+							<?php 
+								$totalTags = count($userTags);
+								foreach($userTags as $i => $tag){
+									if ($i != $totalTags - 1){
+										echo $tag['tag_text'].', ';
+									}else{
+										echo $tag['tag_text'];
+									}
+								}
+							?>
 						</td>
 						<td>
 							<a href="<?=base_url()?>/index.php/group/view/<?php echo $userGroupID;?>">
