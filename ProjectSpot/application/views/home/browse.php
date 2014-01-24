@@ -198,6 +198,8 @@
 				//get the group members
 				$groupMemberFirstName = $groupProfile['users'][0]['user_first_name'];
 				$groupMemberLastName = $groupProfile['users'][0]['user_last_name'];
+				
+				$userID = $groupProfile['users'][0]['id'];
 			?>
 			<tr>
 				<td>
@@ -233,7 +235,9 @@
 					?>
 				</td>
 				<td>
-					<?php echo $groupMemberFirstName.' ';?><?php echo $groupMemberLastName;?>
+					<a href="<?=base_url()?>/index.php/profile/view/<?php echo $userID;?>">
+						<?php echo $groupMemberFirstName.' ';?><?php echo $groupMemberLastName;?>
+					</a>
 				</td>
 			</tr>
 			<?php
