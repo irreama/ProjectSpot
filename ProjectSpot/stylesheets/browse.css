@@ -14,3 +14,11 @@ table, td, tr, th{
 	padding: 2px 3px;
 	font-size:18pt;
 }
+
+.tags{
+	padding:0;
+}
+.tags li{
+	list-style:none;
+	display:block;
+}

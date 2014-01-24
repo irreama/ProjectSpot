@@ -147,8 +147,18 @@
 							?>
 						</td>
 						<td>
-							<a href="<?=base_url()?>/index.php/group/view/<?php echo $userGroupID;?>">
-							<?php echo $userGroupName;?></a>
+							<ul class="tags">
+							<?php
+								foreach($userProfile['groups'] as $group){
+								?>
+							
+									<a href="<?=base_url()?>/index.php/group/view/<?php echo $group['id'];?>">
+									<li><?php echo $group['group_name'];?></li></a>
+								
+								<?php
+								}
+							?>	
+							</ul>
 						</td>
 					</tr>
 				<?php
@@ -217,7 +227,7 @@
 							if ($i != $totalTags - 1){
 								echo $tag['tag_text'].', ';
 							}else{
-								echo $tag['tag_text'];
+								echo htmlentities($tag['tag_text']);
 							}
 						}
 					?>
