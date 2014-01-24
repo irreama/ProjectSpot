@@ -79,5 +79,33 @@ class Group_user_rel_model extends CI_Model{
 		$this->db->where('id', $id);
 		$this->db->delete('ps_group_user_rel');
 	}
+
+	/**
+	 * Snag an array of student ids tied to a group
+	 * @param  int $gid The id of the group
+	 * @return array      an array of students
+	 */
+	public function getGroupStudents($gid){
+		$this->db->from('ps_group_user_rel');
+		$this->db->where('group_id', $gid);
+		$this->db->where('ps_users.user_status !=', 'Advisor');
+		$this->db->join('ps_users', 'ps_users.id = ps_group_user_rel.user_id');
+		$sQuery = $this->db->get();
+		return $sQuery->result_array();
+	}
+
+	/**
+	 * Snag an array of advisors ids tied to a group
+	 * @param  int $gid The id of the group
+	 * @return array      an array of advisors
+	 */
+	public function getGroupAdvisors($gid){
+		$this->db->from('ps_group_user_rel');
+		$this->db->where('group_id', $gid);
+		$this->db->where('ps_users.user_status', 'Advisor');
+		$this->db->join('ps_users', 'ps_users.id = ps_group_user_rel.user_id');
+		$sQuery = $this->db->get();
+		return $sQuery->result_array();
+	}
 }
 ?>
