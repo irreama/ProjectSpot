@@ -179,7 +179,6 @@
 				//Obtain the id of the group
 				$groupProfile = $CI->group_model->getGroupProfile($group['id']);
 				
-				$major = $CI->major_model->get_major_by_id($group['major_id']);
 				//get the departments
 				$groupDepartments = $CI->group_major_rel_model->get_all_majors_by_group_id($group['id']);
 				
@@ -202,12 +201,12 @@
 					<?php 
 						$totalDepts = count($groupDepartments);
 						foreach($groupDepartments as $i => $dept){
+							$major = $CI->major_model->get_major_by_id($dept['major_id']);
 							if ($i != $totalDepts - 1){
-								echo $dept['major_text'].',';
+								echo $major['major_text'].',';
 							}else{
-								echo $dept['major_text'];
+								echo $major['major_text'];
 							}
-							var_dump($dept);
 						}
 					?>
 				</td>
