@@ -26,7 +26,7 @@ CREATE TABLE `ps_users` (
 	`user_first_name` varchar(50) NOT NULL,
 	`user_last_name` varchar(50) NOT NULL,
 	`user_grad_year` YEAR NOT NULL,
-	`user_status` ENUM('Student', 'Advisor', 'Other', 'Admin') NOT NULL DEFAULT 'Student',
+	`user_status` ENUM('Student', 'Advisor', 'Other') NOT NULL DEFAULT 'Student',
 	`user_email` varchar(255) NOT NULL DEFAULT '',
 	`user_gender` varchar(20) NOT NULL DEFAULT 'Not Provided',
 	`user_description` text NOT NULL DEFAULT '',
@@ -40,10 +40,10 @@ CREATE TABLE `ps_users` (
 );
 
 INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_grad_year, user_status, user_email, user_major1)
-VALUES ('afisher', 'Anthony', 'Fisher', 2014, 'Admin', 'afisher@wpi.edu', 1);
+VALUES ('afisher', 'Anthony', 'Fisher', 2014, 'Student', 'afisher@wpi.edu', 1);
 
 INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_grad_year, user_status, user_email, user_major1)
-VALUES ('mcoryea14', 'Madalyn', 'Coryea', 2014, 'Admin', 'mcoryea14@wpi.edu', 1);
+VALUES ('mcoryea14', 'Madalyn', 'Coryea', 2014, 'Student', 'mcoryea14@wpi.edu', 1);
 
 INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_grad_year, user_status, user_email, user_major1)
 VALUES ('dcb', 'David', 'Brown', 2014, 'Advisor', 'dcb@wpi.edu', 1);
@@ -145,6 +145,9 @@ CREATE TABLE `ps_group_user_rel` (
 
 INSERT INTO `ps_group_user_rel` (group_id, user_id, invite_status)
 VALUES (1, 1, 'Accepted');
+
+INSERT INTO `ps_group_user_rel` (group_id, user_id, invite_status)
+VALUES (1, 3, 'Accepted');
 
 --
 -- Table Structure for ps_group_major_rel
