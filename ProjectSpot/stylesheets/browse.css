@@ -6,6 +6,9 @@ th{
 	/*background-color:red;
 	color:white;*/
 }
+td{
+	padding:5px;;
+}
 
 .search-bar{
 	text-align:center;
