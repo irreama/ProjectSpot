@@ -173,16 +173,18 @@
 			foreach($groups as $group){
 				$CI->load->model('group_model');
 				$CI->load->model('group_tag_rel_model');
+				$CI->load->model('group_major_rel_model');
+				$CI->load->model('major_model');
 				
 				//Obtain the id of the group
 				$groupProfile = $CI->group_model->getGroupProfile($group['id']);
 				
+				$major = $CI->major_model->get_major_by_id($group['major_id']);
 				//get the departments
-				$groupDepartment = $groupProfile['majors']['major_text'];
+				$groupDepartments = $CI->group_major_rel_model->get_all_majors_by_group_id($group['id']);
 				
 				//get the tags
 				$groupTags = $CI->group_tag_rel_model->get_all_tags_by_group_id($group['id']);
-				//$groupProfile['tags']['tag_text'];
 				
 				//get the group members
 				$groupMemberFirstName = $groupProfile['users'][0]['user_first_name'];
@@ -197,7 +199,17 @@
 				<?php echo $group['group_name'];?></a>
 				</td>
 				<td>
-					<?php echo $groupDepartment ?>
+					<?php 
+						$totalDepts = count($groupDepartments);
+						foreach($groupDepartments as $i => $dept){
+							if ($i != $totalDepts - 1){
+								echo $dept['major_text'].',';
+							}else{
+								echo $dept['major_text'];
+							}
+							var_dump($dept);
+						}
+					?>
 				</td>
 				<td>
 					<?php 

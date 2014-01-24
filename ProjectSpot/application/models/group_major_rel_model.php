@@ -4,7 +4,7 @@
  * Group Major Relation Model
  * @author Anthony Fisher <afisher@wpi.edu>
  */
-class Group_major_rel_mode extends CI_Model{
+class Group_major_rel_model extends CI_Model{
 
 	/**
 	 * Constructor
