@@ -10,8 +10,8 @@
 	<div class="search-filters">
 		<input type="checkbox" checked/><label>Students without MQPs</label>
 		<input type="checkbox" checked/><label>Students with MQPs</label>
+		<input type="checkbox" checked/><label>Advisors</label>	
 		<input type="checkbox" checked/><label>MQPs</label>
-		<input type="checkbox" checked/><label>Advisors</label>
 	</div>
 </div>
 
