@@ -13,14 +13,17 @@
 
 		//Snag the logged in user's group
 		$groups = $CI->group_user_rel_model->get_all_groups_by_user_id(4);
-		$currGroup = $groups[0]['group_id'];
+		if($groups){
+			$currGroup = $groups[0]['group_id'];
+		}
+		
 		//Change this when we really go live. Use real authentication
 		if($profile_item['id'] == 4){
 		?>
 		<a class="edit button-element-small" href="<?=base_url()?>index.php/profile/edit/<?php echo $profile_item['id']?>">Edit Page</a>
 		<?php
 		}
-		else if($CI->group_user_rel_model->isUserInAnyGroup(4) && $CI->group_user_rel_model->canUserRequestToJoin($profile_item['id'], $currGroup)){
+		else if($groups && $CI->group_user_rel_model->isUserInAnyGroup(4) && $CI->group_user_rel_model->canUserRequestToJoin($profile_item['id'], $currGroup)){
 			?>
 			<button id="inviteButton" type="button" class="edit button-element-small" id="invite" data-uid="<?=$profile_item['id']?>" data-gid="<?=$currGroup?>">Invite to Group</button>
 			<?php
