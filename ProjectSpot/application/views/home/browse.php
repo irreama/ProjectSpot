@@ -1,10 +1,13 @@
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>stylesheets/browse.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="<?=base_url()?>/js/jquery.dataTables.js"></script>
+<script src="<?=base_url()?>/js/browse.js"></script>
 <div class="page-title">
 	<h2>Find students, advisors, and groups</h2>
 </div>
 
 <div class="search-bar">
-	<input type="text"/>
+	<input type="text" id="search"/>
 	<input class="button-element-small" type="button" value="Filter"/>
 
 	<div class="search-filters">
@@ -19,7 +22,8 @@
 
 <div>
 	<h3>Students</h3>
-	<table>
+	<table id="students">
+	<thead>
 		<tr>
 			<th>Status</th>
 			<th>Name</th>
@@ -28,7 +32,7 @@
 			<th>Interests</th>
 			<th>MQP</th>
 		</tr>
-		<tr>
+	</thead>
 		<?php 
 			foreach($users as $user){
 				//Load the major Model in (Only needs to be done once in scope)
@@ -92,10 +96,10 @@
 				}
 			}
 		?>
-		</tr>
 	</table>
 	<h3>Advisors</h3>
-	<table>
+	<table id="advisors">
+		<thead>
 		<tr>
 			<th>Status</th>
 			<th>Name</th>
@@ -103,7 +107,7 @@
 			<th>Interests</th>
 			<th>MQPs</th>
 		</tr>
-		<tr>
+		</thead>
 		<?php
 			foreach($users as $user){	 
 				//Obtain the id of the major you want
@@ -165,11 +169,11 @@
 				}
 			}
 		?>
-		</tr>
 	</table>
 	
 	<h3>MQP Groups</h3>
-	<table>
+	<table id="mqps">
+		<thead>
 		<tr>
 			<th>Status</th>
 			<th>Title</th>
@@ -178,7 +182,7 @@
 			<th>Members</th>
 			<th>Advisors</th>
 		</tr>
-		<tr>
+		</thead>
 		<?php
 			foreach($groups as $group){
 				$CI->load->model('group_model');
@@ -239,10 +243,10 @@
 						<?php echo $groupMemberFirstName.' ';?><?php echo $groupMemberLastName;?>
 					</a>
 				</td>
+				<td></td>
 			</tr>
 			<?php
 			}
 		?>
-		</tr>
 	</table>
 </div>
