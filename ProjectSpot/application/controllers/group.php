@@ -10,6 +10,14 @@ class Group extends CI_Controller{
 		$this->load->model('major_model');
 	}
 
+	public function requestToInvite(){
+		$gid = $this->input->post('gid');
+		$uid = $this->input->post('uid');
+		if(!$this->group_user_rel_model->isUserInAnyGroup($uid) && $this->group_user_rel_model->canUserRequestToJoin($uid, $gid)){
+			$this->group_user_rel_model->new_group_user_rel($gid, $uid, 'Requested');
+		}
+	}
+
 	public function landing(){
 		//check to see if the user is in a group
 		//Fix this for live

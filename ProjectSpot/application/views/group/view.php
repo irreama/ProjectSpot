@@ -14,7 +14,12 @@
 		?>
 	<a class="edit button-element-small" href="<?=base_url()?>index.php/group/edit/<?php echo $group_item['id'];?>">Edit Page</a>
 	<?php
-		}
+	}
+	else if(!$CI->group_user_rel_model->isUserInAnyGroup(4) && $CI->group_user_rel_model->canUserRequestToJoin(4,$group_item['id'])){
+		?>
+	<button type="button" class="edit button-element-small" id="requestInvite" data-uid="4" data-gid="<?=$group_item['id']?>">Request to Join</button>
+		<?php
+	}
 	?>
 	<div class="info">
 		<div class="basic_info">
@@ -59,3 +64,20 @@
 	</div>
 </div><!--right column-->
 <p class="clear"></p>
+<script>
+$(document).ready(function(){
+	$("#requestInvite").click(function(){
+		$.ajax({
+			type:"POST",
+			url:'<?=base_url()?>/index.php/group/requestToInvite',
+			data:{
+				gid:$(this).data("gid"),
+				uid:$(this).data("uid")
+			},
+			success:function(data){
+				console.log(data);
+			}
+		})
+	})
+});
+</script>

@@ -118,6 +118,7 @@ class Group_user_rel_model extends CI_Model{
 		$this->db->from('ps_group_user_rel');
 		$this->db->where('group_id', $gid);
 		$this->db->where('user_id', $uid);
+		$this->db->where('invite_status', 'Accepted');
 		$numRows = $this->db->count_all_results();
 		if($numRows){
 			return true;
@@ -125,7 +126,37 @@ class Group_user_rel_model extends CI_Model{
 		else{
 			return false;
 		}
+	}
 
+	/**
+	 * Determine if the user is in any group
+	 * @param  int  $uid user id
+	 * @return boolean      True if the user is in a group, false if not
+	 */
+	public function isUserInAnyGroup($uid){
+		$this->db->from('ps_group_user_rel');
+		$this->db->where('user_id', $uid);
+		$this->db->where('invite_status', 'Accepted');
+		$numRows = $this->db->count_all_results();
+		if($numRows){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+	public function canUserRequestToJoin($uid, $gid){
+		$this->db->from('ps_group_user_rel');
+		$this->db->where('group_id', $gid);
+		$this->db->where('user_id', $uid);
+		$numRows = $this->db->count_all_results();
+		if($numRows){
+			return false;
+		}
+		else{
+			return true;
+		}
 	}
 }
 ?>
