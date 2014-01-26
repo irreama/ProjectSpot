@@ -6,7 +6,16 @@
 </div><!--left column-->
 
 <div class="right_col clearfix">
+	<?php
+	$CI =& get_instance();
+
+	$CI->load->model('group_user_rel_model');
+	if($CI->group_user_rel_model->isUserInGroup(4,$group_item['id'])){
+		?>
 	<a class="edit button-element-small" href="<?=base_url()?>index.php/group/edit/<?php echo $group_item['id'];?>">Edit Page</a>
+	<?php
+		}
+	?>
 	<div class="info">
 		<div class="basic_info">
 			<label class="title">Project Title:</label>

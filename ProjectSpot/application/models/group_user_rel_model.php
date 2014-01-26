@@ -107,5 +107,25 @@ class Group_user_rel_model extends CI_Model{
 		$sQuery = $this->db->get();
 		return $sQuery->result_array();
 	}
+
+	/**
+	 * Determine if the user is in a given group
+	 * @param  int  $uid the user id
+	 * @param  int  $gid the group id
+	 * @return boolean      True if the user is in, false if not.
+	 */
+	public function isUserInGroup($uid, $gid){
+		$this->db->from('ps_group_user_rel');
+		$this->db->where('group_id', $gid);
+		$this->db->where('user_id', $uid);
+		$numRows = $this->db->count_all_results();
+		if($numRows){
+			return true;
+		}
+		else{
+			return false;
+		}
+
+	}
 }
 ?>
