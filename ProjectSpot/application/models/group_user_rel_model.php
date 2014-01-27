@@ -20,6 +20,7 @@ class Group_user_rel_model extends CI_Model{
 	public function get_all_users_by_group_id($group_id){
 		$this->db->from('ps_group_user_rel');
 		$this->db->where('group_id', $group_id);
+		$this->db->where('invite_status', 'Accepted');
 		$this->db->join('ps_users', 'ps_users.id = ps_group_user_rel.user_id');
 		$query = $this->db->get();
 		return $query->result_array();
@@ -33,6 +34,7 @@ class Group_user_rel_model extends CI_Model{
 	public function get_all_groups_by_user_id($user_id){
 		$this->db->from('ps_group_user_rel');
 		$this->db->where('user_id', $user_id);
+		$this->db->where('invite_status', 'Accepted');
 		$this->db->join('ps_groups', 'ps_groups.id = ps_group_user_rel.group_id');
 		$query = $this->db->get();
 		return $query->result_array();
@@ -106,6 +108,57 @@ class Group_user_rel_model extends CI_Model{
 		$this->db->join('ps_users', 'ps_users.id = ps_group_user_rel.user_id');
 		$sQuery = $this->db->get();
 		return $sQuery->result_array();
+	}
+
+	/**
+	 * Determine if the user is in a given group
+	 * @param  int  $uid the user id
+	 * @param  int  $gid the group id
+	 * @return boolean      True if the user is in, false if not.
+	 */
+	public function isUserInGroup($uid, $gid){
+		$this->db->from('ps_group_user_rel');
+		$this->db->where('group_id', $gid);
+		$this->db->where('user_id', $uid);
+		$this->db->where('invite_status', 'Accepted');
+		$numRows = $this->db->count_all_results();
+		if($numRows){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+	/**
+	 * Determine if the user is in any group
+	 * @param  int  $uid user id
+	 * @return boolean      True if the user is in a group, false if not
+	 */
+	public function isUserInAnyGroup($uid){
+		$this->db->from('ps_group_user_rel');
+		$this->db->where('user_id', $uid);
+		$this->db->where('invite_status', 'Accepted');
+		$numRows = $this->db->count_all_results();
+		if($numRows){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+	public function canUserRequestToJoin($uid, $gid){
+		$this->db->from('ps_group_user_rel');
+		$this->db->where('group_id', $gid);
+		$this->db->where('user_id', $uid);
+		$numRows = $this->db->count_all_results();
+		if($numRows){
+			return false;
+		}
+		else{
+			return true;
+		}
 	}
 }
 ?>

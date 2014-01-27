@@ -8,11 +8,25 @@
 
 <div class="right_col">
 	<?php
+		$CI =& get_instance();
+		$CI->load->model('group_user_rel_model');
+
+		//Snag the logged in user's group
+		$groups = $CI->group_user_rel_model->get_all_groups_by_user_id(4);
+		if($groups){
+			$currGroup = $groups[0]['group_id'];
+		}
+		
 		//Change this when we really go live. Use real authentication
 		if($profile_item['id'] == 4){
 		?>
 		<a class="edit button-element-small" href="<?=base_url()?>index.php/profile/edit/<?php echo $profile_item['id']?>">Edit Page</a>
 		<?php
+		}
+		else if($groups && $CI->group_user_rel_model->isUserInAnyGroup(4) && $CI->group_user_rel_model->canUserRequestToJoin($profile_item['id'], $currGroup)){
+			?>
+			<button id="inviteButton" type="button" class="edit button-element-small" id="invite" data-uid="<?=$profile_item['id']?>" data-gid="<?=$currGroup?>">Invite to Group</button>
+			<?php
 		}
 	?>
 	
@@ -123,3 +137,20 @@
 	</div>
 </div><!--right column-->
 <p class="clear"></p>
+<script>
+$(document).ready(function(){
+	$("#inviteButton").click(function(){
+		$.ajax({
+			type:"POST",
+			url:'<?=base_url()?>/index.php/group/invite',
+			data:{
+				gid:$(this).data("gid"),
+				uid:$(this).data("uid")
+			},
+			success:function(data){
+				console.log(data);
+			}
+		})
+	})
+});
+</script>
