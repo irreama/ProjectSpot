@@ -194,6 +194,7 @@
 					$CI->load->model('group_tag_rel_model');
 					$CI->load->model('group_major_rel_model');
 					$CI->load->model('major_model');
+					$CI->load->model('group_user_rel_model');
 					
 					//Obtain the id of the group
 					$groupProfile = $CI->group_model->getGroupProfile($group['id']);
@@ -207,6 +208,11 @@
 					//get the group members
 					$groupMemberFirstName = $groupProfile['users'][0]['user_first_name'];
 					$groupMemberLastName = $groupProfile['users'][0]['user_last_name'];
+					
+					//get the group's students
+					$groupStudents = $CI->group_user_rel_model->getGroupStudents($group['id']);
+					//get the group's advisors
+					$groupAdvisors = $CI->group_user_rel_model->getGroupAdvisors($group['id']);
 					
 					$userID = $groupProfile['users'][0]['id'];
 				?>
