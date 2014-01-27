@@ -7,6 +7,7 @@
 </div>
 
 <div class="search-bar">
+	<label class="filter">Filter:</label>
 	<input type="text" id="search"/>
 
 	<div class="search-filters">
