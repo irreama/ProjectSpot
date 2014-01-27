@@ -3,7 +3,7 @@
 </div>
 		
 <div class="left_col">
-	<img src="<?=base_url()?>images/no_profile_icon2.png" width=200 height=200 alt="profile image"/>
+	<img src="<?=base_url()?><?=($profile_item['user_avatar'] ? $profile_item['user_avatar'] : "images/no_profile_icon2.png")?>" width=200 height=200 alt="profile image"/>
 </div><!--left column-->
 
 <div class="right_col">
