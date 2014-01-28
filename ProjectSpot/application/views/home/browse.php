@@ -185,7 +185,7 @@
 				<th>Department</th>
 				<th>Areas</th>
 				<th>Members</th>
-				<th>Advisors</th>
+				<!--th>Advisors</th-->
 			</tr>
 			</thead>
 			<?php
@@ -254,7 +254,7 @@
 							<?php echo $groupMemberFirstName.' ';?><?php echo $groupMemberLastName;?>
 						</a>
 					</td>
-					<td></td>
+					<!--td></td-->
 				</tr>
 				<?php
 				}
