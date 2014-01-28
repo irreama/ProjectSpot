@@ -17,6 +17,52 @@ class Profile extends CI_Controller {
 		$this->load->model('group_user_rel_model');
 	}
 
+	public function clearAvatar(){
+		$this->load->helper('file');
+		$uid = 4;
+
+		$this->user_model->clearAvatar($uid);
+
+		//delete_files('./images/avatars/'.$uid);
+		
+		echo "Deleted";
+	}
+
+	public function uploadAvatar(){
+		$uid = 4;
+		if(!is_dir('./images/avatars/'.$uid)){
+			mkdir('./images/avatars/'.$uid);
+		}
+
+		$config['upload_path'] = './images/avatars/'.$uid;
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size']	= '300';
+		$config['max_width']  = '1024';
+		$config['max_height']  = '768';
+		$config['file_name'] = "4";
+		$config['overwrite'] = true;
+
+		$this->load->library('upload', $config);
+		$returnCodes = array();
+
+		if ( ! $this->upload->do_upload()){
+			$returnCodes['success'] = false;
+			$returnCodes['errors'] = $this->upload->display_errors();
+		}
+		else{
+			$avatarData = $this->upload->data();
+
+			$avatarPath = 'images/avatars/'.$uid.'/'.$avatarData['file_name'];
+			$this->user_model->addAvatar($uid, $avatarPath);
+
+			$returnCodes['success'] = true;
+			$returnCodes['filePath'] = $avatarPath;
+			
+		}
+
+		echo json_encode($returnCodes);
+	}
+
 	/**
 	 * Generate the View Profile Page
 	 * Accessed from /profile/view/$id
@@ -49,7 +95,7 @@ class Profile extends CI_Controller {
 	 * Also handles form submission
 	 * @param  int $id The id of the user we're editing
 	 */
-	public function edit($id){
+	public function edit($id, $errors=""){
 		//Load our helpers
 		$this->load->helper('form');
 		$this->load->helper('url');

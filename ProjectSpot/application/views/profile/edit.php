@@ -3,9 +3,14 @@
 	<hr>
 </div>
 <div class="left_col">
-	<img src="<?=base_url()?>images/no_profile_icon2.png" width=200 height=200 alt="profile image"/>
-	<a class="button-element-small">Clear Image</a>
-	<a class="button-element-small">Upload an Image</a>
+	<img id="userAvatar" src="<?=base_url()?><?=($profile_item['user_avatar'] ? $profile_item['user_avatar'] : "images/no_profile_icon2.png")?>" width=200 height=200 alt="profile image"/>
+	<form id="avatarForm" method="post" enctype="multipart/form-data">
+		<input id="chooseAvatar" name="userfile" type="file" />
+		<br/>
+		<input id="uploadAvatar" type="button" value="Upload Avatar" />
+		<br/>
+		<input id="clearAvatar" type="button" value="Clear Avatar"/>
+	</form>
 </div><!--left column-->
 
 <div class="right_col">
@@ -110,3 +115,42 @@
 	</div>
 </div><!--right column-->
 <p class="clear"></p>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#uploadAvatar").click(function(){
+		var formData = new FormData($("#avatarForm")[0]);
+
+		$.ajax({
+			url: '<?=base_url()?>index.php/profile/uploadAvatar',
+			type: "POST",
+			data: formData,
+			dataType: "json",
+			success:function(data){
+				console.log(data);
+				if(data.success){
+					$("#userAvatar").attr('src', '<?=base_url()?>'+data.filePath);
+				}
+				else{
+					alert(data.errors);
+				}
+			},
+			cache: false,
+			contentType: false,
+			processData: false
+		});
+	});
+
+	$("#clearAvatar").click(function(){
+		$.ajax({
+			url: '<?=base_url()?>index.php/profile/clearAvatar',
+			type: "POST",
+			success:function(data){
+				$("#userAvatar").attr('src', '<?=base_url()?>images/no_profile_icon2.png');
+			},
+			cache: false,
+			contentType: false,
+			processData: false
+		});
+	});
+});
+</script>
