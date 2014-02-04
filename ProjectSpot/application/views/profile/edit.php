@@ -7,8 +7,6 @@
 	<form id="avatarForm" method="post" enctype="multipart/form-data">
 		<input id="chooseAvatar" name="userfile" type="file" />
 		<br/>
-		<input id="uploadAvatar" type="button" value="Upload Avatar" />
-		<br/>
 		<input id="clearAvatar" type="button" value="Clear Avatar"/>
 	</form>
 </div><!--left column-->
@@ -117,7 +115,7 @@
 <p class="clear"></p>
 <script type="text/javascript">
 $(document).ready(function(){
-	$("#uploadAvatar").click(function(){
+	$("#chooseAvatar").change(function(){
 		var formData = new FormData($("#avatarForm")[0]);
 
 		$.ajax({
@@ -132,6 +130,7 @@ $(document).ready(function(){
 				}
 				else{
 					alert(data.errors);
+					$("#avatarForm")[0].reset();
 				}
 			},
 			cache: false,
