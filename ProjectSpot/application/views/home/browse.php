@@ -61,7 +61,7 @@
 					$userTags = $CI->user_tag_rel_model->get_all_tags_by_user_id($user['id']);				
 			?>
 					<?php //if user_status = ENUM "Student" --> what do we do about "Admins" who have roles???
-					if($user['user_status'] == "Admin" || $user['user_status'] == "Student"){ ?>
+					if($user['user_status'] == "Student"){ ?>
 						<tr>
 							<td>
 								<?php echo $user['user_status'];?>
