@@ -160,7 +160,7 @@
 									?>
 								
 										<a href="<?=base_url()?>/index.php/group/view/<?php echo $group['id'];?>">
-										<li><?php echo $group['group_name'];?></li></a>
+										<li class="fu"><?php echo $group['group_name'];?></li></a>
 									
 									<?php
 									}
