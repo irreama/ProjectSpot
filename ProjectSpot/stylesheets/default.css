@@ -215,7 +215,7 @@ a:active{
 .button-element-small{
 	color:gray;
 	background-color: #d7d7d7;
-	/*display:block;*/
+	display:block;
 	text-align:center;
 	padding: 5px 10px;
 	border: 1px solid #aaaaaa;

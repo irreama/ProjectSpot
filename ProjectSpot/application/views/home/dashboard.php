@@ -6,12 +6,12 @@
 		<ol>
 			<li>Find an MQP Group<br><a href="<?=base_url()?>index.php/browse">Browse groups now</a></li>
 			<li>Complete your profile<br><a href="<?=base_url()?>index.php/profile/edit/4">Edit profile now</a></li>
-			<li>You have a pending invite<br><a href="<?=base_url()?>index.php/invites">Check invites now</a></li>
+			<!--li>You have a pending invite<br><a href="<?=base_url()?>index.php/invites">Check invites now</a></li-->
 		</ol>
 	</div>
-	<div class="wrap">
+	<!--div class="wrap">
 		<a class="help" href="<?=base_url()?>index.php/help">Need help?</a>
-	</div>
+	</div-->
 </div>
 
 <div class="right">

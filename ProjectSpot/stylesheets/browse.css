@@ -30,6 +30,9 @@ td{
 	padding:0;
 }
 .tags li{
-	list-style:none;
+	/*list-style-type:square;*/
 	display:block;
+	/*padding:50px;
+	list-style-position: inside;
+	z-index:100000;*/
 }

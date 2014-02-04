@@ -160,7 +160,7 @@
 									?>
 								
 										<a href="<?=base_url()?>/index.php/group/view/<?php echo $group['id'];?>">
-										<li><?php echo $group['group_name'];?></li></a>
+										<li class="fu"><?php echo $group['group_name'];?></li></a>
 									
 									<?php
 									}
@@ -184,8 +184,8 @@
 				<th>Title</th>
 				<th>Department</th>
 				<th>Areas</th>
-				<th>Members</th>
 				<th>Advisors</th>
+				<th>Members</th>
 			</tr>
 			</thead>
 			<?php
@@ -194,6 +194,7 @@
 					$CI->load->model('group_tag_rel_model');
 					$CI->load->model('group_major_rel_model');
 					$CI->load->model('major_model');
+					$CI->load->model('group_user_rel_model');
 					
 					//Obtain the id of the group
 					$groupProfile = $CI->group_model->getGroupProfile($group['id']);
@@ -204,9 +205,10 @@
 					//get the tags
 					$groupTags = $CI->group_tag_rel_model->get_all_tags_by_group_id($group['id']);
 					
-					//get the group members
-					$groupMemberFirstName = $groupProfile['users'][0]['user_first_name'];
-					$groupMemberLastName = $groupProfile['users'][0]['user_last_name'];
+					//get the group's students
+					$groupStudents = $CI->group_user_rel_model->getGroupStudents($group['id']);
+					//get the group's advisors
+					$groupAdvisors = $CI->group_user_rel_model->getGroupAdvisors($group['id']);
 					
 					$userID = $groupProfile['users'][0]['id'];
 				?>
@@ -244,11 +246,39 @@
 						?>
 					</td>
 					<td>
+						<?php
+							$totalAdvisors = count($groupAdvisors);
+							foreach($groupAdvisors as $i => $advisor){
+								$firstName = $groupProfile['users'][0]['user_first_name'];
+								$lastName = $groupProfile['users'][0]['user_last_name'];
+						?>	
 						<a href="<?=base_url()?>/index.php/profile/view/<?php echo $userID;?>">
-							<?php echo $groupMemberFirstName.' ';?><?php echo $groupMemberLastName;?>
-						</a>
+							
+						<?php				
+								echo $firstName.' ';
+								echo $lastName;
+						?></a>
+						<?php
+							}
+						?>	
 					</td>
-					<td></td>
+					<td>
+						<?php
+							$totalStudents = count($groupStudents);
+							foreach($groupStudents as $i => $student){
+								$firstName = $groupProfile['users'][0]['user_first_name'];
+								$lastName = $groupProfile['users'][0]['user_last_name'];
+						?>	
+						<a href="<?=base_url()?>/index.php/profile/view/<?php echo $userID;?>">
+							
+						<?php				
+								echo $firstName.' ';
+								echo $lastName;
+						?></a>
+						<?php
+							}
+						?>	
+					</td>
 				</tr>
 				<?php
 				}
