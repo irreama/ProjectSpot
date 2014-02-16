@@ -1,4 +1,10 @@
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>stylesheets/dashboard.css">
+<div class="help-text">
+	This page is your dashboard. From here you can see your todo list, which will help you figure out your MQP.
+	You can also get to external-resources about the MQP at WPI that you may find useful. Important dates that are listed
+	by the department also get posted here.
+	<a class="close" href="#">X</a>
+</div>
 <h2>Dashboard</h2><p class="clear"></p>
 <div class="left">
 	<div id="todo">

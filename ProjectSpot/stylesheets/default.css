@@ -319,3 +319,20 @@ a:active{
 	padding:2px 3px;
 	font-family:"trebuchet ms", trebuchet ms, sans-serif;
 }
+
+.help-text{
+	background-color:yellow;
+	padding: 30px;
+	border-radius:20px;
+	margin-top:-50px;
+	margin-bottom:20px;
+	position:relative;
+}
+.close{
+	position:absolute;
+	top:8px;
+	right:13px;
+	font-size:18pt;
+	font-family:"Helvetica", helvetica, sans-serif; 
+	text-decoration:none;
+}
