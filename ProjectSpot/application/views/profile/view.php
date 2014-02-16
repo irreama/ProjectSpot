@@ -1,3 +1,9 @@
+<div class="help-text">
+	This is your personal profile page. Other ProjectSpot users will see this page when they view your profile.
+	By adding information about yourself here, you'll make it more likely that a user with similar interests will find
+	you. This betters your chances at finding an MQP group in ProjectSpot.
+	<a class="close" href="#">X</a>
+</div>
 <div class="page-title">
 	<h2>This is a<?php echo ($profile_item['user_status'] == 'Advisor' ? "n advisor" : " student"); ?> page</h2>
 </div>

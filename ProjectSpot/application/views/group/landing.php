@@ -1,3 +1,10 @@
+<div class="help-text">
+	You are seeing this page because you are not yet part of a group in ProjectSpot. If you are already in an MQP group,
+	or if you would like to form a brand-new group now, you can "Create a Group Profile" here. Also, if you do not yet
+	have a group and do not know what you want to do for a project, you can browse the groups in ProjectSpot that are
+	still seeking memebers by clicking "Find a Group".
+	<a class="close" href="#">X</a>
+</div>
 <h2>You are not yet in a group.</h2>
 <div class="centered">
 	<div>

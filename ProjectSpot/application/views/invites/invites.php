@@ -1,3 +1,9 @@
+<div class="help-text">
+	Here you can see which MQP groups have invited you to join. If you are already in a group, you can see which members
+	have requested to join your group. You can also see invitations you've sent out to other members and groups in ProjectSpot.
+	You can revoke these invitations if you wish.
+	<a class="close" href="#">X</a>
+</div>
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>stylesheets/invites.css">
 <h2>Invites</h2>
 	<div id="received">	

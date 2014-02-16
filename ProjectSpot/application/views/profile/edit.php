@@ -1,3 +1,8 @@
+<div class="help-text">
+	Here you can edit and customize your personal profile page. You can change your information, upload a photo, and select your
+	interests. You can also add a descripting of yourself, indicating what you're looking for in a MQP.
+	<a class="close" href="#">X</a>
+</div>
 <div class="page-title">
 	<h2>Edit Profile Page</h2>
 	<hr>
