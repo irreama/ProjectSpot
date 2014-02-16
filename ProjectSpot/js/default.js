@@ -19,4 +19,8 @@ $('.tag_listing').on('change', 'input[type="checkbox"]', function(){
 	}
 })
 
+$('.close').on('click', function(){
+	$(this).parent().hide();
+});
+
 });
