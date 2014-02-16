@@ -1,3 +1,10 @@
+<div class="help-text">
+	This is the Find page. You can browse all students, advisors, and MQP groups in ProjectSpot's system. Use the search bar
+	below to filter these results even more. You can type in someone's name, a major,
+	or just an area in computer science that interests you. Use the checkboxes below the search bar to view only the types of
+	results that you want.
+	<a class="close" href="#">X</a>
+</div>
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>stylesheets/browse.css">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="<?=base_url()?>/js/jquery.dataTables.js"></script>
