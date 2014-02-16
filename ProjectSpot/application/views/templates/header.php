@@ -21,7 +21,7 @@
 						<li><a href="<?=base_url()?>index.php/invites"><img class="nav-image" src="<?=base_url()?>images/mail_icon.png"><span>Invites</span></a></li>
 					</ul>
 				</div>
+				<div class="welcome">Welcome Test User, <a class="logout" href="<?=base_url()?>index.php/home">Logout</a></div>
 			</div>
-			<div class="welcome">Welcome Test User, <a href="<?=base_url()?>index.php/home">Logout</a></div>
 			
 			<div class="content">

@@ -45,6 +45,18 @@ a:active{
 	margin:10px;
 	z-index:10;
 	font-weight:bold;
+	float:left;
+	color:black;
+}
+
+.logout:link{
+	color:white;
+}
+.logout:visited{
+	color:white;
+}
+.logout:hover{
+	color:#d7d7d7;
 }
 
 .nav{
