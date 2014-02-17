@@ -137,10 +137,12 @@ CREATE TABLE `ps_group_user_rel` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`group_id` int(11) NOT NULL,
 	`user_id` int(11) NOT NULL,
+	`invited_by` int(11),
 	`invite_status` ENUM('Requested', 'Invited', 'Accepted') NOT NULL DEFAULT 'Invited',
 	PRIMARY KEY (`id`),
 	FOREIGN KEY (`group_id`) REFERENCES ps_groups(`id`),
-	FOREIGN KEY (`user_id`) REFERENCES ps_users(`id`)
+	FOREIGN KEY (`user_id`) REFERENCES ps_users(`id`),
+	FOREIGN KEY (`invited_by`) REFERENCES ps_users(`id`)
 );
 
 INSERT INTO `ps_group_user_rel` (group_id, user_id, invite_status)

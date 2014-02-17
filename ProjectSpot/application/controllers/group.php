@@ -10,19 +10,56 @@ class Group extends CI_Controller{
 		$this->load->model('major_model');
 	}
 
+	public function acceptInvite(){
+		$sender = 4;
+		$id = $this->input->post('id');
+
+		$invite = $this->group_user_rel_model->get($id);
+
+		//check if the user can accept this invite
+		if($invite['user_id'] == $sender && !$this->group_user_rel_model->isUserInAnyGroup($sender)){
+			//$this->group_user_rel_model->update($id, "accepted");
+			echo json_encode(true);
+		}
+		else{
+			echo json_encode(false);
+		}
+
+	}
+
+	public function rejectInvite(){
+		$sender = 4;
+		$id = $this->input->post('id');
+
+		$invite = $this->group_user_rel_model->get($id);
+
+		//print_r($invite);
+
+		//check if the user can accept this invite
+		if($invite['user_id'] == $sender || $this->group_user_rel_model->isUserInGroup($sender, $invite['group_id'])){
+			//$this->group_user_rel_model->delete($id);
+			echo json_encode(true);
+		}
+		else{
+			echo json_encode(false);
+		}
+	}
+
 	public function requestToInvite(){
+		$sender = 4;
 		$gid = $this->input->post('gid');
 		$uid = $this->input->post('uid');
 		if(!$this->group_user_rel_model->isUserInAnyGroup($uid) && $this->group_user_rel_model->canUserRequestToJoin($uid, $gid)){
-			$this->group_user_rel_model->new_group_user_rel($gid, $uid, 'Requested');
+			$this->group_user_rel_model->new_group_user_rel($gid, $uid, $sender, 'Requested');
 		}
 	}
 
 	public function invite(){
+		$sender = 4;
 		$gid = $this->input->post('gid');
 		$uid = $this->input->post('uid');
 		if(!$this->group_user_rel_model->isUserInAnyGroup($uid) && $this->group_user_rel_model->canUserRequestToJoin($uid, $gid)){
-			$this->group_user_rel_model->new_group_user_rel($gid, $uid, 'invited');
+			$this->group_user_rel_model->new_group_user_rel($gid, $uid, $sender, 'invited');
 		}
 	}
 
