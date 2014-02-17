@@ -7,9 +7,9 @@
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>stylesheets/invites.css">
 <h2>Invitations</h2>
 	<div id="received">	
-		<h3>Received Invites</h3><hr>
+		<h3>Received From</h3><hr>
 		<div class="group">
-			<h4>Group Invites</h4>
+			<h4>Group</h4>
 			<div id="invite">
 				<label> 
 					You have been invited by <a href="#">ProjectSpot</a>
@@ -21,9 +21,9 @@
 		</div>
 	</div>
 	<div id="sent">
-		<h3>Sent Invites</h3><hr>
+		<h3>Sent To</h3><hr>
 		<div class="student">
-			<h4>Student Invites</h4>
+			<h4>Student</h4>
 			<div class="invite">
 				<label>
 					You have invited <a href="#">Madalyn Coryea</a>
@@ -33,7 +33,7 @@
 			</div>
 		</div>
 		<div class="advisor">
-			<h4>Advisor Invites</h4>
+			<h4>Advisor</h4>
 			<div class="invite">
 				<label>
 					You have invited <a href="#">David C. Brown</a>
