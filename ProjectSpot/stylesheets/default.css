@@ -171,28 +171,29 @@ a:active{
 	margin:30px auto;
 }
 .button-element{
-	color:gray;
-	background-color: #d7d7d7;
+	color:white;
+	background-color:red;
 	display:block;
 	width:200px;
 	text-align:center;
 	padding: 10px;
-	border: 2px solid #aaaaaa;
 	text-decoration:none;
 	font-size:14pt;
 	border-radius:15px;
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:70px;
+	border:solid 1px red;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.75);
 }
 .button-element:link{
-	color:gray;
-	background-color: #d7d7d7;
+	color:white;
+	background-color:red;
 	display:block;
 	width:200px;
 	text-align:center;
 	padding: 10px;
-	border: 2px solid #aaaaaa;
+	border:solid 1px red;
 	text-decoration:none;
 	font-size:14pt;
 	border-radius:15px;
@@ -201,13 +202,12 @@ a:active{
 	margin-top:70px;
 }
 .button-element:visited{
-	color:gray;
-	background-color: #d7d7d7;
+	color:white;
+	background-color:red;
 	display:block;
 	width:200px;
 	text-align:center;
 	padding: 10px;
-	border: 2px solid #aaaaaa;
 	text-decoration:none;
 	font-size:14pt;
 	border-radius:15px;
@@ -217,12 +217,13 @@ a:active{
 }
 .button-element:hover{
 	color: #ffffff;
-	background-color: #aaaaaa;
+	background-color: #E75353;
+	border:solid 1px #E75353;
 }
 .button-element:active{
-	color: #d7d7d7;
-	background-color: #ffffff;
-	border: 2px solid #d7d7d7;
+	color: white;
+	background-color: #E75353;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.05);
 }
 .button-element-small{
 	color:gray;
