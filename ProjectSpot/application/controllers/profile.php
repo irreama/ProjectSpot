@@ -95,11 +95,13 @@ class Profile extends CI_Controller {
 	 * Also handles form submission
 	 * @param  int $id The id of the user we're editing
 	 */
-	public function edit($id, $errors=""){
+	public function edit($errors=""){
 		//Load our helpers
 		$this->load->helper('form');
 		$this->load->helper('url');
 		$this->load->library('form_validation');
+
+		$id = 4;
 
 		//Generate the data used in the views
 		$data['profile_item'] = $this->user_model->get_user_by_id($id);
