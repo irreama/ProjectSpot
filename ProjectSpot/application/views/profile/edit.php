@@ -10,9 +10,11 @@
 <div class="left_col">
 	<img id="userAvatar" src="<?=base_url()?><?=($profile_item['user_avatar'] ? $profile_item['user_avatar'] : "images/no_profile_icon2.png")?>" width=200 height=200 alt="profile image"/>
 	<form id="avatarForm" method="post" enctype="multipart/form-data">
-		<input id="chooseAvatar" name="userfile" type="file" />
-		<br/>
-		<input id="clearAvatar" type="button" value="Clear Avatar"/>
+		<div class="button-element-small special-button">
+			<label>Upload an Image</label>
+			<input id="chooseAvatar" name="userfile" type="file" />
+		</div>
+		<input id="clearAvatar" class="button-element-small full-width" type="button" value="Clear Image"/>
 	</form>
 </div><!--left column-->
 
