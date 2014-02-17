@@ -44,14 +44,16 @@ class Group_user_rel_model extends CI_Model{
 	 * Insert a new relation into the database
 	 * @param  [int] $group_id  		[The id of the group we're relating]
 	 * @param  [int] $user_id  			[The id of the user we're relating]
+	 * @param  [int] $sent_id  			[The id of the user sending]
 	 * @param  [String] $status   		[The invitation status of the user. ENUM in the Database. Accepted values are 'Invited', 'Confirmation Needed', 'Accepted']
 	 * @return [boolean]           		[True if successful. False if not.]
 	 */	
-	public function new_group_user_rel($group_id, $user_id, $status){
+	public function new_group_user_rel($group_id, $user_id, $sent_id, $status){
 		$data = array(
 			'group_id' => $group_id,
 			'user_id' => $user_id,
-			'invite_status' => $status
+			'invite_status' => $status,
+			'invited_by' => $sent_id
 		);
 
 		$this->db->insert('ps_group_user_rel', $data);
@@ -160,5 +162,38 @@ class Group_user_rel_model extends CI_Model{
 			return true;
 		}
 	}
+
+	public function getSentInvitesByGroupId($gid){
+		$this->db->from('ps_group_user_rel');
+		$this->db->where('group_id', $gid);
+		$this->db->where('invite_status', 'Invited');
+		$iQuery = $this->db->get();
+		return $iQuery->result_array();
+	}
+
+	public function getIncomingInvitesByUserId($uid){
+		$this->db->from('ps_group_user_rel');
+		$this->db->where('user_id', $uid);
+		$this->db->where('invite_status', 'Invited');
+		$iQuery = $this->db->get();
+		return $iQuery->result_array();
+	}
+
+	public function getRequestedInvitesByGroupId($gid){
+		$this->db->from('ps_group_user_rel');
+		$this->db->where('group_id', $gid);
+		$this->db->where('invite_status', 'Invited');
+		$iQuery = $this->db->get();
+		return $iQuery->result_array();
+	}
+
+	public function get($id){
+		$this->db->from('ps_group_user_rel');
+		$this->db->where('id', $id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+
+
 }
 ?>
