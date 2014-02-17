@@ -33,6 +33,7 @@ CREATE TABLE `ps_users` (
 	`user_major1` int(11) NOT NULL,
 	`user_major2` int(11),
 	`user_avatar` varchar(255) NOT NULL DEFAULT '',
+	`user_site` varchar(255) NOT NULL DEFAULT '',
 	`user_is_admin` bit(1) NOT NULL DEFAULT 0,
 	PRIMARY KEY (`id`),
 	FOREIGN KEY (`user_major1`) REFERENCES ps_majors(`id`),
@@ -64,11 +65,13 @@ CREATE TABLE `ps_groups` (
 	`group_creator` int(11) NOT NULL,
 	`group_creation_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	`group_description` text,
+	`group_needs` text,
 	`group_name` varchar(50) NOT NULL DEFAULT '',
 	`group_status` ENUM('Active', 'Closed', 'Archived') NOT NULL DEFAULT 'Active',
 	`group_type` varchar(20) NOT NULL DEFAULT 'MQP',
 	`group_site` varchar(255) NOT NULL DEFAULT '',
 	`group_contact` varchar(255) NOT NULL DEFAULT '',
+	`group_avatar` varchar(255) NOT NULL DEFAULT '',
 	PRIMARY KEY (`id`),
 	FOREIGN KEY (`group_creator`) REFERENCES ps_users(`id`)
 );

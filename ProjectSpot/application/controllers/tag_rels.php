@@ -17,12 +17,13 @@ class Tag_rels extends CI_Controller {
 	 * Load the view for editing user interests
 	 * @param  int $id The id of the user to edit interests
 	 */
-	public function edit_user($id){
+	public function edit_user(){
 		//Load our helpers
 		$this->load->helper('form');
 		$this->load->helper('url');
 		$this->load->library('form_validation');
 		$data['title'] = "Edit Interests";
+		$id = 4;
 
 		//Grab the tags this user already has
 		$data['tag_item']['item_id'] = $id;
@@ -51,7 +52,7 @@ class Tag_rels extends CI_Controller {
 			$this->user_tag_rel_model->add_tags_to_user();
 
 			//Head back to the user edit pages
-			redirect('profile/edit/'.$id);
+			redirect('profile/edit/');
 		}
 	}
 

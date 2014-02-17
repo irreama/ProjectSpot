@@ -138,6 +138,8 @@ class Group extends CI_Controller{
 		$this->load->helper('url');
 		$this->load->library('form_validation');
 
+		$uid = 4;
+
 		$data['title'] = "New Group";
 
 		$this->form_validation->set_rules('group_creator', 'group_creator', 'required');
@@ -154,7 +156,7 @@ class Group extends CI_Controller{
 			//Save the group
 			$new_id = $this->group_model->new_group();
 
-			$this->group_user_rel_model->new_group_user_rel($new_id, $this->input->post('group_creator'), 'Accepted');
+			$this->group_user_rel_model->new_group_user_rel($new_id, $uid, null, 'Accepted');
 
 
 			//Head to the group view page

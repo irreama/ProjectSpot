@@ -13,7 +13,7 @@
 	$attributes = array(
 		'class' => 'tag_form'
 	);
-	echo form_open($tag_item['type'].'/interests/edit/'.$tag_item['item_id'], $attributes);
+	echo form_open($tag_item['type'].'/interests/edit/'.($tag_item['type'] == "group" ? $tag_item['item_id'] : ""), $attributes);
 	//Hidden ID Field
 	echo form_hidden('id', $tag_item['item_id']);
 	if(!empty($tag_item['item_tags'])){

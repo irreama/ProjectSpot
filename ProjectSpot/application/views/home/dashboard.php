@@ -10,10 +10,36 @@
 	<div id="todo">
 		<h3>To-Do List</h3>
 		<ol>
-			<li>Find an MQP Group<br><a href="<?=base_url()?>index.php/browse">Browse groups now</a></li><br>
-			<li>Complete your profile<br><a href="<?=base_url()?>index.php/profile/edit/4">Edit profile now</a></li>
+			<?php
+			foreach($messages['user'] as $aUserMessage){
+			?>
+
+			<li><?=$aUserMessage['text']?><br><a href="<?=base_url()?>index.php/<?=$aUserMessage['link']?>"><?=$aUserMessage['linkText']?></a></li><br>
+			<?php
+			}
+			?>
 			<!--li>You have a pending invite<br><a href="<?=base_url()?>index.php/invites">Check invites now</a></li-->
 		</ol>
+
+	<?php
+	foreach($messages['group'] as $aGroup){
+		?>
+		<h4><?=$aGroup['name']?></h4>
+		<ol>
+			<?php
+			foreach($aGroup['messages'] as $aGroupMessage){
+			?>
+
+			<li><?=$aGroupMessage['text']?><br><a href="<?=base_url()?>index.php/<?=$aGroupMessage['link']?>"><?=$aGroupMessage['linkText']?></a></li><br>
+			<?php
+			}
+			?>
+			<!--li>You have a pending invite<br><a href="<?=base_url()?>index.php/invites">Check invites now</a></li-->
+		</ol>
+		<?php
+	}
+	?>
+		
 	</div>
 	<!--div class="wrap">
 		<a class="help" href="<?=base_url()?>index.php/help">Need help?</a>
