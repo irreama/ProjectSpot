@@ -1,8 +1,8 @@
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>stylesheets/dashboard.css">
 <div class="help-text">
-	This page is your dashboard. From here you can see your todo list, which will help you figure out your MQP.
-	You can also get to external-resources about the MQP at WPI that you may find useful. Important dates that are listed
-	by the department also get posted here.
+	This is the Dashboard. From here you can see your To-Do list, which
+	helps you. You can also get to useful Resources about the MQP, as well
+	as Important Dates that are listed by the CS department.
 	<a class="close" href="#">X</a>
 </div>
 <h2>Dashboard</h2><p class="clear"></p>
@@ -10,7 +10,7 @@
 	<div id="todo">
 		<h3>To-Do List</h3>
 		<ol>
-			<li>Find an MQP Group<br><a href="<?=base_url()?>index.php/browse">Browse groups now</a></li>
+			<li>Find an MQP Group<br><a href="<?=base_url()?>index.php/browse">Browse groups now</a></li><br>
 			<li>Complete your profile<br><a href="<?=base_url()?>index.php/profile/edit/4">Edit profile now</a></li>
 			<!--li>You have a pending invite<br><a href="<?=base_url()?>index.php/invites">Check invites now</a></li-->
 		</ol>

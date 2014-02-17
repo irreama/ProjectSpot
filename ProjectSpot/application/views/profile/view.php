@@ -1,7 +1,8 @@
 <div class="help-text">
-	This is your personal profile page. Other ProjectSpot users will see this page when they view your profile.
-	By adding information about yourself here, you'll make it more likely that a user with similar interests will find
-	you. This betters your chances at finding an MQP group in ProjectSpot.
+	This is your personal Profile page. It can be seen by other
+	ProjectSpot users. Add information to allow users with similar
+	interests to find you. This improves your chance of finding an MQP
+	group.
 	<a class="close" href="#">X</a>
 </div>
 <div class="page-title">
