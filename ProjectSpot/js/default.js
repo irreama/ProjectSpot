@@ -18,10 +18,14 @@ $('.tag_listing').on('change', 'input[type="checkbox"]', function(){
 		$('input[type="checkbox"][data-id="' + id +'"]').prop('checked', false);
 	}
 })
-
+var cookieVal = $.cookie("helpText"+window.location.pathname);
+if (cookieVal == "1"){
+	$(".help-text").hide();
+}
 $('.close').on('click', function(e){
 	e.preventDefault();
 	$(this).parent().hide();
+	$.cookie("helpText"+window.location.pathname,"1",{expires:500});
 });
 
 });
