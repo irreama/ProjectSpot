@@ -5,7 +5,7 @@
 	<a class="close" href="#">X</a>
 </div>
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>stylesheets/invites.css">
-<h2>Invites</h2>
+<h2>Invitations</h2>
 	<div id="received">	
 		<h3>Received Invites</h3><hr>
 		<div class="group">
