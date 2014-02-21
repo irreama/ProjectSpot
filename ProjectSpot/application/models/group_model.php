@@ -105,6 +105,24 @@ class Group_model extends CI_Model{
 		return $group;
 	}
 
+	public function addAvatar($uid, $file){
+		$data = array(
+			'group_avatar' => $file
+		);
+
+		$this->db->where('id', $uid);
+		return $this->db->update('ps_groups', $data);
+	}
+
+	public function clearAvatar($uid){
+		$data = array(
+			'group_avatar' => ""
+		);
+
+		$this->db->where('id', $uid);
+		return $this->db->update('ps_groups', $data);
+	}
+
 
 }
 

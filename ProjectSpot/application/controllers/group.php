@@ -10,6 +10,64 @@ class Group extends CI_Controller{
 		$this->load->model('major_model');
 	}
 
+		public function clearAvatar(){
+		$this->load->helper('file');
+		$uid = 4;
+		$gid = $this->input->post('gid');
+
+		//check to see if the user is a member
+		if($this->group_user_rel_model->isUserInGroup($uid, $gid)){
+			$this->group_model->clearAvatar($gid);
+
+			//delete_files('./images/avatars/'.$uid);
+			
+			echo "Deleted";
+		}
+	}
+
+	public function uploadAvatar(){
+		$uid = 4;
+		$gid = $this->input->post('gid');
+
+				//check to see if the user is a member
+		if($this->group_user_rel_model->isUserInGroup($uid, $gid)){
+			if(!is_dir('./images/avatars/groups/'.$gid)){
+				mkdir('./images/avatars/groups/'.$gid);
+			}
+
+			$config['upload_path'] = './images/avatars/groups/'.$gid;
+			$config['allowed_types'] = 'gif|jpg|png';
+			$config['max_size']	= '300';
+			$config['max_width']  = '1024';
+			$config['max_height']  = '768';
+			$config['file_name'] = $gid;
+			$config['overwrite'] = true;
+
+			$this->load->library('upload', $config);
+			$returnCodes = array();
+
+			if ( ! $this->upload->do_upload()){
+				$returnCodes['success'] = false;
+				$returnCodes['errors'] = $this->upload->display_errors();
+				$returnCodes['gid'] = $gid;
+			}
+			else{
+				$avatarData = $this->upload->data();
+
+				$avatarPath = 'images/avatars/groups/'.$gid.'/'.$avatarData['file_name'];
+				$this->group_model->addAvatar($gid, $avatarPath);
+
+				$returnCodes['success'] = true;
+				$returnCodes['filePath'] = $avatarPath;
+				
+			}
+
+			echo json_encode($returnCodes);
+		}
+
+		
+	}
+
 	public function acceptInvite(){
 		$sender = 4;
 		$id = $this->input->post('id');

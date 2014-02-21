@@ -30,11 +30,11 @@ class Profile extends CI_Controller {
 
 	public function uploadAvatar(){
 		$uid = 4;
-		if(!is_dir('./images/avatars/'.$uid)){
-			mkdir('./images/avatars/'.$uid);
+		if(!is_dir('./images/avatars/profiles/'.$uid)){
+			mkdir('./images/avatars/profiles/'.$uid);
 		}
 
-		$config['upload_path'] = './images/avatars/'.$uid;
+		$config['upload_path'] = './images/avatars/profiles/'.$uid;
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size']	= '300';
 		$config['max_width']  = '1024';
@@ -52,7 +52,7 @@ class Profile extends CI_Controller {
 		else{
 			$avatarData = $this->upload->data();
 
-			$avatarPath = 'images/avatars/'.$uid.'/'.$avatarData['file_name'];
+			$avatarPath = 'images/avatars/profiles/'.$uid.'/'.$avatarData['file_name'];
 			$this->user_model->addAvatar($uid, $avatarPath);
 
 			$returnCodes['success'] = true;

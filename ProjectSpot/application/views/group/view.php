@@ -2,7 +2,7 @@
 	<h2>This is a group page</h2>
 </div>
 <div class="left_col clearfix">
-	<img src="<?=base_url()?>images/no_profile_icon2.png" width=200 height=200 alt="profile image"/>
+	<img src="<?=base_url()?><?=($group_item['group_avatar'] ? $group_item['group_avatar'] : "images/no_profile_icon2.png")?>" width=200 height=200 alt="profile image"/>
 </div><!--left column-->
 
 <div class="right_col clearfix">
