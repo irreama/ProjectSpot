@@ -8,7 +8,7 @@
 
 	<div class="project">
 		<!--This <a> tag is a link to the page for this group-->
-		<a class="project-tile" href="<?=base_url()?>group/view/<?=$aGroup['group_id']?>">
+		<a class="project-tile" href="<?=base_url()?>index.php/group/view/<?=$aGroup['group_id']?>">
 			<div class="project-span">
 				<!--This image is either the group's image or the default-->
 				<img src="<?=base_url()?><?=($aGroup['group_avatar'] ? $aGroup['group_avatar'] : "images/no_profile_icon2.png")?>" alt="project1"/>
