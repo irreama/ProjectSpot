@@ -122,9 +122,16 @@ class Group extends CI_Controller{
 	}
 
 	public function landing(){
+		$uid = 4;
+
+		//Load the user Model
+		$this->load->model("user_model");
+
 		//check to see if the user is in a group
 		//Fix this for live
-		$data['group_item'] = $this->group_user_rel_model->get_all_groups_by_user_id(4);
+		$data['group_item'] = $this->group_user_rel_model->get_all_groups_by_user_id($uid);
+		$user = $this->user_model->get_user_by_id($uid);
+
 
 		if(empty($data['group_item'])){
 			$data['title'] = "Groups";
@@ -132,9 +139,18 @@ class Group extends CI_Controller{
 			$this->load->view('group/landing', $data);
 			$this->load->view('templates/footer');
 		}
-		else{
+		else if($user['user_status'] != "Advisor"){
 			$this->load->helper('url');
 			redirect('group/view/'.$data['group_item'][0]['id']);
+		}
+		else{
+			$data['title'] = "Groups";
+			echo "<pre>";
+			print_r($data);
+			echo "</pre>";
+			$this->load->view('templates/header', $data);
+			$this->load->view('group/advisorLanding', $data);
+			$this->load->view('templates/footer');
 		}
 		
 		
