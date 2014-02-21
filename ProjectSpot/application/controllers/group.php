@@ -145,9 +145,6 @@ class Group extends CI_Controller{
 		}
 		else{
 			$data['title'] = "Groups";
-			echo "<pre>";
-			print_r($data);
-			echo "</pre>";
 			$this->load->view('templates/header', $data);
 			$this->load->view('group/advisorLanding', $data);
 			$this->load->view('templates/footer');
