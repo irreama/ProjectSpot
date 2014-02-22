@@ -58,9 +58,18 @@
 			<label class="title">Give a description of your group:</label>
 			<textarea class="input_field full_width" rows=5 name="group_description"><?php echo $group_item['group_description'];?></textarea>
 		</div>
+
+		<div class="needs">
+			<label class="title">What does your group need?:</label>
+			<textarea class="input_field full_width" rows=5 name="group_needs"><?php echo $group_item['group_needs'];?></textarea>
+		</div>
 		
 		<div class="contact">
 			<label class="title">Contact:</label><input class="input_field input_width" type="text" name="group_contact" value="<?php echo $group_item['group_contact'];?>"/>
+		</div>
+
+		<div class="site">
+			<label class="title">Site:</label><input class="input_field input_width" type="text" name="group_site" value="<?php echo $group_item['group_site'];?>"/>
 		</div>
 		
 		<div class="button_panel">

@@ -8,6 +8,7 @@ class Tag_rels extends CI_Controller {
 	 */
 	public function __construct(){
 		parent::__construct();
+		checkSession();
 		$this->load->model('user_tag_rel_model');
 		$this->load->model('group_tag_rel_model');
 		$this->load->model('tag_model');
@@ -23,7 +24,7 @@ class Tag_rels extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('form_validation');
 		$data['title'] = "Edit Interests";
-		$id = 4;
+		$id = $this->session->userdata('user_id');
 
 		//Grab the tags this user already has
 		$data['tag_item']['item_id'] = $id;

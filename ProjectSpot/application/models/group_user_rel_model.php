@@ -194,6 +194,14 @@ class Group_user_rel_model extends CI_Model{
 		return $query->row_array();
 	}
 
+	public function getGroupIdsByUserId($uid){
+		$this->db->from('ps_group_user_rel');
+		$this->db->where('user_id', $uid);
+		$this->db->where('invite_status', 'Accepted');
+		$gQuery = $this->db->get();
+		return $gQuery->result_array();
+	}
+
 
 }
 ?>

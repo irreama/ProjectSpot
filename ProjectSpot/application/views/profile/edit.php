@@ -106,6 +106,15 @@
 		<div class="contact">
 			<label class="title">Contact:</label><label><?php echo $profile_item['user_email']?></label>
 		</div>
+		<?php
+		if($profile_item['user_status'] == "Advisor"){
+		?>
+		<div class="website">
+			<label class="title">Web Site:</label><input type="text" name="user_site" value="<?php echo $profile_item['user_site']?>"/>
+		</div>
+		<?php
+		}
+		?>
 		
 		<div class="button_panel">
 			<a class="button-element-small cancel" href="<?=base_url()?>index.php/profile/view/<?php echo $profile_item['id']?>">Cancel</a>

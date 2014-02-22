@@ -15,7 +15,7 @@
 	<a class="edit button-element-small" href="<?=base_url()?>index.php/group/edit/<?php echo $group_item['id'];?>">Edit Page</a>
 	<?php
 	}
-	else if(!$CI->group_user_rel_model->isUserInAnyGroup(4) && $CI->group_user_rel_model->canUserRequestToJoin(4,$group_item['id'])){
+	else if(!$CI->group_user_rel_model->isUserInAnyGroup($CI->session->userdata('user_id')) && $CI->group_user_rel_model->canUserRequestToJoin($CI->session->userdata('user_id'),$group_item['id'])){
 		?>
 	<button type="button" class="edit button-element-small" id="requestInvite" data-uid="4" data-gid="<?=$group_item['id']?>">Request to Join</button>
 		<?php
@@ -57,9 +57,19 @@
 				<?php echo $group_item['group_description'];?>
 			</label>
 		</div>
+		<div class="needs">
+			<label class="title">Group Needs:</label>
+			<label>
+				<?php echo $group_item['group_needs'];?>
+			</label>
+		</div>
 		<div class="contact">
 			<label class="title">Contact:</label>
 			<label><?php echo $group_item['group_contact'];?></label>
+		</div>
+		<div class="site">
+			<label class="title">Site:</label>
+			<label><?php echo $group_item['group_site'];?></label>
 		</div>
 	</div>
 </div><!--right column-->

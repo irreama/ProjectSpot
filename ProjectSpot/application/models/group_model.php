@@ -44,7 +44,9 @@ class Group_model extends CI_Model{
 		$data = array(
 			'group_name' => $this->input->post('group_name'),
 			'group_description' => $this->input->post('group_description'),
-			'group_contact' => $this->input->post('group_contact')
+			'group_contact' => $this->input->post('group_contact'),
+			'group_site' => $this->input->post('group_site'),
+			'group_needs' => $this->input->post('group_needs')
 		);
 
 		$this->db->where('id', $this->input->post('id'));
