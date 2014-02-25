@@ -1,6 +1,6 @@
 <?php
 function checkSession(){
-    echo getenv("REMOTE_USER");
+    echo getenv("CAS_MAIL");
 	$CI = & get_instance();
     //$CI->session->sess_destroy();
 	if(!$CI->session->userdata('validated')){
