@@ -1,8 +1,6 @@
 <?php
 function checkSession(){
-    echo "<pre>";
-    print_r($_ENV);
-    echo "</pre>";
+    echo getenv("CAS_UID")
 	$CI = & get_instance();
     //$CI->session->sess_destroy();
 	if(!$CI->session->userdata('validated')){
