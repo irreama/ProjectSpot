@@ -36,7 +36,7 @@
 						Just click login below to get started!
 					</p>
 				</div>
-				<p class="clear"></p><a class="button-element" href="ProjectSpot">Login</a>
+				<p class="clear"></p><a class="button-element" href="ProjectSpot/index.php">Login</a>
 			</div><!--End content-->
 			<div class="footer">
 				<div class="footer_content">
