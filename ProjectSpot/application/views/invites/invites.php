@@ -11,7 +11,8 @@
 		<div class="group">
 			<h4>Group</h4>
 			<?php
-			foreach ($invites['incoming'] as $anInvite){
+			if(count($invites['incoming'])){
+				foreach ($invites['incoming'] as $anInvite){
 			?>
 			<div data-invite-id="<?=$anInvite['id']?>" id="invite">
 				<label> 
@@ -22,6 +23,12 @@
 				<a class="invite-button button-element-small inline reject">X Reject</a>
 			</div>
 			<?php
+				}
+			}
+			else{
+			?>
+			<p>There are no incoming invites to display</p>
+			<?php
 			}
 			?>
 		</div>
@@ -31,7 +38,8 @@
 		<div class="student">
 			<h4>Student</h4>
 			<?php
-			foreach($invites['outgoing']['students'] as $anInvite){
+			if(isset($invites['outgoing']['students']) && count($invites['outgoing']['students'])){
+				foreach($invites['outgoing']['students'] as $anInvite){
 			?>
 			<div data-invite-id="<?=$anInvite['id']?>" class="invite">
 				<label>
@@ -41,13 +49,20 @@
 				<a class="invite-button button-element-small inline reject">X Revoke</a>
 			</div>
 			<?php
+				}
+			}
+			else{
+			?>
+			<p>There are no student invites to display</p>
+			<?php
 			}
 			?>
 		</div>
 		<div class="advisor">
 			<h4>Advisor</h4>
 			<?php
-			foreach($invites['outgoing']['advisors'] as $anInvite){
+			if(isset($invites['outgoing']['advisors']) && count($invites['outgoing']['advisors'])){
+				foreach($invites['outgoing']['advisors'] as $anInvite){
 			?>
 			<div data-invite-id="<?=$anInvite['id']?>" class="invite">
 				<label>
@@ -56,6 +71,12 @@
 				</label>
 				<a class="invite-button button-element-small inline reject">X Revoke</a>
 			</div>
+			<?php
+				}
+			}
+			else{
+			?>
+			<p>There are no advisor invites to display</p>
 			<?php
 			}
 			?>

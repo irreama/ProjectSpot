@@ -3,11 +3,12 @@ class Invites extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
+		checkSession();
 	}
 
 	public function index(){
 		$data['title'] = 'Invites';
-		$uid = 4;
+		$uid = $this->session->userdata('user_id');
 		$data['uid'] = $uid;
 
 		//Grab all recieved invites

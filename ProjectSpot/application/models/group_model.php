@@ -44,7 +44,9 @@ class Group_model extends CI_Model{
 		$data = array(
 			'group_name' => $this->input->post('group_name'),
 			'group_description' => $this->input->post('group_description'),
-			'group_contact' => $this->input->post('group_contact')
+			'group_contact' => $this->input->post('group_contact'),
+			'group_site' => $this->input->post('group_site'),
+			'group_needs' => $this->input->post('group_needs')
 		);
 
 		$this->db->where('id', $this->input->post('id'));
@@ -103,6 +105,24 @@ class Group_model extends CI_Model{
 		$group['group_creator'] = $this->user_model->get_user_by_id($group['group_creator']);
 
 		return $group;
+	}
+
+	public function addAvatar($uid, $file){
+		$data = array(
+			'group_avatar' => $file
+		);
+
+		$this->db->where('id', $uid);
+		return $this->db->update('ps_groups', $data);
+	}
+
+	public function clearAvatar($uid){
+		$data = array(
+			'group_avatar' => ""
+		);
+
+		$this->db->where('id', $uid);
+		return $this->db->update('ps_groups', $data);
 	}
 
 

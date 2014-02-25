@@ -42,10 +42,11 @@ class User_model extends CI_Model{
 
 		$data = array(
 			'user_description' => $this->input->post('user_description'),
-			'user_gender' => $this->input->post('user_gender')
+			'user_gender' => $this->input->post('user_gender'),
+			'user_site' => $this->input->post('user_site')
 		);
 
-		$this->db->where('id', $this->input->post('id'));
+		$this->db->where('id', $this->session->userdata('user_id'));
 		return $this->db->update('ps_users', $data);
 	}
 

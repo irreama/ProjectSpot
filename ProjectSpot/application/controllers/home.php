@@ -3,13 +3,14 @@ class Home extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
+		checkSession();
 		$this->load->model('user_model');
 		$this->load->model('group_model');
 	}
 
 	public function index(){
 		$data['title'] = 'Dashboard';
-		$uid = 4;
+		$uid = $this->session->userdata('user_id');
 
 		$this->load->model('user_tag_rel_model');
 		$this->load->model('group_user_rel_model');

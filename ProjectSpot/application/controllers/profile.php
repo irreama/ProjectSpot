@@ -11,6 +11,9 @@ class Profile extends CI_Controller {
 	 */
 	public function __construct(){
 		parent::__construct();
+
+		//Check if we're logged in
+		checkSession();
 		$this->load->model('user_model');
 		$this->load->model('major_model');
 		$this->load->model('user_tag_rel_model');
@@ -19,7 +22,7 @@ class Profile extends CI_Controller {
 
 	public function clearAvatar(){
 		$this->load->helper('file');
-		$uid = 4;
+		$uid = $this->session->userdata('user_id');
 
 		$this->user_model->clearAvatar($uid);
 
@@ -29,12 +32,12 @@ class Profile extends CI_Controller {
 	}
 
 	public function uploadAvatar(){
-		$uid = 4;
-		if(!is_dir('./images/avatars/'.$uid)){
-			mkdir('./images/avatars/'.$uid);
+		$uid = $this->session->userdata('user_id');
+		if(!is_dir('./images/avatars/profiles/'.$uid)){
+			mkdir('./images/avatars/profiles/'.$uid);
 		}
 
-		$config['upload_path'] = './images/avatars/'.$uid;
+		$config['upload_path'] = './images/avatars/profiles/'.$uid;
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size']	= '300';
 		$config['max_width']  = '1024';
@@ -52,7 +55,7 @@ class Profile extends CI_Controller {
 		else{
 			$avatarData = $this->upload->data();
 
-			$avatarPath = 'images/avatars/'.$uid.'/'.$avatarData['file_name'];
+			$avatarPath = 'images/avatars/profiles/'.$uid.'/'.$avatarData['file_name'];
 			$this->user_model->addAvatar($uid, $avatarPath);
 
 			$returnCodes['success'] = true;
@@ -101,7 +104,7 @@ class Profile extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('form_validation');
 
-		$id = 4;
+		$id = $this->session->userdata('user_id');
 
 		//Generate the data used in the views
 		$data['profile_item'] = $this->user_model->get_user_by_id($id);

@@ -9,9 +9,15 @@
 	<hr>
 </div>
 <div class="left_col">
-	<img src="<?=base_url()?>images/no_profile_icon2.png" width=200 height=200 alt="profile image"/>
-	<a class="button-element-small">Clear Image</a>
-	<a class="button-element-small">Upload an Image</a>
+	<img id="groupAvatar" src="<?=base_url()?><?=($group_item['group_avatar'] ? $group_item['group_avatar'] : "images/no_profile_icon2.png")?>" width=200 height=200 alt="profile image"/>
+	<form id="avatarForm" method="post" enctype="multipart/form-data">
+		<div class="button-element-small special-button">
+			<label>Upload an Image</label>
+			<input id="chooseAvatar" name="userfile" type="file" />
+			<input type="hidden" name="gid" value="<?=$group_item['id']?>"/>
+		</div>
+		<input id="clearAvatar" class="button-element-small full-width" type="button" value="Clear Image"/>
+	</form>
 </div><!--left column-->
 
 <div class="right_col">
@@ -52,9 +58,18 @@
 			<label class="title">Give a description of your group:</label>
 			<textarea class="input_field full_width" rows=5 name="group_description"><?php echo $group_item['group_description'];?></textarea>
 		</div>
+
+		<div class="needs">
+			<label class="title">What does your group need?:</label>
+			<textarea class="input_field full_width" rows=5 name="group_needs"><?php echo $group_item['group_needs'];?></textarea>
+		</div>
 		
 		<div class="contact">
 			<label class="title">Contact:</label><input class="input_field input_width" type="text" name="group_contact" value="<?php echo $group_item['group_contact'];?>"/>
+		</div>
+
+		<div class="site">
+			<label class="title">Site:</label><input class="input_field input_width" type="text" name="group_site" value="<?php echo $group_item['group_site'];?>"/>
 		</div>
 		
 		<div class="button_panel">
@@ -65,3 +80,43 @@
 	</form>
 </div><!--right column-->
 <p class="clear"></p>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#chooseAvatar").change(function(){
+		var formData = new FormData($("#avatarForm")[0]);
+
+		$.ajax({
+			url: '<?=base_url()?>index.php/group/uploadAvatar',
+			type: "POST",
+			data: formData,
+			dataType: "json",
+			success:function(data){
+				console.log(data);
+				if(data.success){
+					$("#groupAvatar").attr('src', '<?=base_url()?>'+data.filePath);
+				}
+				else{
+					alert(data.errors);
+					$("#avatarForm")[0].reset();
+				}
+			},
+			cache: false,
+			contentType: false,
+			processData: false
+		});
+	});
+
+	$("#clearAvatar").click(function(){
+		$.ajax({
+			url: '<?=base_url()?>index.php/group/clearAvatar',
+			type: "POST",
+			success:function(data){
+				$("#groupAvatar").attr('src', '<?=base_url()?>images/no_profile_icon2.png');
+			},
+			cache: false,
+			contentType: false,
+			processData: false
+		});
+	});
+});
+</script>

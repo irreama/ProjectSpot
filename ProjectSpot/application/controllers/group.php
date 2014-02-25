@@ -4,14 +4,73 @@ class Group extends CI_Controller{
 
 	public function __construct(){
 		parent::__construct();
+		checkSession();
 		$this->load->model('group_model');
 		$this->load->model('group_user_rel_model');
 		$this->load->model('group_tag_rel_model');
 		$this->load->model('major_model');
 	}
 
+		public function clearAvatar(){
+		$this->load->helper('file');
+		$uid = $this->session->userdata('user_id');
+		$gid = $this->input->post('gid');
+
+		//check to see if the user is a member
+		if($this->group_user_rel_model->isUserInGroup($uid, $gid)){
+			$this->group_model->clearAvatar($gid);
+
+			//delete_files('./images/avatars/'.$uid);
+			
+			echo "Deleted";
+		}
+	}
+
+	public function uploadAvatar(){
+		$uid = $this->session->userdata('user_id');
+		$gid = $this->input->post('gid');
+
+				//check to see if the user is a member
+		if($this->group_user_rel_model->isUserInGroup($uid, $gid)){
+			if(!is_dir('./images/avatars/groups/'.$gid)){
+				mkdir('./images/avatars/groups/'.$gid);
+			}
+
+			$config['upload_path'] = './images/avatars/groups/'.$gid;
+			$config['allowed_types'] = 'gif|jpg|png';
+			$config['max_size']	= '300';
+			$config['max_width']  = '1024';
+			$config['max_height']  = '768';
+			$config['file_name'] = $gid;
+			$config['overwrite'] = true;
+
+			$this->load->library('upload', $config);
+			$returnCodes = array();
+
+			if ( ! $this->upload->do_upload()){
+				$returnCodes['success'] = false;
+				$returnCodes['errors'] = $this->upload->display_errors();
+				$returnCodes['gid'] = $gid;
+			}
+			else{
+				$avatarData = $this->upload->data();
+
+				$avatarPath = 'images/avatars/groups/'.$gid.'/'.$avatarData['file_name'];
+				$this->group_model->addAvatar($gid, $avatarPath);
+
+				$returnCodes['success'] = true;
+				$returnCodes['filePath'] = $avatarPath;
+				
+			}
+
+			echo json_encode($returnCodes);
+		}
+
+		
+	}
+
 	public function acceptInvite(){
-		$sender = 4;
+		$sender = $this->session->userdata('user_id');
 		$id = $this->input->post('id');
 
 		$invite = $this->group_user_rel_model->get($id);
@@ -28,7 +87,7 @@ class Group extends CI_Controller{
 	}
 
 	public function rejectInvite(){
-		$sender = 4;
+		$sender = $this->session->userdata('user_id');
 		$id = $this->input->post('id');
 
 		$invite = $this->group_user_rel_model->get($id);
@@ -46,7 +105,7 @@ class Group extends CI_Controller{
 	}
 
 	public function requestToInvite(){
-		$sender = 4;
+		$sender = $this->session->userdata('user_id');
 		$gid = $this->input->post('gid');
 		$uid = $this->input->post('uid');
 		if(!$this->group_user_rel_model->isUserInAnyGroup($uid) && $this->group_user_rel_model->canUserRequestToJoin($uid, $gid)){
@@ -55,7 +114,7 @@ class Group extends CI_Controller{
 	}
 
 	public function invite(){
-		$sender = 4;
+		$sender = $this->session->userdata('user_id');
 		$gid = $this->input->post('gid');
 		$uid = $this->input->post('uid');
 		if(!$this->group_user_rel_model->isUserInAnyGroup($uid) && $this->group_user_rel_model->canUserRequestToJoin($uid, $gid)){
@@ -64,9 +123,16 @@ class Group extends CI_Controller{
 	}
 
 	public function landing(){
+		$uid = $this->session->userdata('user_id');
+
+		//Load the user Model
+		$this->load->model("user_model");
+
 		//check to see if the user is in a group
 		//Fix this for live
-		$data['group_item'] = $this->group_user_rel_model->get_all_groups_by_user_id(4);
+		$data['group_item'] = $this->group_user_rel_model->get_all_groups_by_user_id($uid);
+		$user = $this->user_model->get_user_by_id($uid);
+
 
 		if(empty($data['group_item'])){
 			$data['title'] = "Groups";
@@ -74,9 +140,15 @@ class Group extends CI_Controller{
 			$this->load->view('group/landing', $data);
 			$this->load->view('templates/footer');
 		}
-		else{
+		else if($user['user_status'] != "Advisor"){
 			$this->load->helper('url');
 			redirect('group/view/'.$data['group_item'][0]['id']);
+		}
+		else{
+			$data['title'] = "Groups";
+			$this->load->view('templates/header', $data);
+			$this->load->view('group/advisorLanding', $data);
+			$this->load->view('templates/footer');
 		}
 		
 		
@@ -138,7 +210,7 @@ class Group extends CI_Controller{
 		$this->load->helper('url');
 		$this->load->library('form_validation');
 
-		$uid = 4;
+		$uid = $this->session->userdata('user_id');
 
 		$data['title'] = "New Group";
 
@@ -163,13 +235,6 @@ class Group extends CI_Controller{
 			redirect('group/view/'.$new_id);
 		}
 	}
-
-
-
-
-
-
-
 }
 
 
