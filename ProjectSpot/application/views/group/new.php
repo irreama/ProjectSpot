@@ -5,6 +5,7 @@
 </div><!--left column-->
 
 <div class="right_col">
+	<?php echo validation_errors(); ?>
 	<?php
 	echo form_open('group/new/');
 	?>

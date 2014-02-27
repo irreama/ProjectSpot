@@ -9,6 +9,8 @@ class Group extends CI_Controller{
 		$this->load->model('group_user_rel_model');
 		$this->load->model('group_tag_rel_model');
 		$this->load->model('major_model');
+
+		$data['displayName'] = $this->session->userdata('display_name');
 	}
 
 		public function clearAvatar(){

@@ -21,6 +21,7 @@
 </div><!--left column-->
 
 <div class="right_col">
+	<?php echo validation_errors(); ?>
 	<?php
 	//Start Generating form fields and their data
 	echo form_open('group/edit/'.$group_item['id']);

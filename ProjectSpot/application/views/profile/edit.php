@@ -21,6 +21,7 @@
 <div class="right_col">
 	<div class="info">
 		<div class="basic_info">
+			<?php echo validation_errors(); ?>
 			<?php
 			//Start Generating form fields and their data
 			echo form_open('profile/edit/'.$profile_item['id']);
@@ -66,7 +67,20 @@
 				if($profile_item['user_status'] != 'Advisor'){
 				?>
 				<label class="title">Graduation Year:</label>
-				<label><?php echo $profile_item['user_grad_year'] ?></label>
+				<select name="user_grad_year">
+					<option value=""<?=(!$profile_item['user_grad_year'] ? ' slected="selected"' : '')?>>Not Specified</option>
+				<?php
+				$currYear = date("Y");
+				$startYear = $currYear - 2;
+
+				for($i = $startYear; $i <= ($startYear + 15); $i++){
+				?>
+
+					<option value="<?=$i?>"<?=(!$profile_item['user_grad_year'] == $i ? ' slected="selected"' : '')?>><?=$i?></option>
+				<?php
+				}
+				?>
+				</select>
 				<?php
 				}
 				?>

@@ -9,6 +9,7 @@ class Home extends CI_Controller {
 	}
 
 	public function index(){
+
 		$data['title'] = 'Dashboard';
 		$uid = $this->session->userdata('user_id');
 
@@ -29,6 +30,14 @@ class Home extends CI_Controller {
 				'text' => "Add your interests to your profile",
 				'linkText' => "Add interests now",
 				'link' => "profile/interests/edit"
+			);
+		}
+
+		if(!$user['user_grad_year']){
+			$data['messages']['user'][] = array(
+				'text' => "Select your graduation year in your profile",
+				'linkText' => "Add a graduation year now",
+				'link' => "profile/edit"
 			);
 		}
 

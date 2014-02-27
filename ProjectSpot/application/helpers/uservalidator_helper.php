@@ -1,6 +1,5 @@
 <?php
 function checkSession(){
-    echo getenv("CAS_MAIL");
 	$CI = & get_instance();
     //$CI->session->sess_destroy();
 	if(!$CI->session->userdata('validated')){
@@ -12,7 +11,7 @@ function checkSession(){
 			'validated' => true
 		);
 
-		$CI->session->set_userdata($sessData);
+		//$CI->session->set_userdata($sessData);
     }
     else{
     	echo "<pre>";

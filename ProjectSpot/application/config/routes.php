@@ -59,6 +59,8 @@ $route['group/view/(:any)'] = 'group/view/$1';
 $route['group/edit/(:any)'] = 'group/edit/$1';
 $route['group/new'] = 'group/create/';
 $route['group/interests/edit/(:any)'] = 'tag_rels/edit_group/$1';
+$route['login'] = "login/loginHandler";
+$route['logout'] = "login/logoutHandler";
 
 
 

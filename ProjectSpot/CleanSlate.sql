@@ -9,11 +9,12 @@ DROP TABLE IF EXISTS `ps_majors`;
 CREATE TABLE `ps_majors` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`major_text` varchar(255) NOT NULL DEFAULT '',
+	`ldap_name` varchar(255) NOT NULL DEFAULT '',
 	PRIMARY KEY (`id`)
 );
 
-INSERT INTO `ps_majors` (major_text)
-VALUES ('Computer Science');
+INSERT INTO `ps_majors` (major_text, ldap_name)
+VALUES ('Computer Science', 'CS');
 
 --
 -- Table Structure for ps_users
@@ -25,7 +26,7 @@ CREATE TABLE `ps_users` (
 	`user_login` varchar(100) NOT NULL,
 	`user_first_name` varchar(50) NOT NULL,
 	`user_last_name` varchar(50) NOT NULL,
-	`user_grad_year` YEAR NOT NULL,
+	`user_grad_year` YEAR,
 	`user_status` ENUM('Student', 'Advisor', 'Other') NOT NULL DEFAULT 'Student',
 	`user_email` varchar(255) NOT NULL DEFAULT '',
 	`user_gender` varchar(20) NOT NULL DEFAULT 'Not Provided',
@@ -40,8 +41,8 @@ CREATE TABLE `ps_users` (
 	FOREIGN KEY (`user_major2`) REFERENCES ps_majors(`id`)
 );
 
-INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_grad_year, user_status, user_email, user_major1)
-VALUES ('afisher', 'Anthony', 'Fisher', 2014, 'Student', 'afisher@wpi.edu', 1);
+INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_status, user_email, user_major1)
+VALUES ('bad', 'Anthony', 'Fisher', 'Student', 'afisher@wpi.edu', 1);
 
 INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_grad_year, user_status, user_email, user_major1)
 VALUES ('mcoryea14', 'Madalyn', 'Coryea', 2014, 'Student', 'mcoryea14@wpi.edu', 1);

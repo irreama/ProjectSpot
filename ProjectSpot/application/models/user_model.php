@@ -42,6 +42,7 @@ class User_model extends CI_Model{
 
 		$data = array(
 			'user_description' => $this->input->post('user_description'),
+			'user_grad_year' => (!$this->input->post('user_grad_year')? null : $this->input->post('user_grad_year')),
 			'user_gender' => $this->input->post('user_gender'),
 			'user_site' => $this->input->post('user_site')
 		);
@@ -52,11 +53,16 @@ class User_model extends CI_Model{
 
 	/**
 	 * Add this new user to the database after scraping their information
-	 * @param  String $login The user's login information
-	 * @return Boolean True if the user was saved correctly, false if there was an issue.
+	 * @param  Array $user The user's information
+	 * @return Mixed The id of the user if the user was saved correctly, false if there was an issue.
 	 */
-	public function new_user($login){
-		return true;
+	public function new_user($user){
+		if($this->db->insert('ps_users', $user)){
+			return $this->db->insert_id();
+		}
+		else{
+			return false;
+		}
 	}
 
 	/**
