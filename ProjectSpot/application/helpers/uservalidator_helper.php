@@ -1,5 +1,6 @@
 <?php
 function checkSession(){
+    echo getenv("REMOTE_USER");
 	$CI = & get_instance();
     //$CI->session->sess_destroy();
 	if(!$CI->session->userdata('validated')){
