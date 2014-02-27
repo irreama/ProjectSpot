@@ -24,7 +24,7 @@ $CI =& get_instance();
 						<li><a href="<?=base_url()?>index.php/profile/view/<?=$CI->session->userdata('user_id')?>"><img class="nav-image" src="<?=base_url()?>images/profile_icon.png"><span>Profile</span></a></li> <!--student, advisor pages (no profile template?)/-->
 						<li><a href="<?=base_url()?>index.php/group"><img class="nav-image" src="<?=base_url()?>images/group_icon.png"><span>Group</span></a></li>
 						<li><a href="<?=base_url()?>index.php/invites"><img class="nav-image" src="<?=base_url()?>images/mail_icon.png"><span>Invitations</span></a></li>
-						<li><a href="<?=base_url()?>index.php/logout"><span>Logout</span></a></li>
+						<li><a href="<?=base_url()?>index.php/logout"><img class="nav-image" src="<?=base_url()?>images/logout_icon.png"><span>Logout</span></a></li>
 					</ul>
 				</div>
 				<!--div class="welcome">Welcome Test User, <a class="logout" href="<?=base_url()?>index.php/home">Logout</a></div-->
