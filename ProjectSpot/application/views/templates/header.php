@@ -26,7 +26,7 @@ $CI =& get_instance();
 						<li><a href="<?=base_url()?>index.php/invites"><img class="nav-image" src="<?=base_url()?>images/mail_icon.png"><span>Invitations</span></a></li>
 					</ul>
 				</div>
-				<div class="welcome">Welcome Test User, <a class="logout" href="<?=base_url()?>index.php/home">Logout</a></div>
+				<!--div class="welcome">Welcome Test User, <a class="logout" href="<?=base_url()?>index.php/home">Logout</a></div-->
 			</div>
 			
 			<div class="content">
