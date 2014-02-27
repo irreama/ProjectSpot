@@ -6,8 +6,10 @@
 	<a class="close" href="#">X</a>
 </div>
 <h2>Dashboard</h2><p class="clear"></p>
-<!-- This needs to pull the real data Anthony! -->
-<div class="welcome">Welcome, Test User!</div>
+<?php 
+	$ci = & get_instance();
+?>
+<div class="welcome">Welcome, <?=$ci->session->userdata('display_name') ?>!</div>
 <div class="left">
 	<div id="todo">
 		<h3>To-Do List</h3>
