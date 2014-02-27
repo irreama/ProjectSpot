@@ -13,12 +13,12 @@
 		<input type="hidden" name="group_creator" value="4"/>
 		
 		<div>
-			<label class="title">Title:</label>
+			<label class="title">Project Title:</label>
 			<input class="group_name" type="text" name="group_name"/>
 		</div>
 		
 		<div>
-			<label class="title">Description:</label>
+			<label class="title">Description of the Project:</label>
 			<textarea class="group_description" name="group_description"></textarea>
 		</div>
 		
