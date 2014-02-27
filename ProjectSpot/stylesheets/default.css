@@ -78,13 +78,14 @@ a:active{
 	height: 100%;
 }
 .nav li{
-	/*background-color:red;*/
+	background-color:red;
 	float: left;
 	text-decoration: none;
 	display: block;
 	border-right:solid 2px black;
-	border-top:solid 2px black;
+	border-top:solid 1px black;
 	border-left:solid 1px white;
+	border-bottom:solid 1px black;
 	height:100%;
 }
 .nav a{
