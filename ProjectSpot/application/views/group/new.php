@@ -3,7 +3,7 @@
 	<h2>Create a new group</h2>
 </div>
 
-<div>
+<div class="group-form">
 	<?php
 	echo form_open('group/new/');
 	?>
@@ -35,7 +35,7 @@
 			</p>
 		</div>
 		
-		<input class="enter button-element-small" type="submit" name="submit" value="Create Group"/>
+		<input class="enter button-element" type="submit" name="submit" value="Create Group"/>
 	</div>
 	</form>
 </div>
