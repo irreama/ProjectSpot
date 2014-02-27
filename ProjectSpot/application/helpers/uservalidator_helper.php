@@ -14,9 +14,7 @@ function checkSession(){
 		//$CI->session->set_userdata($sessData);
     }
     else{
-    	echo "<pre>";
-    	print_r($CI->session->userdata);
-    	echo "</pre>";
+
     }
 }
 
