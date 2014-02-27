@@ -2,6 +2,8 @@ html{font-family:"trebuchet ms", trebuchet ms, sans-serif;}
 body{margin:0px;}
 h1{font-family:"Arial", arial, sans-serif;}
 h2{display: inline;}
+h3{font-size:14pt;}
+textarea{resize:vertical; font-size:14pt;font-family:"trebuchet ms", trebuchet ms, sans-serif; padding:2px;}
 html,body {
 	margin:0;
 	padding:0;
@@ -32,6 +34,7 @@ a:active{
 	border-bottom:2px solid #000000;
 	height:40px;
 	z-index:1;
+	min-width:1200px;
 }
 .banner h1{
 	float:left;
@@ -45,8 +48,8 @@ a:active{
 	margin:10px;
 	z-index:10;
 	font-weight:bold;
-	float:left;
 	color:black;
+	display:block;
 }
 
 .logout:link{
@@ -78,13 +81,14 @@ a:active{
 	height: 100%;
 }
 .nav li{
-	/*background-color:red;*/
+	background-color:red;
 	float: left;
 	text-decoration: none;
 	display: block;
 	border-right:solid 2px black;
-	border-top:solid 2px black;
+	border-top:solid 1px black;
 	border-left:solid 1px white;
+	border-bottom:solid 1px black;
 	height:100%;
 }
 .nav a{
@@ -119,6 +123,7 @@ a:active{
 .content{
 	width: 65%;
 	min-height: 100%;
+	min-width:600px;
 	margin: 0px auto;
 	margin-bottom: 0;
 	background-color: white;
@@ -355,4 +360,15 @@ a:active{
 }
 .full-width{
 	width:100%;
+}
+
+.information{
+	border:1px solid gray;
+	padding:10px 20px;
+	border-radius:10px;
+	background-color:#d7d7d7;
+	color:gray;
+}
+.profile-info{
+	margin-top:15px;
 }
