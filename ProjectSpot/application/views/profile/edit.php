@@ -121,7 +121,8 @@
 			<h3>Why can't I change some information?</h3>
 			<p>
 				Name, major, graduation year, and contact is pulled from WPI. If you think there is an error,
-				you should contact the school and make sure your information is up-to-date.
+				you should contact the school and make sure your information is up-to-date. An MQP will be displayed
+				on your profile only once you have joined a group in ProjectSpot.
 			</p>
 		</div>
 			
