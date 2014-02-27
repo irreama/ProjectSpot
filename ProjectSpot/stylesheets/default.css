@@ -356,3 +356,11 @@ a:active{
 .full-width{
 	width:100%;
 }
+
+.information{
+	border:1px solid gray;
+	padding:10px 20px;
+	border-radius:10px;
+	background-color:#d7d7d7;
+	color:gray;
+}

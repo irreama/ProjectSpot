@@ -1,5 +1,6 @@
+<link rel="stylesheet" type="text/css" href="<?=base_url()?>stylesheets/create_group.css">
 <div class="page-title">
-	<h2>This is a group page</h2>
+	<h2>Create a new group</h2>
 </div>
 <div class="left_col">
 </div><!--left column-->
@@ -10,12 +11,33 @@
 	?>
 	<div class="info">
 		<input type="hidden" name="group_creator" value="4"/>
-		<label class="title">Title:</label><input type="text" name="group_name"/><br/>
-		<label class="title">Description:</label>
-		<textarea name="group_description"></textarea><br/>
-		<br/>
-		<label class="title">Group Contact:</label><input type="text" name="group_contact" value="test@wpi.edu"/>
-		<input class="enter" type="submit" name="submit" value="Create Group"/>
+		
+		<div>
+			<label class="title">Title:</label>
+			<input class="group_name" type="text" name="group_name"/>
+		</div>
+		
+		<div>
+			<label class="title">Description:</label>
+			<textarea class="group_description" name="group_description"></textarea>
+		</div>
+		
+		<!-- Anthony where is the other description box? -->
+		
+		<div>
+			<label class="title">Group Contact:</label>
+			<input class="group_contact" type="text" name="group_contact" value="test@wpi.edu"/>
+		</div>
+		
+		<div class="information">
+			<h3>Why can't I add group members?</h3>
+			<p>
+				ProjectSpot works off-of a request-system. To add a member, that person must have created a profile by logging in.
+				You can then add that person by going to his/her profile page, and clicking the "invite to group" button.
+			</p>
+		</div>
+		
+		<input class="enter button-element-small" type="submit" name="submit" value="Create Group"/>
 	</div>
 	</form>
 </div><!--right column-->
