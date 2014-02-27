@@ -121,6 +121,7 @@ a:active{
 .content{
 	width: 65%;
 	min-height: 100%;
+	min-width:600px;
 	margin: 0px auto;
 	margin-bottom: 0;
 	background-color: white;
