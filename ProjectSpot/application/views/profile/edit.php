@@ -116,6 +116,15 @@
 		}
 		?>
 		
+					
+		<div class="information profile-info">
+			<h3>Why can't I change some information?</h3>
+			<p>
+				Name, major, graduation year, and contact is pulled from WPI. If you think there is an error,
+				you should contact the school and make sure your information is up-to-date.
+			</p>
+		</div>
+			
 		<div class="button_panel">
 			<a class="button-element-small cancel" href="<?=base_url()?>index.php/profile/view/<?php echo $profile_item['id']?>">Cancel</a>
 			<input class="button-element-small edit" type="submit" name="submit" value="Save" />

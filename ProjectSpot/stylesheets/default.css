@@ -2,6 +2,8 @@ html{font-family:"trebuchet ms", trebuchet ms, sans-serif;}
 body{margin:0px;}
 h1{font-family:"Arial", arial, sans-serif;}
 h2{display: inline;}
+h3{font-size:14pt;}
+textarea{resize:vertical; font-size:14pt;font-family:"trebuchet ms", trebuchet ms, sans-serif; padding:2px;}
 html,body {
 	margin:0;
 	padding:0;
@@ -366,4 +368,7 @@ a:active{
 	border-radius:10px;
 	background-color:#d7d7d7;
 	color:gray;
+}
+.profile-info{
+	margin-top:15px;
 }
