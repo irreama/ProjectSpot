@@ -2,10 +2,8 @@
 <div class="page-title">
 	<h2>Create a new group</h2>
 </div>
-<div class="left_col">
-</div><!--left column-->
 
-<div class="right_col">
+<div>
 	<?php
 	echo form_open('group/new/');
 	?>
@@ -40,4 +38,4 @@
 		<input class="enter button-element-small" type="submit" name="submit" value="Create Group"/>
 	</div>
 	</form>
-</div><!--right column-->
+</div>
