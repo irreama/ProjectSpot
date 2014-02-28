@@ -6,6 +6,7 @@
 </div><!--left column-->
 
 <div class="right_col clearfix">
+	<div id="button-div">
 	<?php
 	$CI =& get_instance();
 
@@ -26,6 +27,7 @@
 	<?php
 	}
 	?>
+	</div>
 	<div class="info">
 		<div class="basic_info">
 			<label class="title">Project Title:</label>
@@ -92,7 +94,8 @@ $(document).ready(function(){
 			},
 			success:function(data){
 				console.log(data);
-				button.addClass("disabled-button");
+				button.remove();
+				$("#button-div").html('<div class="disabled-button edit button-element-small">Invite to Group</div>');
 			}
 		})
 	})
