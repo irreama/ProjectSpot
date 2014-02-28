@@ -70,7 +70,7 @@ class Major_model extends CI_Model{
 	}
 
 	public function getMajorIdByName($name){
-		$query = $this->db->get_where('ps_majors', array('major_name' => $name));
+		$query = $this->db->get_where('ps_majors', array('major_text' => $name));
 		$major = $query->row_array();
 		return $major['id'];
 	}
