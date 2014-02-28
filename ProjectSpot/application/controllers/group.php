@@ -79,7 +79,7 @@ class Group extends CI_Controller{
 
 		$invite = $this->group_user_rel_model->get($id);
 
-		$requesterModel = $this->user_mode->get_user_by_id($invite['user_id']);
+		$requesterModel = $this->user_model->get_user_by_id($invite['user_id']);
 
 		if($this->group_user_rel_model->isUserInGroup($sender, $invite['group_id'])){
 			$this->group_user_rel_model->delete($id);
