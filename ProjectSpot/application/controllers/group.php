@@ -272,27 +272,34 @@ class Group extends CI_Controller{
 
 		$uid = $this->session->userdata('user_id');
 
-		$data['title'] = "New Group";
+		$currUser = $this->user_model->get_user_by_id($uid);
 
-		$this->form_validation->set_rules('group_creator', 'group_creator', 'required');
-		$this->form_validation->set_rules('group_name', 'Group Name', 'required');
+		if(!$this->group_user_rel_model->isUserInAnyGroup($uid) || $currUser['user_status'] == "Advisor"){
+			$data['title'] = "New Group";
 
-		if($this->form_validation->run() == FALSE){
+			$this->form_validation->set_rules('group_creator', 'group_creator', 'required');
+			$this->form_validation->set_rules('group_name', 'Group Name', 'required');
 
-			//If the form is not validated, display the form again.
-			$this->load->view('templates/header', $data);
-			$this->load->view('group/new');
-			$this->load->view('templates/footer');
+			if($this->form_validation->run() == FALSE){
+
+				//If the form is not validated, display the form again.
+				$this->load->view('templates/header', $data);
+				$this->load->view('group/new');
+				$this->load->view('templates/footer');
+			}
+			else{
+				//Save the group
+				$new_id = $this->group_model->new_group();
+
+				$this->group_user_rel_model->new_group_user_rel($new_id, $uid, null, 'Accepted');
+
+
+				//Head to the group view page
+				redirect('group/view/'.$new_id);
+			}
 		}
 		else{
-			//Save the group
-			$new_id = $this->group_model->new_group();
-
-			$this->group_user_rel_model->new_group_user_rel($new_id, $uid, null, 'Accepted');
-
-
-			//Head to the group view page
-			redirect('group/view/'.$new_id);
+			redirect('group');
 		}
 	}
 }

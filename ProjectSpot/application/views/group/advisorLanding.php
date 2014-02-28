@@ -1,6 +1,8 @@
 <!--Rename this stylesheet link after whatever you name this file, and then put in stylesheets folder -->
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>stylesheets/YOUR_NAME_HERE.css">
 
+<a class="edit button-element-small" href="<?=base_url()?>index.php/group/new/">Create a Group</a>
+
 <!--for loop here: each project is it's own div. projects listed in alphabetical order-->
 <?php
 	foreach($group_item as $aGroup){
