@@ -107,7 +107,7 @@
 				}
 				echo implode(',&nbsp;', $tag_array);
 			?>
-			<a class="button-element-small" href="<?=base_url()?>index.php/profile/interests/edit/<?php echo $profile_item['id']?>">
+			<a class="button-element-small" href="<?=base_url()?>index.php/profile/interests/edit">
 				Edit Interests
 			</a>
 		</div>	
