@@ -29,7 +29,7 @@
 		
 		<div>
 			<label class="title">Group Contact:</label>
-			<input class="group_contact" type="text" name="group_contact" value="test@wpi.edu"/>
+			<input class="group_contact" type="text" name="group_contact" value="<?=$contact?>"/>
 		</div>
 		
 		<div class="information">

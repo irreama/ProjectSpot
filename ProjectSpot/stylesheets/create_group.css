@@ -16,6 +16,13 @@ div{margin-bottom:30px;}
 	border-radius:5px;
 }
 
+.group_needs{
+	/*width:400px;*/
+	width:100%;
+	height:200px;
+	border-radius:5px;
+}
+
 .group_contact{
 	width:300px;
 	border-radius:5px;

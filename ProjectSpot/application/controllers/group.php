@@ -275,6 +275,8 @@ class Group extends CI_Controller{
 
 		$currUser = $this->user_model->get_user_by_id($uid);
 
+		$data['contact'] = $currUser['user_email'];
+
 		if(!$this->group_user_rel_model->isUserInAnyGroup($uid) || $currUser['user_status'] == "Advisor"){
 			$data['title'] = "New Group";
 
