@@ -160,7 +160,6 @@ $(document).ready(function(){
 			},
 			success:function(data){
 				if(data == "true"){
-					
 					if(confirm("By removing the last member, you will delete this group. Are you sure you want to delete this group?")){
 						$.ajax({
 							url: '<?=base_url()?>index.php/group/removeGroup',
@@ -169,7 +168,7 @@ $(document).ready(function(){
 								gid: "<?=$group_item['id']?>",
 							},
 							success:function(data){
-								window.location = "<?=base_url()?>index.php/group";
+								//window.location = "<?=base_url()?>index.php/group";
 							}
 						});
 					}
