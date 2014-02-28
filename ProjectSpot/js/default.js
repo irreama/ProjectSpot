@@ -6,7 +6,7 @@ $('input[type="checkbox"]').on('click', function(event) {
 });
 
 //Handle the Interests Page
-$(".tag_item").on("click", function(){
+$(document).on("click", ".tag_item", function(){
 	var checkbox = $(this).children("input");
 	checkbox.prop("checked", !checkbox.prop("checked"));
 
@@ -25,10 +25,6 @@ $(".tag_item").on("click", function(){
 	}
 });
 
-$('.tag_listing').on('change', 'input[type="checkbox"]', function(){
-	console.log("Checkbox Changed");
-	
-})
 var cookieVal = $.cookie("helpText"+window.location.pathname);
 if (cookieVal == "1"){
 	$(".help-text").hide();
