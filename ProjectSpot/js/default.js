@@ -3,7 +3,10 @@ $(document).ready(function(){
 //Handle the Interests Page
 $(".tag_listing").on("click", ".tag_item", function(event){
 	var checkbox = $(this).children("input");
-	checkbox.prop("checked", !checkbox.prop("checked"));
+	if(event.target.nodeName != "INPUT"){
+		checkbox.prop("checked", !checkbox.prop("checked"));
+	}
+
 
 	if(checkbox.is(':checked')){
 		//Add it to the form
