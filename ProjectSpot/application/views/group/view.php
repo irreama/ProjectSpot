@@ -10,7 +10,7 @@
 	$CI =& get_instance();
 
 	$CI->load->model('group_user_rel_model');
-	if($CI->group_user_rel_model->isUserInGroup(4,$group_item['id'])){
+	if($CI->group_user_rel_model->isUserInGroup($CI->session->userdata('user_id'),$group_item['id'])){
 		?>
 	<a class="edit button-element-small" href="<?=base_url()?>index.php/group/edit/<?php echo $group_item['id'];?>">Edit Page</a>
 	<?php
