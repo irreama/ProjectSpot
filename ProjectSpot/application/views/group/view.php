@@ -17,8 +17,13 @@
 	}
 	else if(!$CI->group_user_rel_model->isUserInAnyGroup($CI->session->userdata('user_id')) && $CI->group_user_rel_model->canUserRequestToJoin($CI->session->userdata('user_id'),$group_item['id'])){
 		?>
-	<button type="button" class="edit button-element-small" id="requestInvite" data-uid="4" data-gid="<?=$group_item['id']?>">Request to Join</button>
+	<button type="button" class="edit button-element-small" id="requestInvite" data-uid="<?=$CI->session->userdata('user_id')?>" data-gid="<?=$group_item['id']?>">Request to Join</button>
 		<?php
+	}
+	else{
+	?>
+		<button type="button" class="edit button-element-small inactive">Request to Join</button>
+	<?php
 	}
 	?>
 	<div class="info">
@@ -77,6 +82,7 @@
 <script>
 $(document).ready(function(){
 	$("#requestInvite").click(function(){
+		var button = $(this);
 		$.ajax({
 			type:"POST",
 			url:'<?=base_url()?>/index.php/group/requestToInvite',
@@ -86,6 +92,7 @@ $(document).ready(function(){
 			},
 			success:function(data){
 				console.log(data);
+				button.addClass("inactive");
 			}
 		})
 	})

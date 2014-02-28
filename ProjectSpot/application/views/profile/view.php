@@ -35,6 +35,11 @@
 			<button id="inviteButton" type="button" class="edit button-element-small" id="invite" data-uid="<?=$profile_item['id']?>" data-gid="<?=$currGroup?>">Invite to Group</button>
 			<?php
 		}
+		else{
+			?>
+			<button type="button" class="inactive edit button-element-small">Invite to Group</button>
+		<?php
+		}
 	?>
 	
 	<div class="info">
@@ -147,6 +152,7 @@
 <script>
 $(document).ready(function(){
 	$("#inviteButton").click(function(){
+		var button = $(this);
 		$.ajax({
 			type:"POST",
 			url:'<?=base_url()?>/index.php/group/invite',
@@ -156,6 +162,7 @@ $(document).ready(function(){
 			},
 			success:function(data){
 				console.log(data);
+				button.addClass("inactive");
 			}
 		})
 	})
