@@ -2,10 +2,10 @@
 <html>
 	<head>
 		<title>Home - ProjectSpot</title>
-		<link rel="stylesheet" type="text/css" href="ProjectSpot/stylesheets/default.css">
-		<link rel="stylesheet" type="text/css" href="ProjectSpot/stylesheets/student.css">
+		<link rel="stylesheet" type="text/css" href="stylesheets/default.css">
+		<link rel="stylesheet" type="text/css" href="stylesheets/student.css">
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-		<script src="ProjectSpot/js/default.js"></script>
+		<script src="js/default.js"></script>
 
 	</head>
 	
@@ -17,11 +17,10 @@
 				</h1>
 			</div>
 			<div class="content">
-				<link rel="stylesheet" type="text/css" href="ProjectSpot/stylesheets/home.css">
-				<link rel="stylesheet" type="text/css" href="ProjectSpot/stylesheets/default.css">
+				<link rel="stylesheet" type="text/css" href="stylesheets/home.css">
 				<h1>
 					Welcome to ProjectSpot
-				</h1><img class="gompei" src="ProjectSpot/images/gompei_pspot_firstdraft.png" alt="pspot logo">
+				</h1><img class="gompei" src="images/gompei_pspot_firstdraft.png" alt="pspot logo">
 				<div class="welcome-text">
 					<p>
 						Welcome to ProjectSpot! ProjectSpot is a website for WPI Computer Science, Robotics, and IMGD students who are looking for MQP groups, partners, and advisors.
@@ -40,7 +39,7 @@
 			</div><!--End content-->
 			<div class="footer">
 				<div class="footer_content">
-					<img class="wpi right-foot" src="ProjectSpot/images/WPI_white.png" alt="wpi logo">
+					<img class="wpi right-foot" src="images/WPI_white.png" alt="wpi logo">
 					<div class="left-foot">
 						<p>
 							WPI
