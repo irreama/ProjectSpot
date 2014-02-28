@@ -1,6 +1,11 @@
 $(document).ready(function(){
 
 //Handle the Interests Page
+$(".tag_item").on("click", function(){
+	var checkbox = $(this).children("input");
+
+	checkbox.prop("checked", !checkbox.prop("checked"));
+});
 
 $('.tag_listing').on('change', 'input[type="checkbox"]', function(){
 	console.log("Checkbox Changed");
