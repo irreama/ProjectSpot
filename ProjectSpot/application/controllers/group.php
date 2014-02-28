@@ -100,7 +100,7 @@ class Group extends CI_Controller{
 
 		$requesterModel = $this->user_mode->get_user_by_id($invite['user_id']);
 
-		if($this->group_user_rel_model->isUserInGroup($sender, $invite['group_id']) && (!$this->group_user_rel_model->isUserInAnyGroup($invite['user_id'])) || $requesterModel['user_status'] == "Advisor")){
+		if($this->group_user_rel_model->isUserInGroup($sender, $invite['group_id']) && (!$this->group_user_rel_model->isUserInAnyGroup($invite['user_id']) || $requesterModel['user_status'] == "Advisor")){
 			$this->group_user_rel_model->update($id, "accepted");
 			echo json_encode(true);
 		}
