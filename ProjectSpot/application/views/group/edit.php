@@ -36,7 +36,7 @@
 				<?php
 				foreach($group_item['users'] as $a_user){
 				?>
-				<label class="title"><?php echo($a_user['user_status'] == "Advisor" ? "Advisor" : $a_user['user_major1']['major_text']);?>:</label><label><?php echo $a_user['user_first_name'];?> <?php echo $a_user['user_last_name'];?></label>
+				<label class="title"><?php echo($a_user['user_status'] == "Advisor" ? "Advisor" : $a_user['user_major1']['major_text']);?>:</label><label><?php echo $a_user['user_first_name'];?> <?php echo $a_user['user_last_name'];?> <a class="removeMember" data-uid="<?=$a_user['user_id']?>" data-gid="<?=$group_item['id']?>">Remove</a></label>
 				<?php
 				}
 			?>

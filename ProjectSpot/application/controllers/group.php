@@ -234,7 +234,6 @@ class Group extends CI_Controller{
 			$data['group_item'] = $this->group_model->get_group_by_id($id);
 			$users = $this->group_user_rel_model->get_all_users_by_group_id($id);
 			foreach($users as $user){
-				print_r($user);
 				$user['user_major1'] = $this->major_model->get_major_by_id($user['user_major1']);
 				$data['group_item']['users'][] = $user;
 			}
