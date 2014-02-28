@@ -101,7 +101,6 @@ $(document).ready(function(){
 					$("#avatarForm")[0].reset();
 				}
 			},
-			cache: false,
 			contentType: false,
 			processData: false
 		});
@@ -114,7 +113,6 @@ $(document).ready(function(){
 			success:function(data){
 				$("#groupAvatar").attr('src', '<?=base_url()?>images/no_profile_icon2.png');
 			},
-			cache: false,
 			contentType: false,
 			processData: false
 		});
@@ -136,7 +134,6 @@ $(document).ready(function(){
 					console.log("Member Not Removed");
 				}
 			},
-			cache: false,
 			contentType: false,
 			processData: false
 		});
@@ -163,7 +160,6 @@ $(document).ready(function(){
 					removeMember(uid, gid);
 				}
 			},
-			cache: false,
 			contentType: false,
 			processData: false
 		});
