@@ -44,8 +44,8 @@ CREATE TABLE `ps_users` (
 INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_status, user_email, user_major1)
 VALUES ('bad', 'Anthony', 'Fisher', 'Student', 'afisher@wpi.edu', 1);
 
-INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_grad_year, user_status, user_email, user_major1)
-VALUES ('mcoryea14', 'Madalyn', 'Coryea', 2014, 'Student', 'mcoryea14@wpi.edu', 1);
+--INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_grad_year, user_status, user_email, user_major1)
+--VALUES ('mcoryea14', 'Madalyn', 'Coryea', 2014, 'Student', 'mcoryea14@wpi.edu', 1);
 
 INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_grad_year, user_status, user_email, user_major1)
 VALUES ('dcb', 'David', 'Brown', 2014, 'Advisor', 'dcb@wpi.edu', 1);
