@@ -18,7 +18,7 @@ class Group extends CI_Controller{
 		$gid = $this->input->post("gid");
 
 		//Check to see if there aren't more members in this group
-		if(count($this->group_user_rel_model->get_all_users_by_group_id($gid) == 1)){
+		if(count($this->group_user_rel_model->get_all_users_by_group_id($gid)) == 1){
 			echo "true";
 		}
 		else{
