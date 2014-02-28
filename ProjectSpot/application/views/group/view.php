@@ -22,7 +22,7 @@
 	}
 	else{
 	?>
-		<button type="button" class="edit button-element-small inactive">Request to Join</button>
+		<button type="button" class="edit button-element-small disabled-button">Request to Join</button>
 	<?php
 	}
 	?>
@@ -92,7 +92,7 @@ $(document).ready(function(){
 			},
 			success:function(data){
 				console.log(data);
-				button.addClass("inactive");
+				button.addClass("disabled-button");
 			}
 		})
 	})

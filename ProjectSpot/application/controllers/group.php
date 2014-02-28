@@ -72,14 +72,18 @@ class Group extends CI_Controller{
 	}
 
 	public function acceptInvite(){
+		$this->load->model("user_model");
+
 		$sender = $this->session->userdata('user_id');
 		$id = $this->input->post('id');
 
 		$invite = $this->group_user_rel_model->get($id);
 
+		$senderModel = $this->user_model->get_user_by_id($sender);
+
 		//check if the user can accept this invite
-		if($invite['user_id'] == $sender && !$this->group_user_rel_model->isUserInAnyGroup($sender)){
-			//$this->group_user_rel_model->update($id, "accepted");
+		if($invite['user_id'] == $sender && (!$this->group_user_rel_model->isUserInAnyGroup($sender) || $senderModel['user_status'] == "Advisor")){
+			$this->group_user_rel_model->update($id, "accepted");
 			echo json_encode(true);
 		}
 		else{
@@ -96,9 +100,9 @@ class Group extends CI_Controller{
 
 		//print_r($invite);
 
-		//check if the user can accept this invite
+		//check if the user can reject this invite
 		if($invite['user_id'] == $sender || $this->group_user_rel_model->isUserInGroup($sender, $invite['group_id'])){
-			//$this->group_user_rel_model->delete($id);
+			$this->group_user_rel_model->delete($id);
 			echo json_encode(true);
 		}
 		else{
@@ -107,19 +111,29 @@ class Group extends CI_Controller{
 	}
 
 	public function requestToInvite(){
+		$this->load->model("user_model");
+
 		$sender = $this->session->userdata('user_id');
 		$gid = $this->input->post('gid');
 		$uid = $this->input->post('uid');
-		if(!$this->group_user_rel_model->isUserInAnyGroup($uid) && $this->group_user_rel_model->canUserRequestToJoin($uid, $gid)){
+
+		$recipient = $this->user_model->get_user_by_id($uid);
+
+		if((!$this->group_user_rel_model->isUserInAnyGroup($uid) || $recipient['user_status'] == "Advisor") && $this->group_user_rel_model->canUserRequestToJoin($uid, $gid)){
 			$this->group_user_rel_model->new_group_user_rel($gid, $uid, $sender, 'Requested');
 		}
 	}
 
 	public function invite(){
+		$this->load->model("user_model");
+
 		$sender = $this->session->userdata('user_id');
 		$gid = $this->input->post('gid');
 		$uid = $this->input->post('uid');
-		if(!$this->group_user_rel_model->isUserInAnyGroup($uid) && $this->group_user_rel_model->canUserRequestToJoin($uid, $gid)){
+
+		$recipient = $this->user_model->get_user_by_id($uid);
+
+		if((!$this->group_user_rel_model->isUserInAnyGroup($uid) || $recipient['user_status'] == "Advisor") && $this->group_user_rel_model->canUserRequestToJoin($uid, $gid)){
 			$this->group_user_rel_model->new_group_user_rel($gid, $uid, $sender, 'invited');
 		}
 	}

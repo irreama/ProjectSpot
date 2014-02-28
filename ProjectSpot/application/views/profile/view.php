@@ -37,7 +37,7 @@
 		}
 		else{
 			?>
-			<button type="button" class="inactive edit button-element-small">Invite to Group</button>
+			<button type="button" class="disabled-button edit button-element-small">Invite to Group</button>
 		<?php
 		}
 	?>
@@ -162,7 +162,7 @@ $(document).ready(function(){
 			},
 			success:function(data){
 				console.log(data);
-				button.addClass("inactive");
+				button.addClass("disabled-button");
 			}
 		})
 	})
