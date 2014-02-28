@@ -13,7 +13,36 @@ class Group extends CI_Controller{
 		$data['displayName'] = $this->session->userdata('display_name');
 	}
 
-		public function clearAvatar(){
+	public function isLastMember(){
+		$uid = $this->input->post("uid");
+		$gid = $this->input->post("gid");
+
+		//Check to see if there aren't more members in this group
+		if(count($this->group_user_rel_model->get_all_users_by_group_id($gid) == 1){
+			echo "true";
+		}
+		else{
+			echo "false";
+		}
+	}
+
+	public function removeMember(){
+		$uid = $this->input->post("uid");
+		$gid = $this->input->post("gid");
+
+		//Check to see if this member is in a group
+		if($this->group_user_rel_model->isUserInGroup($this->session->userdata('user_id'), $gid)){
+			//Remove the member
+			echo "true";
+		}
+		else{
+			echo "false";
+		}
+		
+		
+	}
+
+	public function clearAvatar(){
 		$this->load->helper('file');
 		$uid = $this->session->userdata('user_id');
 		$gid = $this->input->post('gid');

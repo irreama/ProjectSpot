@@ -119,5 +119,52 @@ $(document).ready(function(){
 			processData: false
 		});
 	});
+
+	function removeMember(uid, gid){
+		$.ajax({
+			url: '<?=base_url()?>index.php/group/removeMember',
+			type: "POST",
+			data:{
+				gid = gid,
+				uid = uid
+			},
+			success:function(data){
+				if(data == "true"){
+					console.log("Member Removed");
+				}
+				else{
+					console.log("Member Not Removed");
+				}
+			},
+			cache: false,
+			contentType: false,
+			processData: false
+		});
+	}
+
+	$(".removeMember").click(function(){
+		var gid = $(this).data("gid");
+		var uid = $(this).data("uid");
+		$.ajax({
+			url: '<?=base_url()?>index.php/group/isLastMember',
+			type: "POST",
+			data:{
+				gid = gid,
+				uid = uid
+			},
+			success:function(data){
+				if(data == "true"){
+					console.log("Last Member");
+				}
+				else{
+					console.log("Not Last Member");
+					removeMember(uid, gid);
+				}
+			},
+			cache: false,
+			contentType: false,
+			processData: false
+		});
+	});
 });
 </script>
