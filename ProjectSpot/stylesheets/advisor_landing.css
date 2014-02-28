@@ -1,0 +1,20 @@
+.project{
+	margin-bottom:20px;
+}
+.project-span{
+	padding:20px 20px 0px 20px;
+	display:inline-block;
+}
+.project h3{
+	display:inline-block;
+	padding:0;
+	margin:0;
+	height:70px;
+	vertical-align:middle;
+}
+.project img{
+	width:70px;
+	height:70px;
+	display:inline-block;
+	margin-right:20px;
+}

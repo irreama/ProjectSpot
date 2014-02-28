@@ -26,6 +26,7 @@ class Group_model extends CI_Model{
 		$data = array(
 			'group_creator' => $this->input->post('group_creator'),
 			'group_description' => $this->input->post('group_description'),
+			'group_needs' => $this->input->post('group_needs'),
 			'group_name' => $this->input->post('group_name'),
 			'group_contact' => $this->input->post('group_contact')
 		);

@@ -20,6 +20,10 @@
 			<label class="title">Description of the Project:</label>
 			<textarea class="group_description" name="group_description"></textarea>
 		</div>
+		<div>
+			<label class="title">Needs of the Project:</label>
+			<textarea class="group_needs" name="group_needs"></textarea>
+		</div>
 		
 		<!-- Anthony where is the other description box? -->
 		
