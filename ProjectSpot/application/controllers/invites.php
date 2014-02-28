@@ -25,10 +25,23 @@ class Invites extends CI_Controller {
 
 		foreach($incoming as $incomingInvite){
 			$incomingInvite['group'] = $this->group_model->get_group_by_id($incomingInvite['group_id']);
-			$data['invites']['incoming'][] = $incomingInvite;
+			$data['invites']['incoming']['group'][] = $incomingInvite;
 		}
 
 		foreach($groups as $aGroup){
+			//Grab requests to join this group
+			$requests = $this->group_user_model->getRequestedInvitesByGroupId($aGroup['id']);
+
+			foreach($requests as $aRequest){
+				$requester = $this->user_model->get_user_by_id($aRequest['user_id']);
+				$data['invites']['incoming']['requests'][] = array(
+					'id' => $aRequest['id'],
+					'group' => $aGroup,
+					'requester' => $requester
+				);
+			}
+			
+			//Grab outgoing requests to join a group
 			$outgoing = $this->group_user_rel_model->getSentInvitesByGroupId($aGroup['id']);
 			foreach($outgoing as $outgoingInvite){
 				$outgoingInvite['sender'] = $this->user_model->get_user_by_id($outgoingInvite['invited_by']);

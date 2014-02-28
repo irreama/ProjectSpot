@@ -12,12 +12,36 @@
 			<h4>Group</h4>
 			<?php
 			if(count($invites['incoming'])){
-				foreach ($invites['incoming'] as $anInvite){
+				foreach ($invites['incoming']['group'] as $anInvite){
 			?>
 			<div data-invite-id="<?=$anInvite['id']?>" id="invite">
 				<label> 
-					You have been invited by <a href="<?=base_url()?>"><?=$anInvite['group']['group_name']?></a>
+					You have been invited by <a href="<?=base_url()?>group/view/<?=$anInvite['group']['group_id']?>"><?=$anInvite['group']['group_name']?></a>
 					to join their MQP Group
+				</label>
+				<a class="invite-button button-element-small inline accept">&#10003; Accept</a>
+				<a class="invite-button button-element-small inline reject">X Reject</a>
+			</div>
+			<?php
+				}
+			}
+			else{
+			?>
+			<p>There are no incoming invites to display</p>
+			<?php
+			}
+			?>
+		</div>
+		<div class="requests">
+			<h4>Requests</h4>
+			<?php
+			if(count($invites['incoming'])){
+				foreach ($invites['incoming']['requests'] as $anInvite){
+			?>
+			<div data-invite-id="<?=$anInvite['id']?>" id="invite">
+				<label>
+					<a href="<?=base_url()?>index.php/profile/view/<?=$anInvite['requester']['id']?>"><?=$anInvite['requester']['user_first_name']?> <?=$anInvite['requester']['user_last_name']?></a> has requested to join your group,
+					<?=$anInvite['group']['group_name']?>
 				</label>
 				<a class="invite-button button-element-small inline accept">&#10003; Accept</a>
 				<a class="invite-button button-element-small inline reject">X Reject</a>

@@ -182,7 +182,7 @@ class Group_user_rel_model extends CI_Model{
 	public function getRequestedInvitesByGroupId($gid){
 		$this->db->from('ps_group_user_rel');
 		$this->db->where('group_id', $gid);
-		$this->db->where('invite_status', 'Invited');
+		$this->db->where('invite_status', 'Requested');
 		$iQuery = $this->db->get();
 		return $iQuery->result_array();
 	}
@@ -201,7 +201,5 @@ class Group_user_rel_model extends CI_Model{
 		$gQuery = $this->db->get();
 		return $gQuery->result_array();
 	}
-
-
 }
 ?>

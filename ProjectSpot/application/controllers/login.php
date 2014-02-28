@@ -22,10 +22,6 @@ class Login extends CI_Controller {
 					$this->load->model("major_model");
 					$info = ldap_get_entries($ds, $sr);
 
-					echo "<pre>";
-					print_r($info);
-					echo "</pre>";
-
 					if($info['count']){
 						$user['user_login'] = $info[0]['uid'][0];
 						$user['user_first_name'] = $info[0]['givenname'][0];
