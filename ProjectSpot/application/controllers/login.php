@@ -32,14 +32,16 @@ class Login extends CI_Controller {
 						$user['user_last_name'] = $info[0]['sn'][0];
 						if($info[0]['edupersonprimaryaffiliation'][0] == "student"){
 							$user['user_status'] = "Student";
+							$user['user_major1'] = $this->major_model->getMajorIdByLdap($info[0]['wpiedupersonmajor'][0]);
 						}
 						else if($info[0]['edupersonprimaryaffiliation'][0] == "faculty"){
 							$user['user_status'] = "Advisor";
+							$user['user_major1'] = $this->major_model->getMajorIdByName($info[0]['ou'][0]);
 						}
 						else{
 							$user['user_status'] = "Other";
 						}
-						$user['user_major1'] = $this->major_model->getMajorIdByLdap($info[0]['wpiedupersonmajor'][0]);
+						
 						$user['user_email'] = $info[0]['mail'][0];
 
 						$newId = $this->user_model->new_user($user);
