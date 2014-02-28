@@ -201,5 +201,11 @@ class Group_user_rel_model extends CI_Model{
 		$gQuery = $this->db->get();
 		return $gQuery->result_array();
 	}
+
+	public function removeUserFromGroup($uid, $gid){
+		$this->db->where('user_id', $uid);
+		$this->db->where('group_id', $gid);
+		$this->db->delete('ps_group_user_rel');
+	}
 }
 ?>

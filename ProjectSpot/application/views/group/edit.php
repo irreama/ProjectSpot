@@ -1,6 +1,6 @@
 <pre>
 <?php
-//print_r($group_item);
+$CI = & get_instance();
 ?>
 </pre>
 
@@ -83,8 +83,32 @@
 	</form>
 </div><!--right column-->
 <p class="clear"></p>
+<div id="confirmRemoval">
+	<p>By removing the last member, you will delete this group. Are you sure you want to delete this group?</p>
+</div>
 <script type="text/javascript">
 $(document).ready(function(){
+	$("#confirmRemoval").dialog({
+		height: 140,
+		modal: true,
+		buttons: {
+			"Yes": function() {
+				$.ajax({
+					url: '<?=base_url()?>index.php/group/removeGroup',
+					type: "POST",
+					data:{
+						gid: "<?=$group_item['id']?>",
+					},
+					success:function(data){
+						window.location = "<?=base_url()?>index.php/group";
+					}
+				});
+			},
+			"No": function() {
+				$( this ).dialog( "close" );
+			}
+		}
+	});
 	$("#chooseAvatar").change(function(){
 		var formData = new FormData($("#avatarForm")[0]);
 
@@ -136,6 +160,10 @@ $(document).ready(function(){
 						$("#group-member-"+uid).remove();
 					});
 
+					if(uid == "<?=$CI->session->userdata('user_id')?>"){
+						window.location = "<?=base_url()?>index.php/group";
+					}
+
 				}
 				else{
 					console.log("Member Not Removed");
@@ -157,7 +185,7 @@ $(document).ready(function(){
 			success:function(data){
 				if(data == "true"){
 					
-					console.log("Last Member");
+					$("#confirmRemoval").dialog("open");
 				}
 				else{
 					console.log("Not Last Member");

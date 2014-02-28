@@ -126,6 +126,11 @@ class Group_model extends CI_Model{
 		return $this->db->update('ps_groups', $data);
 	}
 
+	public function delete($gid){
+		$this->db->where('id', $gid);
+		$this->db->delete('ps_groups');
+	}
+
 
 }
 

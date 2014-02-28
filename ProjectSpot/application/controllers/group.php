@@ -8,9 +8,33 @@ class Group extends CI_Controller{
 		$this->load->model('group_model');
 		$this->load->model('group_user_rel_model');
 		$this->load->model('group_tag_rel_model');
+		$this->load->model('group_major_rel_model');
 		$this->load->model('major_model');
 
 		$data['displayName'] = $this->session->userdata('display_name');
+	}
+
+	public function removeGroup(){
+		$gid = $this->input->post("gid");
+
+		//Check to see if this person is in the group
+		if($this->group_user_rel_model->isUserInGroup($this->session->userdata('user_id'), $gid)){
+			//Check to see if this really is the last member in the group
+			if(count($this->group_user_rel_model->get_all_users_by_group_id($gid)) == 1){
+				//Remove the user from the group
+				$this->group_user_rel_model->removeUserFromGroup($this->session->userdata('user_id'), $gid);
+
+				//Remove the majors from the group
+				$this->group_major_rel_model->removeMajorsFromGroup($gid);
+
+				//Remove the tags from the group
+				$this->group_tag_rel_model->delete_group_tags($gid);
+				
+				//Remove the group itself
+				$this->group_model->delete($gid);
+			}
+		}
+
 	}
 
 	public function isLastMember(){
@@ -30,9 +54,10 @@ class Group extends CI_Controller{
 		$uid = $this->input->post("uid");
 		$gid = $this->input->post("gid");
 
-		//Check to see if this member is in a group
+		//Check to see if this member is in the group
 		if($this->group_user_rel_model->isUserInGroup($this->session->userdata('user_id'), $gid)){
 			//Remove the member
+			$this->group_user_rel_model->removeUserFromGroup($uid, $gid);
 			echo "true";
 		}
 		else{
