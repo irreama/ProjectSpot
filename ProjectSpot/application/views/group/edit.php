@@ -83,32 +83,8 @@ $CI = & get_instance();
 	</form>
 </div><!--right column-->
 <p class="clear"></p>
-<div id="confirmRemoval">
-	<p>By removing the last member, you will delete this group. Are you sure you want to delete this group?</p>
-</div>
 <script type="text/javascript">
 $(document).ready(function(){
-	$("#confirmRemoval").dialog({
-		height: 140,
-		modal: true,
-		buttons: {
-			"Yes": function() {
-				$.ajax({
-					url: '<?=base_url()?>index.php/group/removeGroup',
-					type: "POST",
-					data:{
-						gid: "<?=$group_item['id']?>",
-					},
-					success:function(data){
-						window.location = "<?=base_url()?>index.php/group";
-					}
-				});
-			},
-			"No": function() {
-				$( this ).dialog( "close" );
-			}
-		}
-	});
 	$("#chooseAvatar").change(function(){
 		var formData = new FormData($("#avatarForm")[0]);
 
@@ -185,7 +161,18 @@ $(document).ready(function(){
 			success:function(data){
 				if(data == "true"){
 					
-					$("#confirmRemoval").dialog("open");
+					if(confirm("By removing the last member, you will delete this group. Are you sure you want to delete this group?")){
+						$.ajax({
+							url: '<?=base_url()?>index.php/group/removeGroup',
+							type: "POST",
+							data:{
+								gid: "<?=$group_item['id']?>",
+							},
+							success:function(data){
+								window.location = "<?=base_url()?>index.php/group";
+							}
+						});
+					}
 				}
 				else{
 					console.log("Not Last Member");
