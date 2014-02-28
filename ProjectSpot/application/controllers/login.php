@@ -16,11 +16,15 @@ class Login extends CI_Controller {
 				$ds = ldap_connect("ldapv2.wpi.edu");
 				$dn = "dc=wpi,dc=edu";
 				$filter = "uid=$uid";
-				$attr = array("edupersonprimaryaffiliation", "givenname", "sn", "mail", "uid", "wpieduPersonMajor");
-				$sr = ldap_search($ds, $dn, $filter, $attr);
+				//$attr = array("edupersonprimaryaffiliation", "givenname", "sn", "mail", "uid", "wpieduPersonMajor");
+				$sr = ldap_search($ds, $dn, $filter);
 				if($sr){
 					$this->load->model("major_model");
 					$info = ldap_get_entries($ds, $sr);
+
+					echo "<pre>";
+					print_r($info);
+					echo "</pre>";
 
 					if($info['count']){
 						$user['user_login'] = $info[0]['uid'][0];
