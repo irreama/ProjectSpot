@@ -68,7 +68,7 @@
 			?>
 			<div data-invite-id="<?=$anInvite['id']?>" class="invite">
 				<label>
-					<?=($uid == $anInvite['sender']['id'] ? "You have" : "<a href='" . base_url() "index.php/profile/view/".$anInvite['sender']['id']."'>". $anInvite['sender']['user_first_name'] . " " . $anInvite['sender']['user_last_name'] . "</a> has") ?> invited <a href="<?=base_url()?>"><?=$anInvite['recipient']['user_first_name']?> <?=$anInvite['recipient']['user_last_name']?></a>
+					<?=($uid == $anInvite['sender']['id'] ? "You have" : "<a href='" . base_url(). "index.php/profile/view/".$anInvite['sender']['id']."'>". $anInvite['sender']['user_first_name'] . " " . $anInvite['sender']['user_last_name'] . "</a> has") ?> invited <a href="<?=base_url()?>"><?=$anInvite['recipient']['user_first_name']?> <?=$anInvite['recipient']['user_last_name']?></a>
 					to join your MQP group 
 				</label>
 				<a class="invite-button button-element-small inline reject">X Revoke</a>
@@ -91,7 +91,7 @@
 			?>
 			<div data-invite-id="<?=$anInvite['id']?>" class="invite">
 				<label>
-					<?=($uid == $anInvite['sender']['id'] ? "You have" : "<a href='" . base_url() "index.php/profile/view/".$anInvite['sender']['id']."'>". $anInvite['sender']['user_first_name'] . " " . $anInvite['sender']['user_last_name'] . "</a> has") ?> invited <a href="<?=base_url()?>"><?=$anInvite['recipient']['user_first_name']?> <?=$anInvite['recipient']['user_last_name']?></a>
+					<?=($uid == $anInvite['sender']['id'] ? "You have" : "<a href='" . base_url() ."index.php/profile/view/".$anInvite['sender']['id']."'>". $anInvite['sender']['user_first_name'] . " " . $anInvite['sender']['user_last_name'] . "</a> has") ?> invited <a href="<?=base_url()?>"><?=$anInvite['recipient']['user_first_name']?> <?=$anInvite['recipient']['user_last_name']?></a>
 					to advise your MQP group 
 				</label>
 				<a class="invite-button button-element-small inline reject">X Revoke</a>
