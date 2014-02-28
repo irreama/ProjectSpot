@@ -30,7 +30,7 @@ class Invites extends CI_Controller {
 
 		foreach($groups as $aGroup){
 			//Grab requests to join this group
-			$requests = $this->group_user_model->getRequestedInvitesByGroupId($aGroup['id']);
+			$requests = $this->group_user_rel_model->getRequestedInvitesByGroupId($aGroup['id']);
 
 			foreach($requests as $aRequest){
 				$requester = $this->user_model->get_user_by_id($aRequest['user_id']);
