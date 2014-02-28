@@ -21,7 +21,7 @@
 			<textarea class="group_description" name="group_description"></textarea>
 		</div>
 		<div>
-			<label class="title">Needs of the Project:</label>
+			<label class="title">Majors, skills, and requirements for new members:</label>
 			<textarea class="group_needs" name="group_needs"></textarea>
 		</div>
 		
@@ -30,6 +30,11 @@
 		<div>
 			<label class="title">Group Contact:</label>
 			<input class="group_contact" type="text" name="group_contact" value="<?=$contact?>"/>
+		</div>
+
+		<div>
+			<label class="title">Group Website:</label>
+			<input class="group_site" type="text" name="group_site"/>
 		</div>
 		
 		<div class="information">

@@ -27,7 +27,7 @@
 			}
 			else{
 			?>
-			<p>There are no incoming invites to display</p>
+			<p>You have not been invited to join any groups.</p>
 			<?php
 			}
 			?>
@@ -51,12 +51,19 @@
 			}
 			else{
 			?>
-			<p>There are no incoming invites to display</p>
+			<p>No one has requested to join your group</p>
 			<?php
 			}
 			?>
 		</div>
 	</div>
+	<?php
+	$CI = & get_instance();
+
+	$CI->load->model("group_user_rel_model");
+
+	if($CI->group_user_rel_model->isUserInAnyGroup($CI->session->userdata("user_id"))){
+	?>
 	<div id="sent">
 		<h3>Sent To</h3><hr>
 		<div class="student">
@@ -77,7 +84,7 @@
 			}
 			else{
 			?>
-			<p>There are no student invites to display</p>
+			<p>There are currently no students invited to your group</p>
 			<?php
 			}
 			?>
@@ -100,12 +107,15 @@
 			}
 			else{
 			?>
-			<p>There are no advisor invites to display</p>
+			<p>There are currently no advisors invited to your group</p>
 			<?php
 			}
 			?>
 		</div>
 	</div>
+	<?php
+	}
+	?>
 	<script>
 	$(document).ready(function(){
 		$("a.invite-button").click(function(event){

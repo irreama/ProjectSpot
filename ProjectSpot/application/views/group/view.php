@@ -40,8 +40,10 @@
 						<?php echo($a_user['user_status'] == "Advisor" ? "Advisor" : $a_user['user_major1']['major_text']);?>:
 					</label>
 					<label>
+						<a href="<?=base_url()?>index.php/profile/view/<?=$a_user['id']?>">
 						<?php echo $a_user['user_first_name'];?> 
 						<?php echo $a_user['user_last_name'];?>
+					</a>
 					</label>
 				<?php
 				}
@@ -65,18 +67,18 @@
 			</label>
 		</div>
 		<div class="needs">
-			<label class="title">Group Needs:</label>
+			<label class="title">Members this group is looking for:</label>
 			<label>
 				<?php echo $group_item['group_needs'];?>
 			</label>
 		</div>
 		<div class="contact">
 			<label class="title">Contact:</label>
-			<label><?php echo $group_item['group_contact'];?></label>
+			<label><a href="mailto:<?php echo $group_item['group_contact'];?>"><?php echo $group_item['group_contact'];?></a></label>
 		</div>
 		<div class="site">
-			<label class="title">Site:</label>
-			<label><?php echo $group_item['group_site'];?></label>
+			<label class="title">Group Website:</label>
+			<label><a href="<?php echo $group_item['group_site'];?>"><?php echo $group_item['group_site'];?></a></label>
 		</div>
 	</div>
 </div><!--right column-->

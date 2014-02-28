@@ -28,6 +28,7 @@ class Group_model extends CI_Model{
 			'group_description' => $this->input->post('group_description'),
 			'group_needs' => $this->input->post('group_needs'),
 			'group_name' => $this->input->post('group_name'),
+			'group_site' => $this->input->post('group_site'),
 			'group_contact' => $this->input->post('group_contact')
 		);
 
