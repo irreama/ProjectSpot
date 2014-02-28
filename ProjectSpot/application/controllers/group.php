@@ -30,8 +30,6 @@ class Group extends CI_Controller{
 		$uid = $this->input->post("uid");
 		$gid = $this->input->post("gid");
 
-		echo $this->session->userdata('user_id');
-
 		//Check to see if this member is in a group
 		if($this->group_user_rel_model->isUserInGroup($this->session->userdata('user_id'), $gid)){
 			//Remove the member
