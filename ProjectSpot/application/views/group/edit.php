@@ -143,7 +143,6 @@ $(document).ready(function(){
 	}
 
 	$(".removeMember").click(function(){
-		alert("Firefox?");
 		var gid = $(this).data("gid");
 		var uid = $(this).data("uid");
 		$.ajax({
@@ -155,6 +154,7 @@ $(document).ready(function(){
 			},
 			success:function(data){
 				if(data == "true"){
+					alert("Firefox? yo?");
 					console.log("Last Member");
 				}
 				else{
