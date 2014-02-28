@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 //Handle the Interests Page
-$("div").on("click", ".tag_item", function(event){
+$(".tag_listing").on("click", ".tag_item", function(event){
 	var checkbox = $(this).children("input");
 	checkbox.prop("checked", !checkbox.prop("checked"));
 
