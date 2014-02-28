@@ -13,6 +13,7 @@
 			<?php
 			if(isset($invites['incoming']['group']) && count($invites['incoming']['group'])){
 				foreach ($invites['incoming']['group'] as $anInvite){
+					print_r($anInvite);
 			?>
 			<div data-invite-id="<?=$anInvite['id']?>" id="invite">
 				<label> 
