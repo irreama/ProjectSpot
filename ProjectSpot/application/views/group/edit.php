@@ -101,6 +101,7 @@ $(document).ready(function(){
 					$("#avatarForm")[0].reset();
 				}
 			},
+			cache: false,
 			contentType: false,
 			processData: false
 		});
@@ -133,9 +134,7 @@ $(document).ready(function(){
 				else{
 					console.log("Member Not Removed");
 				}
-			},
-			contentType: false,
-			processData: false
+			}
 		});
 	}
 
@@ -159,9 +158,7 @@ $(document).ready(function(){
 					console.log("Not Last Member");
 					removeMember(uid, gid);
 				}
-			},
-			contentType: false,
-			processData: false
+			}
 		});
 	});
 });
