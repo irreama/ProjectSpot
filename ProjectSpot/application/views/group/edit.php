@@ -125,8 +125,8 @@ $(document).ready(function(){
 			url: '<?=base_url()?>index.php/group/removeMember',
 			type: "POST",
 			data:{
-				gid = gid,
-				uid = uid
+				gid: gid,
+				uid: uid
 			},
 			success:function(data){
 				if(data == "true"){
@@ -149,8 +149,8 @@ $(document).ready(function(){
 			url: '<?=base_url()?>index.php/group/isLastMember',
 			type: "POST",
 			data:{
-				gid = gid,
-				uid = uid
+				gid: gid,
+				uid: uid
 			},
 			success:function(data){
 				if(data == "true"){
