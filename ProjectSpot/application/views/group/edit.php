@@ -143,6 +143,7 @@ $(document).ready(function(){
 	}
 
 	$(".removeMember").click(function(){
+		alert("Firefox?");
 		var gid = $(this).data("gid");
 		var uid = $(this).data("uid");
 		$.ajax({
