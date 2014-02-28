@@ -43,8 +43,8 @@
 					<a href="<?=base_url()?>index.php/profile/view/<?=$anInvite['requester']['id']?>"><?=$anInvite['requester']['user_first_name']?> <?=$anInvite['requester']['user_last_name']?></a> has requested to join your group,
 					<a href="<?=base_url()?>index.php/group/view/<?=$anInvite['group']['id']?>"><?=$anInvite['group']['group_name']?></a>
 				</label>
-				<a class="invite-button button-element-small inline accept">&#10003; Accept</a>
-				<a class="invite-button button-element-small inline reject">X Reject</a>
+				<a class="request-button button-element-small inline accept">&#10003; Accept</a>
+				<a class="request-button button-element-small inline reject">X Reject</a>
 			</div>
 			<?php
 				}
@@ -122,6 +122,39 @@
 				$.ajax({
 					type:"POST",
 					url:'<?=base_url()?>/index.php/group/'+action+'Invite',
+					data:{
+						id:invParent.data("invite-id")
+					},
+					success:function(data){
+						console.log(data);
+						if(data == "true"){
+							invParent.fadeOut(function(){
+								invParent.remove();
+							});
+							
+						}
+						else{
+							console.log("Nay");
+						}
+					}
+				})
+			}
+		});
+
+		$("a.request-button").click(function(event){
+			var action = "none";
+			var invParent = $(this).parent();
+			if($(this).hasClass("reject")){
+				action = "reject";
+			}
+			else if($(this).hasClass("accept")){
+				action = "accept";
+			}
+
+			if(action != "none"){
+				$.ajax({
+					type:"POST",
+					url:'<?=base_url()?>/index.php/group/'+action+'Request',
 					data:{
 						id:invParent.data("invite-id")
 					},

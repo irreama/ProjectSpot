@@ -71,6 +71,25 @@ class Group extends CI_Controller{
 		
 	}
 
+	public function rejectRequest(){
+		$this->load->model("user_model");
+
+		$sender = $this->session->userdata('user_id');
+		$id = $this->input->post('id');
+
+		$invite = $this->group_user_rel_model->get($id);
+
+		$requesterModel = $this->user_mode->get_user_by_id($invite['user_id']);
+
+		if($this->group_user_rel_model->isUserInGroup($sender, $invite['group_id'])){
+			$this->group_user_rel_model->delete($id);
+			echo json_encode(true);
+		}
+		else{
+			echo json_encode(false);
+		}
+	}
+
 	public function acceptRequest(){
 		$this->load->model("user_model");
 
