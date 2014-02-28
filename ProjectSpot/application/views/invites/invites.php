@@ -41,7 +41,7 @@
 			<div data-invite-id="<?=$anInvite['id']?>" id="invite">
 				<label>
 					<a href="<?=base_url()?>index.php/profile/view/<?=$anInvite['requester']['id']?>"><?=$anInvite['requester']['user_first_name']?> <?=$anInvite['requester']['user_last_name']?></a> has requested to join your group,
-					<?=$anInvite['group']['group_name']?>
+					<a href="<?=base_url()?>index.php/group/view/<?=$anInvite['group']['id']?>"><?=$anInvite['group']['group_name']?></a>
 				</label>
 				<a class="invite-button button-element-small inline accept">&#10003; Accept</a>
 				<a class="invite-button button-element-small inline reject">X Reject</a>
