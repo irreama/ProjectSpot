@@ -58,7 +58,7 @@ class Group_major_rel_model extends CI_Model{
 		$this->db->delete('ps_group_major_rel');
 	}
 
-	public function deleteMajorsFromGroup($gid){
+	public function removeMajorsFromGroup($gid){
 		$this->db->where('group_id', $gid);
 		$this->db->delete('ps_group_major_rel');
 	}
