@@ -11,7 +11,7 @@
 		<div class="group">
 			<h4>Group</h4>
 			<?php
-			if(count($invites['incoming'])){
+			if(isset($invites['incoming']['group'] && count($invites['incoming']['group'])){
 				foreach ($invites['incoming']['group'] as $anInvite){
 			?>
 			<div data-invite-id="<?=$anInvite['id']?>" id="invite">
@@ -35,7 +35,7 @@
 		<div class="requests">
 			<h4>Requests</h4>
 			<?php
-			if(count($invites['incoming'])){
+			if(isset($invites['incoming']['requests']) && count($invites['incoming']['requests'])){
 				foreach ($invites['incoming']['requests'] as $anInvite){
 			?>
 			<div data-invite-id="<?=$anInvite['id']?>" id="invite">

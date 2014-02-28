@@ -226,37 +226,43 @@ class Group extends CI_Controller{
 	}
 
 	public function edit($id){
-		$this->load->helper('form');
-		$this->load->helper('url');
-		$this->load->library('form_validation');
+		if($this->group_user_rel_model->isUserInGroup($this->session->userdata('user_id'), $id)){
+			$this->load->helper('form');
+			$this->load->helper('url');
+			$this->load->library('form_validation');
 
-		$data['group_item'] = $this->group_model->get_group_by_id($id);
-		$users = $this->group_user_rel_model->get_all_users_by_group_id($id);
-		foreach($users as $user){
-			$user['user_major1'] = $this->major_model->get_major_by_id($user['user_major1']);
-			$data['group_item']['users'][] = $user;
-		}
-		 
-		$data['group_item']['tags'] = $this->group_tag_rel_model->get_all_tags_by_group_id($id);
+			$data['group_item'] = $this->group_model->get_group_by_id($id);
+			$users = $this->group_user_rel_model->get_all_users_by_group_id($id);
+			foreach($users as $user){
+				$user['user_major1'] = $this->major_model->get_major_by_id($user['user_major1']);
+				$data['group_item']['users'][] = $user;
+			}
+			 
+			$data['group_item']['tags'] = $this->group_tag_rel_model->get_all_tags_by_group_id($id);
 
-		$data['title'] = "Edit Group";
+			$data['title'] = "Edit Group";
 
-		$this->form_validation->set_rules('group_name', 'Group Name', 'required');
+			$this->form_validation->set_rules('group_name', 'Group Name', 'required');
 
-		if($this->form_validation->run() == FALSE){
+			if($this->form_validation->run() == FALSE){
 
-			//If the form is not validated, display the form again.
-			$this->load->view('templates/header', $data);
-			$this->load->view('group/edit', $data);
-			$this->load->view('templates/footer');
+				//If the form is not validated, display the form again.
+				$this->load->view('templates/header', $data);
+				$this->load->view('group/edit', $data);
+				$this->load->view('templates/footer');
+			}
+			else{
+				//Save the user
+				$this->group_model->update_group();
+
+				//Head back to the user view pages
+				redirect('group/view/'.$id);
+			}
 		}
 		else{
-			//Save the user
-			$this->group_model->update_group();
-
-			//Head back to the user view pages
 			redirect('group/view/'.$id);
 		}
+		
 	}
 
 	public function create(){
