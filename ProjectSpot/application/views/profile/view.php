@@ -24,11 +24,13 @@
 			$currGroup = $groups[0]['group_id'];
 		}
 		
-		//Change this when we really go live. Use real authentication
 		if($profile_item['id'] == $CI->session->userdata('user_id')){
 		?>
 		<a class="edit button-element-small" href="<?=base_url()?>index.php/profile/edit/<?php echo $profile_item['id']?>">Edit Page</a>
 		<?php
+		}
+		else if($profile_item['user_status'] != "Advisor" && !$CI->group_user_rel_model->isUserInAnyGroup($profile_item['id'])){
+			//Hacky way to not display 
 		}
 		else if(($groups && $CI->group_user_rel_model->isUserInAnyGroup($CI->session->userdata('user_id')) && $CI->group_user_rel_model->canUserRequestToJoin($profile_item['id'], $currGroup))){
 			?>
@@ -37,7 +39,7 @@
 		}
 		else{
 			?>
-			<button type="button" class="disabled-button edit button-element-small">Invite to Group</button>
+			<div class="disabled-button edit button-element-small">Invite to Group</div>
 		<?php
 		}
 	?>

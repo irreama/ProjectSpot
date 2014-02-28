@@ -168,7 +168,7 @@ $(document).ready(function(){
 								gid: "<?=$group_item['id']?>",
 							},
 							success:function(data){
-								//window.location = "<?=base_url()?>index.php/group";
+								window.location = "<?=base_url()?>index.php/group";
 							}
 						});
 					}
