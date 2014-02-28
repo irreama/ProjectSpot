@@ -153,8 +153,9 @@ $(document).ready(function(){
 				uid: uid
 			},
 			success:function(data){
+				alert("Firefox? yo?");
 				if(data == "true"){
-					alert("Firefox? yo?");
+					
 					console.log("Last Member");
 				}
 				else{
