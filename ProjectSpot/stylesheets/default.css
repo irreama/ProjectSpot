@@ -361,7 +361,7 @@ a:active{
 	margin-bottom:20px;
 	position:relative;
 }
-.close{
+.help-text .close{
 	position:absolute;
 	top:8px;
 	right:13px;
