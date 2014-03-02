@@ -206,9 +206,6 @@
 					//Obtain the id of the group
 					$groupProfile = $CI->group_model->getGroupProfile($group['id']);
 					
-					//get the departments
-					$groupDepartments = $CI->group_major_rel_model->get_all_majors_by_group_id($group['id']);
-					
 					//get the tags
 					$groupTags = $CI->group_tag_rel_model->get_all_tags_by_group_id($group['id']);
 					
@@ -228,16 +225,41 @@
 					<?php echo $group['group_name'];?></a>
 					</td>
 					<td>
-						<?php 
-							$totalDepts = count($groupDepartments);
-							foreach($groupDepartments as $i => $dept){
-								$major = $CI->major_model->get_major_by_id($dept['major_id']);
-								if ($i != $totalDepts - 1){
-									echo $major['major_text'].',';
-								}else{
-									echo $major['major_text'];
+						<?php
+							$departments = array();
+							foreach ($groupStudents as $student) {
+								$majorId = intval($student['user_major1']);
+								if (!array_key_exists($majorId, $departments)) {
+								   $department = $CI->major_model->get_major_by_id($majorId);
+								   if (!empty($department['major_text'])) {
+								       $departments[$majorId] = $department['major_text'];
+								   }
+								}
+								$majorId = intval($student['user_major2']);
+								if (!array_key_exists($majorId, $departments)) {
+								   $department = $CI->major_model->get_major_by_id($majorId);
+								   if (!empty($department['major_text'])) {
+								       $departments[$majorId] = $department['major_text'];
+								   }
 								}
 							}
+							foreach ($groupAdvisors as $advisor) {
+								$majorId = intval($advisor['user_major1']);
+								if (!array_key_exists($majorId, $departments)) {
+								   $department = $CI->major_model->get_major_by_id($majorId);
+								   if (!empty($department['major_text'])) {
+								       $departments[$majorId] = $department['major_text'];
+								   }
+								}
+								$majorId = intval($advisor['user_major2']);
+								if (!array_key_exists($majorId, $departments)) {
+								   $department = $CI->major_model->get_major_by_id($majorId);
+								   if (!empty($department['major_text'])) {
+								       $departments[$majorId] = $department['major_text'];
+								   }
+								}
+							}
+							echo implode('<br/>',$departments);
 						?>
 					</td>
 					<td>
