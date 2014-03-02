@@ -6,6 +6,11 @@ textarea{display:block;}
 	margin-right:5px;
 	font-weight: bold;
 }
+.nl_title{
+	display:block;
+	margin-right:5px;
+	font-weight: bold;
+}
 
 .left_col{
 	/*clear:both;
@@ -37,6 +42,12 @@ textarea{display:block;}
 	margin-top:30px;
 }
 .description{
+	margin-top:30px;
+}
+.needs{
+	margin-top:30px;
+}
+.site{
 	margin-top:30px;
 }
 .contact{

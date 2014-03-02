@@ -28,11 +28,14 @@
 		}
 		?>
 	</div>
+	
 	<div class="info">
 		<div class="basic_info">
 			<label class="title">Project Title:</label>
 			<label><?php echo $group_item['group_name'];?></label>
+			
 			<div class="members">
+				<label class="nl_title">Group Members:</label>
 				<?php
 					foreach($group_item['users'] as $a_user){
 					?>
@@ -50,6 +53,7 @@
 				?>
 			</div>
 		</div>
+		
 		<div class="interests">
 			<label class="title">Interests:</label>
 			<?php
@@ -60,22 +64,26 @@
 				echo implode(',&nbsp;', $tag_array);
 			?>
 		</div>
+		
 		<div class="description">
-			<label class="title">Description:</label>
+			<label class="nl_title">Description:</label>
 			<label>
 				<?php echo $group_item['group_description'];?>
 			</label>
 		</div>
+		
 		<div class="needs">
-			<label class="title">Members this group is looking for:</label>
+			<label class="nl_title">Members this group is looking for:</label>
 			<label>
 				<?php echo $group_item['group_needs'];?>
 			</label>
 		</div>
+		
 		<div class="contact">
 			<label class="title">Contact:</label>
 			<label><a href="mailto:<?php echo $group_item['group_contact'];?>"><?php echo $group_item['group_contact'];?></a></label>
 		</div>
+		
 		<div class="site">
 			<label class="title">Group Website:</label>
 			<label><a href="<?php echo $group_item['group_site'];?>"><?php echo $group_item['group_site'];?></a></label>
@@ -83,6 +91,7 @@
 	</div>
 </div><!--right column-->
 <p class="clear"></p>
+
 <script>
 $(document).ready(function(){
 	$("#requestInvite").click(function(){
