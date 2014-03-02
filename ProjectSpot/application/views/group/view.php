@@ -39,7 +39,7 @@
 				<?php
 					foreach($group_item['users'] as $a_user){
 					?>
-					<label class="title">
+					<label class="group_members">
 						<?php echo($a_user['user_status'] == "Advisor" ? "Advisor" : $a_user['user_major1']['major_text']);?>:
 					</label>
 					<label>
@@ -79,14 +79,14 @@
 			</label>
 		</div>
 		
-		<div class="contact">
-			<label class="title">Contact:</label>
-			<label><a href="mailto:<?php echo $group_item['group_contact'];?>"><?php echo $group_item['group_contact'];?></a></label>
-		</div>
-		
 		<div class="site">
 			<label class="title">Group Website:</label>
 			<label><a href="<?php echo $group_item['group_site'];?>"><?php echo $group_item['group_site'];?></a></label>
+		</div>
+		
+		<div class="contact">
+			<label class="title">Contact:</label>
+			<label><a href="mailto:<?php echo $group_item['group_contact'];?>"><?php echo $group_item['group_contact'];?></a></label>
 		</div>
 	</div>
 </div><!--right column-->

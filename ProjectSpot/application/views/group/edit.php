@@ -32,7 +32,9 @@ $CI = & get_instance();
 		<div class="basic_info">
 			<label class="title">Project Title:</label>
 			<input class="input_field input_width" type="text" name="group_name" value="<?php echo $group_item['group_name'];?>"/>
+			
 			<div>
+				<label class="nl_title">Group Members:</label>
 				<?php
 				foreach($group_item['users'] as $a_user){
 				?>
@@ -69,12 +71,12 @@ $CI = & get_instance();
 			<textarea class="input_field full_width" rows=5 name="group_needs"><?php echo $group_item['group_needs'];?></textarea>
 		</div>
 		
-		<div class="contact">
-			<label class="title">Contact:</label><input class="input_field input_width" type="text" name="group_contact" value="<?php echo $group_item['group_contact'];?>"/>
-		</div>
-
 		<div class="site">
 			<label class="title">Group Website:</label><input class="input_field input_width" type="text" name="group_site" value="<?php echo $group_item['group_site'];?>"/>
+		</div>
+		
+		<div class="contact">
+			<label class="title">Contact:</label><input class="input_field input_width" type="text" name="group_contact" value="<?php echo $group_item['group_contact'];?>"/>
 		</div>
 		
 		<div class="button_panel">
