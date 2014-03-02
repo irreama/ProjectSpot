@@ -151,7 +151,7 @@
 		
 		<div class="contact">
 			<label class="title">Contact:</label>
-			<label><?php echo $profile_item['user_email'];?></label>
+			<a href="mailto:<?=$profile_item['user_email'];?>"><?=$profile_item['user_email'];?></a>
 		</div>
 	</div>
 </div><!--right column-->

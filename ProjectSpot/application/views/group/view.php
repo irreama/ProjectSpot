@@ -83,7 +83,13 @@
 		
 		<div class="site">
 			<label class="title">Group Website:</label>
-			<label><a href="<?php echo $group_item['group_site'];?>"><?php echo $group_item['group_site'];?></a></label>
+			<?php
+			$url = $group_item['group_site'];
+			if (!empty($url) && empty(parse_url($url, PHP_URL_SCHEME))) {
+				$url = (!empty($_SERVER['HTTPS']) ? 'https://' : 'http://') . $url;
+			}
+			?>
+			<label><a href="<?=$url?>" target="_blank"><?=$url?></a></label>
 		</div>
 		
 		<div class="contact">

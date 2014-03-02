@@ -68,7 +68,7 @@
 				?>
 				<label class="title">Graduation Year:</label>
 				<select name="user_grad_year">
-					<option value=""<?=(!$profile_item['user_grad_year'] ? ' slected="selected"' : '')?>>Not Specified</option>
+					<option value=""<?=(empty($profile_item['user_grad_year']) ? ' selected="selected"' : '')?>>Not Specified</option>
 				<?php
 				$currYear = date("Y");
 				$startYear = $currYear - 2;
@@ -76,7 +76,7 @@
 				for($i = $startYear; $i <= ($startYear + 15); $i++){
 				?>
 
-					<option value="<?=$i?>"<?=(!$profile_item['user_grad_year'] == $i ? ' slected="selected"' : '')?>><?=$i?></option>
+					<option value="<?=$i?>"<?=($profile_item['user_grad_year'] == $i ? ' selected="selected"' : '')?>><?=$i?></option>
 				<?php
 				}
 				?>
