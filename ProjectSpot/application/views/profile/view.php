@@ -1,3 +1,14 @@
+<?php
+		$CI =& get_instance();
+		$CI->load->model('group_user_rel_model');
+
+		//Snag the logged in user's group
+		$groups = $CI->group_user_rel_model->get_all_groups_by_user_id($CI->session->userdata('user_id'));
+		if($groups){
+			$currGroup = $groups[0]['group_id'];
+		}
+		if($profile_item['id'] == $CI->session->userdata('user_id')){
+		?>
 <div class="help-text">
 	This is your personal Profile page. It can be seen by other
 	ProjectSpot users. Add information to allow users with similar
@@ -5,6 +16,7 @@
 	group.
 	<a class="close" href="#">X</a>
 </div>
+<?php } ?>
 <div class="page-title">
 	<h2>This is a<?php echo ($profile_item['user_status'] == 'Advisor' ? "n advisor" : " student"); ?> profile page</h2>
 </div>
@@ -15,16 +27,7 @@
 
 <div class="right_col">
 	<div id="button-div">
-	<?php
-		$CI =& get_instance();
-		$CI->load->model('group_user_rel_model');
-
-		//Snag the logged in user's group
-		$groups = $CI->group_user_rel_model->get_all_groups_by_user_id($CI->session->userdata('user_id'));
-		if($groups){
-			$currGroup = $groups[0]['group_id'];
-		}
-		
+	<?php		
 		if($profile_item['id'] == $CI->session->userdata('user_id')){
 		?>
 		<a class="edit button-element-small" href="<?=base_url()?>index.php/profile/edit/<?php echo $profile_item['id']?>">Edit Page</a>
