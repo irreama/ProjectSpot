@@ -7,26 +7,26 @@
 
 <div class="right_col clearfix">
 	<div id="button-div">
-	<?php
-	$CI =& get_instance();
-
-	$CI->load->model('group_user_rel_model');
-	if($CI->group_user_rel_model->isUserInGroup($CI->session->userdata('user_id'),$group_item['id'])){
-		?>
-	<a class="edit button-element-small" href="<?=base_url()?>index.php/group/edit/<?php echo $group_item['id'];?>">Edit Page</a>
-	<?php
-	}
-	else if(!$CI->group_user_rel_model->isUserInAnyGroup($CI->session->userdata('user_id')) && $CI->group_user_rel_model->canUserRequestToJoin($CI->session->userdata('user_id'),$group_item['id'])){
-		?>
-	<button type="button" class="edit button-element-small" id="requestInvite" data-uid="<?=$CI->session->userdata('user_id')?>" data-gid="<?=$group_item['id']?>">Request to Join</button>
 		<?php
-	}
-	else{
-	?>
-		<button type="button" class="edit button-element-small disabled-button">Request to Join</button>
-	<?php
-	}
-	?>
+		$CI =& get_instance();
+
+		$CI->load->model('group_user_rel_model');
+		if($CI->group_user_rel_model->isUserInGroup($CI->session->userdata('user_id'),$group_item['id'])){
+			?>
+		<a class="edit button-element-small" href="<?=base_url()?>index.php/group/edit/<?php echo $group_item['id'];?>">Edit Page</a>
+		<?php
+		}
+		else if(!$CI->group_user_rel_model->isUserInAnyGroup($CI->session->userdata('user_id')) && $CI->group_user_rel_model->canUserRequestToJoin($CI->session->userdata('user_id'),$group_item['id'])){
+			?>
+		<button type="button" class="edit button-element-small" id="requestInvite" data-uid="<?=$CI->session->userdata('user_id')?>" data-gid="<?=$group_item['id']?>">Request to Join</button>
+			<?php
+		}
+		else{
+		?>
+			<button type="button" class="edit button-element-small disabled-button">Request to Join</button>
+		<?php
+		}
+		?>
 	</div>
 	<div class="info">
 		<div class="basic_info">

@@ -14,8 +14,9 @@ html,body {
 #container{
 	height:100%;
 }
-a:link{
+a:link, a{
 	color:red;
+	text-decoration:underline;
 }
 a:visited{
 	color:red;
