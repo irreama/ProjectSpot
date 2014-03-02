@@ -149,6 +149,23 @@
 			</label>
 		</div>
 		
+		<div class="site">
+			<?php
+			if($profile_item['user_status'] == 'Advisor'){
+			?>
+				<label class="title">Website:</label>
+				<?php
+				$url = !empty($profile_item['user_site']) ? $profile_item['user_site'] : '';
+				if (!empty($url) && empty(parse_url($url, PHP_URL_SCHEME))) {
+					$url = (!empty($_SERVER['HTTPS']) ? 'https://' : 'http://') . $url;
+				}
+				?>
+				<label><a href="<?=$url?>" target="_blank"><?=$url?></a></label>
+			<?php
+			}
+			?>
+		</div>
+		
 		<div class="contact">
 			<label class="title">Contact:</label>
 			<a href="mailto:<?=$profile_item['user_email'];?>"><?=$profile_item['user_email'];?></a>

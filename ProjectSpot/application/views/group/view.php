@@ -84,7 +84,7 @@
 		<div class="site">
 			<label class="title">Group Website:</label>
 			<?php
-			$url = $group_item['group_site'];
+			$url = !empty($group_item['group_site']) ? $group_item['group_site'] : '';
 			if (!empty($url) && empty(parse_url($url, PHP_URL_SCHEME))) {
 				$url = (!empty($_SERVER['HTTPS']) ? 'https://' : 'http://') . $url;
 			}
