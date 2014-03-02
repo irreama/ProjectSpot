@@ -36,3 +36,11 @@ div{margin-bottom:30px;}
 	margin-right:auto;
 	width:80%;
 }
+
+.group_site {
+	width:500px;
+	border-radius:5px;
+	border:1px solid rgb(169, 169, 169);
+	padding:2px;
+	font-size:14pt;
+}
