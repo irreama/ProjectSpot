@@ -23,7 +23,7 @@
 		}
 		else{
 		?>
-			<button type="button" class="edit button-element-small disabled-button">Request to Join</button>
+			<button type="button" class="edit disabled-button" disabled="disabled">Request to Join</button>
 		<?php
 		}
 		?>
@@ -114,7 +114,7 @@ $(document).ready(function(){
 			success:function(data){
 				console.log(data);
 				button.remove();
-				$("#button-div").html('<div class="disabled-button edit button-element-small">Invite to Group</div>');
+				$("#button-div").html('<div class="disabled-button edit" disabled="disabled">Invite to Group</div>');
 			}
 		})
 	})

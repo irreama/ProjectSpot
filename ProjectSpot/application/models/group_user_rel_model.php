@@ -31,10 +31,12 @@ class Group_user_rel_model extends CI_Model{
 	 * @param  [int] $user_id 	[the user to search on]
 	 * @return [array]          [An array of all the group ids]
 	 */
-	public function get_all_groups_by_user_id($user_id){
+	public function get_all_groups_by_user_id($user_id, $all = false){
 		$this->db->from('ps_group_user_rel');
 		$this->db->where('user_id', $user_id);
-		$this->db->where('invite_status', 'Accepted');
+		if (!$all) {
+			$this->db->where('invite_status', 'Accepted');
+		}
 		$this->db->join('ps_groups', 'ps_groups.id = ps_group_user_rel.group_id');
 		$query = $this->db->get();
 		return $query->result_array();

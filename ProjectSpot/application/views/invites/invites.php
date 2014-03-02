@@ -61,14 +61,16 @@
 	$CI = & get_instance();
 
 	$CI->load->model("group_user_rel_model");
-
-	if($CI->group_user_rel_model->isUserInAnyGroup($CI->session->userdata("user_id"))){
 	?>
 	<div id="sent">
 		<h3>Sent To</h3><hr>
+<?php
+	if($CI->group_user_rel_model->isUserInAnyGroup($CI->session->userdata("user_id"))){
+	?>
 		<div class="student">
 			<h4>Student</h4>
 			<?php
+			
 			if(isset($invites['outgoing']['students']) && count($invites['outgoing']['students'])){
 				foreach($invites['outgoing']['students'] as $anInvite){
 			?>
@@ -112,10 +114,32 @@
 			}
 			?>
 		</div>
+		<?php
+}
+		?>
+		<div class="group">
+			<h4>Group</h4>
+			<?php
+			if(isset($invites['outgoing']['groups']) && count($invites['outgoing']['groups'])){
+				foreach($invites['outgoing']['groups'] as $anInvite){
+			?>
+			<div data-invite-id="<?=$anInvite['id']?>" class="invite">
+				<label>
+					You have requested to join <?=$anInvite['group']['group_name']?>
+				</label>
+				<a class="invite-button button-element-small inline reject">X Revoke</a>
+			</div>
+			<?php
+				}
+			}
+			else{
+			?>
+			<p>You currently have not requested to join any groups</p>
+			<?php
+			}
+			?>
+		</div>
 	</div>
-	<?php
-	}
-	?>
 	<script>
 	$(document).ready(function(){
 		$("a.invite-button").click(function(event){
