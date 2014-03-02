@@ -39,15 +39,17 @@
 				<?php
 					foreach($group_item['users'] as $a_user){
 					?>
-					<label class="group_members">
-						<?php echo($a_user['user_status'] == "Advisor" ? "Advisor" : $a_user['user_major1']['major_text']);?>:
-					</label>
-					<label>
-						<a href="<?=base_url()?>index.php/profile/view/<?=$a_user['id']?>">
-						<?php echo $a_user['user_first_name'];?> 
-						<?php echo $a_user['user_last_name'];?>
-					</a>
-					</label>
+					<div>
+						<label class="group_members">
+							<?php echo($a_user['user_status'] == "Advisor" ? "Advisor" : $a_user['user_major1']['major_text']);?>:
+						</label>
+						<label>
+							<a href="<?=base_url()?>index.php/profile/view/<?=$a_user['id']?>">
+							<?php echo $a_user['user_first_name'];?> 
+							<?php echo $a_user['user_last_name'];?>
+						</a>
+						</label>
+					</div>
 				<?php
 				}
 				?>
