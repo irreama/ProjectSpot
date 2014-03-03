@@ -156,7 +156,8 @@
 				<label class="title">Website:</label>
 				<?php
 				$url = !empty($profile_item['user_site']) ? $profile_item['user_site'] : '';
-				if (!empty($url) && empty(parse_url($url, PHP_URL_SCHEME))) {
+				$scheme = parse_url($url, PHP_URL_SCHEME);
+				if (!empty($url) && empty($scheme)) {
 					$url = (!empty($_SERVER['HTTPS']) ? 'https://' : 'http://') . $url;
 				}
 				?>
