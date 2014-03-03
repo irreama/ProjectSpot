@@ -28,7 +28,7 @@
 	<?php
 	foreach($messages['group'] as $aGroup){
 		?>
-		<h4><?=$aGroup['name']?></h4>
+		<h4>For <?=$aGroup['name']?>:</h4>
 		<ol>
 			<?php
 			foreach($aGroup['messages'] as $aGroupMessage){

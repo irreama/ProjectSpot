@@ -382,3 +382,9 @@ a:active{
 .profile-info{
 	margin-top:15px;
 }
+.top-spacing{
+	margin:30px 0px;
+}
+.little-top-spacing{
+	margin:5px 0px 10px 0px;
+}

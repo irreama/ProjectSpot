@@ -35,11 +35,14 @@ $CI = & get_instance();
 			
 			<div>
 				<label class="nl_title">Group Members:</label>
+				<div class="information little-top-spacing">
+					To delete this group, all group members must be removed.
+				</div>
 				<?php
 				foreach($group_item['users'] as $a_user){
 				?>
 				<div id="group-member-<?=$a_user['user_id']?>" class="groupMemberDiv">
-					<label class="title"><?php echo($a_user['user_status'] == "Advisor" ? "Advisor" : $a_user['user_major1']['major_text']);?>:</label>
+					<label><?php echo($a_user['user_status'] == "Advisor" ? "Advisor" : $a_user['user_major1']['major_text']);?>:</label>
 					<label><?php echo $a_user['user_first_name'];?> <?php echo $a_user['user_last_name'];?> 
 					<a class="removeMember" data-uid="<?=$a_user['user_id']?>" data-gid="<?=$group_item['id']?>">Remove</a></label>
 				</div>
@@ -82,7 +85,7 @@ $CI = & get_instance();
 		<div class="button_panel">
 			<a class="button-element-small cancel" href="<?=base_url()?>index.php/group/view/<?php echo $group_item['id']?>">Cancel</a>
 			<input class="button-element-small edit" type="submit" name="submit" value="Save" />
-		</div>
+		</div>	
 	</div>
 	</form>
 </div><!--right column-->

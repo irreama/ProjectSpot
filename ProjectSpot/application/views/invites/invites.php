@@ -1,3 +1,10 @@
+<?php
+$CI = & get_instance();
+
+$CI->load->model("group_user_rel_model");
+
+$in_group = $CI->group_user_rel_model->isUserInAnyGroup($CI->session->userdata("user_id"));
+?>
 <div class="help-text">
 	Here you can see which MQP groups have invited you to join. If you are already in a group, you can see which members
 	have requested to join your group. You can also see invitations you've sent out to other members and groups in ProjectSpot.
@@ -6,8 +13,17 @@
 </div>
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>stylesheets/invites.css">
 <h2>Invitations</h2>
+	<?php
+			if ($in_group) {
+				?>
+				<div class="information top-spacing">
+						While you are part of a group, you cannot join any other groups.
+				</div>
+				<?php
+			}
+			?>
 	<div id="received">	
-		<h3>Received From</h3><hr>
+		<h3>Received From:</h3><hr>
 		<div class="group">
 			<h4>Group</h4>
 			<?php
@@ -19,7 +35,13 @@
 					You have been invited by <a href="<?=base_url()?>group/view/<?=$anInvite['group']['id']?>"><?=$anInvite['group']['group_name']?></a>
 					to join their MQP Group
 				</label>
-				<a class="invite-button button-element-small inline accept">&#10003; Accept</a>
+				<?php
+				if(!$in_group){
+				?>
+					<a class="invite-button button-element-small inline accept">&#10003; Accept</a>
+				<?php
+				}
+				?>
 				<a class="invite-button button-element-small inline reject">X Reject</a>
 			</div>
 			<?php
@@ -57,13 +79,8 @@
 			?>
 		</div>
 	</div>
-	<?php
-	$CI = & get_instance();
-
-	$CI->load->model("group_user_rel_model");
-	?>
 	<div id="sent">
-		<h3>Sent To</h3><hr>
+		<h3>Sent To:</h3><hr>
 <?php
 	if($CI->group_user_rel_model->isUserInAnyGroup($CI->session->userdata("user_id"))){
 	?>
@@ -143,15 +160,16 @@
 	<script>
 	$(document).ready(function(){
 		$("a.invite-button").click(function(event){
-			var action = "none";
-			var invParent = $(this).parent();
-			if($(this).hasClass("reject")){
+			var action = "none",
+			    invParent = $(this).parent(),
+				self = $(this);
+			
+			if(self.hasClass("reject")){
 				action = "reject";
 			}
-			else if($(this).hasClass("accept")){
+			else if(self.hasClass("accept")){
 				action = "accept";
 			}
-
 			if(action != "none"){
 				$.ajax({
 					type:"POST",
@@ -165,7 +183,13 @@
 							invParent.fadeOut(function(){
 								invParent.remove();
 							});
-							
+							if (self.hasClass('accept')) {
+								var group = invParent.parent(),
+								    buttons = group.find('.invite-button.accept');
+								buttons.fadeOut(function() {
+									buttons.remove();
+								});
+							}
 						}
 						else{
 							console.log("Nay");
