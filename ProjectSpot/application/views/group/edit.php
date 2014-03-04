@@ -59,7 +59,7 @@ $CI = & get_instance();
 				foreach ($group_item['tags'] as $tag){
 					$tag_array[] = $tag['tag_text'];
 				}
-				echo implode(',&nbsp;', $tag_array);
+				echo implode(', ', $tag_array);
 			?>
 			<a id="editInterests" class="button-element-small">Edit Interests</a>
 		</div>

@@ -105,7 +105,7 @@
 				foreach ($profile_item['ps_tags'] as $tag){
 					$tag_array[] = $tag['tag_text'];
 				}
-				echo implode(',&nbsp;', $tag_array);
+				echo implode(', ', $tag_array);
 			?>
 			<a class="button-element-small" id="editInterests">
 				Edit Interests

@@ -63,7 +63,7 @@
 				foreach ($group_item['tags'] as $tag){
 					$tag_array[] = $tag['tag_text'];
 				}
-				echo implode(',&nbsp;', $tag_array);
+				echo implode(', ', $tag_array);
 			?>
 		</div>
 		
