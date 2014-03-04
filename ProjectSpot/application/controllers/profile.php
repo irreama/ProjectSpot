@@ -20,6 +20,17 @@ class Profile extends CI_Controller {
 		$this->load->model('group_user_rel_model');
 	}
 
+	public function holdForInterests(){
+		$formData = array('profileFormData');
+
+		$formData['profileFormData']['user_gender'] = $this->input->post('user_gender');
+		$formData['profileFormData']['user_description'] = $this->input->post('user_description');
+		$formData['profileFormData']['user_grad_year'] = $this->input->post('user_grad_year');
+
+		$this->session->set_userdata($formData);
+
+	}
+
 	public function clearAvatar(){
 		$this->load->helper('file');
 		$uid = $this->session->userdata('user_id');
@@ -39,10 +50,10 @@ class Profile extends CI_Controller {
 
 		$config['upload_path'] = './images/avatars/profiles/'.$uid;
 		$config['allowed_types'] = 'gif|jpg|png';
-		$config['max_size']	= '300';
-		$config['max_width']  = '1024';
-		$config['max_height']  = '768';
-		$config['file_name'] = "4";
+		$config['max_size']	= '3072';
+		$config['max_width']  = '2000';
+		$config['max_height']  = '2000';
+		$config['file_name'] = $uid;
 		$config['overwrite'] = true;
 
 		$this->load->library('upload', $config);
@@ -117,6 +128,17 @@ class Profile extends CI_Controller {
 		}
 		$data['profile_item']['ps_tags'] = $this->user_tag_rel_model->get_all_tags_by_user_id($id);
 		$data['title'] = 'Edit Profile';
+
+		//Check to see if we stored data
+		if($this->session->userdata('profileFormData')){
+			$formData = $this->session->userdata('profileFormData');
+
+			$data['profile_item']['user_grad_year'] = $formData['user_grad_year'];
+			$data['profile_item']['user_description'] = $formData['user_description'];
+			$data['profile_item']['user_gender'] = $formData['user_gender'];
+
+			$this->session->unset_userdata('profileFormData');
+		}
 
 		//Require ID to save the form
 		$this->form_validation->set_rules('id', 'id', 'required');

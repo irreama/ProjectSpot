@@ -61,7 +61,7 @@ $CI = & get_instance();
 				}
 				echo implode(',&nbsp;', $tag_array);
 			?>
-			<a class="button-element-small" href="<?=base_url()?>index.php/group/interests/edit/<?php echo $group_item['id']?>">Edit Interests</a>
+			<a id="editInterests" class="button-element-small">Edit Interests</a>
 		</div>
 		
 		<div class="description">
@@ -92,6 +92,24 @@ $CI = & get_instance();
 <p class="clear"></p>
 <script type="text/javascript">
 $(document).ready(function(){
+	$("#editInterests").on("click", function(){
+
+		$.ajax({
+			type: "POST",
+			url: "<?=base_url()?>index.php/group/holdForInterests",
+			data: {
+				group_name: $("input[name='group_name']").val(),
+				group_description: $("textarea[name='group_description']").val(),
+				group_needs: $("textarea[name='group_needs']").val(),
+				group_site: $("input[name='group_site']").val(),
+				group_contact: $("input[name='group_contact']").val()
+			},
+			success: function(event){
+				window.location = "<?=base_url()?>index.php/group/interests/edit/<?php echo $group_item['id']?>";
+			},
+		});
+	});
+
 	$("#chooseAvatar").change(function(){
 		var formData = new FormData($("#avatarForm")[0]);
 

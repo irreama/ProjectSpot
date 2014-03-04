@@ -14,6 +14,19 @@ class Group extends CI_Controller{
 		$data['displayName'] = $this->session->userdata('display_name');
 	}
 
+	public function holdForInterests(){
+		$formData = array('groupFormData');
+
+		$formData['groupFormData']['group_name'] = $this->input->post('group_name');
+		$formData['groupFormData']['group_description'] = $this->input->post('group_description');
+		$formData['groupFormData']['group_needs'] = $this->input->post('group_needs');
+		$formData['groupFormData']['group_site'] = $this->input->post('group_site');
+		$formData['groupFormData']['group_contact'] = $this->input->post('group_contact');
+
+		$this->session->set_userdata($formData);
+
+	}
+
 	public function removeGroup(){
 		$gid = $this->input->post("gid");
 
@@ -94,9 +107,9 @@ class Group extends CI_Controller{
 
 			$config['upload_path'] = './images/avatars/groups/'.$gid;
 			$config['allowed_types'] = 'gif|jpg|png';
-			$config['max_size']	= '300';
-			$config['max_width']  = '1024';
-			$config['max_height']  = '768';
+			$config['max_size']	= '3072';
+			$config['max_width']  = '2000';
+			$config['max_height']  = '2000';
 			$config['file_name'] = $gid;
 			$config['overwrite'] = true;
 
@@ -295,6 +308,20 @@ class Group extends CI_Controller{
 			$data['group_item']['tags'] = $this->group_tag_rel_model->get_all_tags_by_group_id($id);
 
 			$data['title'] = "Edit Group";
+
+			//Check to see if we stored data
+			if($this->session->userdata('groupFormData')){
+				$formData = $this->session->userdata('groupFormData');
+
+				$data['group_item']['group_name'] = $formData['group_name'];
+				$data['group_item']['group_description'] = $formData['group_description'];
+				$data['group_item']['group_needs'] = $formData['group_needs'];
+				$data['group_item']['group_site'] = $formData['group_site'];
+				$data['group_item']['group_contact'] = $formData['group_contact'];
+
+
+				$this->session->unset_userdata('groupFormData');
+			}
 
 			$this->form_validation->set_rules('group_name', 'Group Name', 'required');
 

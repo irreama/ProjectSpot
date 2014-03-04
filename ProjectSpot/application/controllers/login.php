@@ -6,6 +6,12 @@ class Login extends CI_Controller {
     }
 
     public function loginHandler(){
+
+    	//Invalidate the current session
+    	//Can't destroy the session, otherwise we lose access to it for some reason?
+    	$this->session->unset_userdata('user_id');
+		$this->session->unset_userdata('validated');
+
 		$uid = getenv("REMOTE_USER");
 		$this->load->model("user_model");
 
@@ -41,8 +47,6 @@ class Login extends CI_Controller {
 
 					$newId = $this->user_model->new_user($user);
 					if($newId){
-						$this->session->set_userdata('user_id','');
-						$this->session->set_userdata('validated',false);
 						$sessData = array(
 							'user_id' => $newId,
 							'display_name' => $user['user_first_name'].' '.$user['user_last_name'],
@@ -69,8 +73,6 @@ class Login extends CI_Controller {
 			ldap_close($ds);
 		}
 		else{
-			$this->session->set_userdata('user_id','');
-			$this->session->set_userdata('validated',false);
 			$sessData = array(
 				'user_id' => $user['id'],
 				'display_name' => $user['user_first_name'].' '.$user['user_last_name'],

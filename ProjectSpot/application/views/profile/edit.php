@@ -107,7 +107,7 @@
 				}
 				echo implode(',&nbsp;', $tag_array);
 			?>
-			<a class="button-element-small" href="<?=base_url()?>index.php/profile/interests/edit">
+			<a class="button-element-small" id="editInterests">
 				Edit Interests
 			</a>
 		</div>	
@@ -154,6 +154,22 @@
 <p class="clear"></p>
 <script type="text/javascript">
 $(document).ready(function(){
+	$("#editInterests").on("click", function(){
+
+		$.ajax({
+			type: "POST",
+			url: "<?=base_url()?>index.php/profile/holdForInterests",
+			data: {
+				user_grad_year: $("select[name='user_grad_year']").find(":selected").val(),
+				user_description: $("textarea[name='user_description']").val(),
+				user_gender: $("input[name='user_gender']:checked").val()
+			},
+			success: function(event){
+				window.location = "<?=base_url()?>index.php/profile/interests/edit";
+			},
+		});
+	});
+
 	$("#chooseAvatar").change(function(){
 		var formData = new FormData($("#avatarForm")[0]);
 
