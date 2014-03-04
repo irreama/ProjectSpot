@@ -131,7 +131,7 @@
 		
 		<div class="interests">
 			<label class="title">Interests:</label>
-			<label>
+			<span>
 				<?php
 					$tag_array = array();
 					foreach ($profile_item['ps_tags'] as $tag){
@@ -139,14 +139,14 @@
 					}
 					echo implode(',&nbsp;', $tag_array);
 				?>
-			</label>
+			</span>
 		</div>
 		
 		<div class="description">
 			<label class="title">Description:</label>
-			<label>
+			<span>
 				<?php echo $profile_item['user_description'] ?>
-			</label>
+			</span>
 		</div>
 		
 		<div class="site">
@@ -161,7 +161,7 @@
 					$url = (!empty($_SERVER['HTTPS']) ? 'https://' : 'http://') . $url;
 				}
 				?>
-				<label><a href="<?=$url?>" target="_blank"><?=$url?></a></label>
+				<span><a href="<?=$url?>" target="_blank"><?=$url?></a></span>
 			<?php
 			}
 			?>
