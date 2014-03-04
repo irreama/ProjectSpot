@@ -278,15 +278,15 @@
 						<?php
 							$totalAdvisors = count($groupAdvisors);
 							foreach($groupAdvisors as $i => $advisor){
-								$firstName = $groupProfile['users'][0]['user_first_name'];
-								$lastName = $groupProfile['users'][0]['user_last_name'];
+								$firstName = $advisor['user_first_name'];
+								$lastName = $advisor['user_last_name'];
 						?>	
 						<a href="<?=base_url()?>/index.php/profile/view/<?php echo $userID;?>">
 							
 						<?php				
 								echo $firstName.' ';
 								echo $lastName;
-						?></a>
+						?></a><br/>
 						<?php
 							}
 						?>	
@@ -294,16 +294,18 @@
 					<td>
 						<?php
 							$totalStudents = count($groupStudents);
+
 							foreach($groupStudents as $i => $student){
-								$firstName = $groupProfile['users'][0]['user_first_name'];
-								$lastName = $groupProfile['users'][0]['user_last_name'];
+
+								$firstName = $student['user_first_name'];
+								$lastName = $student['user_last_name'];
 						?>	
 						<a href="<?=base_url()?>/index.php/profile/view/<?php echo $userID;?>">
 							
 						<?php				
 								echo $firstName.' ';
 								echo $lastName;
-						?></a>
+						?></a><br/>
 						<?php
 							}
 						?>	
