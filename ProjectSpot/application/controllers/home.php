@@ -159,7 +159,7 @@ class Home extends CI_Controller {
 
 	public function browse(){
 		$data['title'] = 'Browse';
-		$data['users'] = $this->user_model->get_all_users();
+		$data['users'] = $this->user_model->getAllStudentsAndAdvisors();
 		$data['groups'] = $this->group_model->get_all_groups();
 		//Load our views
 		$this->load->view('templates/header', $data);

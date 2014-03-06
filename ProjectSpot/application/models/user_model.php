@@ -74,6 +74,13 @@ class User_model extends CI_Model{
 		return $query->result_array();
 	}
 
+	public function getAllStudentsAndAdvisors(){
+		$this->db->from('ps_users');
+		$this->db->where('user_status <>', 'Other');
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
 	public function getUserProfile($id){
 		//Snag the main profile Data
 		$uQuery = $this->db->get_where('ps_users', array('id' => $id));

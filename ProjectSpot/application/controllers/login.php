@@ -12,6 +12,7 @@ class Login extends CI_Controller {
     	$this->session->unset_userdata('user_id');
 		$this->session->unset_userdata('validated');
 
+		//$uid = "";
 		$uid = getenv("REMOTE_USER");
 		$this->load->model("user_model");
 
@@ -50,7 +51,8 @@ class Login extends CI_Controller {
 						$sessData = array(
 							'user_id' => $newId,
 							'display_name' => $user['user_first_name'].' '.$user['user_last_name'],
-							'validated' => true
+							'validated' => true,
+							'user_is_admin' => $user['user_is_admin']
 						);
 
 						$this->session->set_userdata($sessData);
@@ -76,7 +78,8 @@ class Login extends CI_Controller {
 			$sessData = array(
 				'user_id' => $user['id'],
 				'display_name' => $user['user_first_name'].' '.$user['user_last_name'],
-				'validated' => true
+				'validated' => true,
+				'user_is_admin' => $user['user_is_admin']
 			);
 
 			$this->session->set_userdata($sessData);

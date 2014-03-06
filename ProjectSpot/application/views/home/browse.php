@@ -213,8 +213,6 @@
 					$groupStudents = $CI->group_user_rel_model->getGroupStudents($group['id']);
 					//get the group's advisors
 					$groupAdvisors = $CI->group_user_rel_model->getGroupAdvisors($group['id']);
-					
-					$userID = $groupProfile['users'][0]['id'];
 				?>
 				<tr>
 					<td>
@@ -281,7 +279,7 @@
 								$firstName = $advisor['user_first_name'];
 								$lastName = $advisor['user_last_name'];
 						?>	
-						<a href="<?=base_url()?>/index.php/profile/view/<?php echo $userID;?>">
+						<a href="<?=base_url()?>/index.php/profile/view/<?php echo $advisor['user_id'];?>">
 							
 						<?php				
 								echo $firstName.' ';
@@ -300,7 +298,7 @@
 								$firstName = $student['user_first_name'];
 								$lastName = $student['user_last_name'];
 						?>	
-						<a href="<?=base_url()?>/index.php/profile/view/<?php echo $userID;?>">
+						<a href="<?=base_url()?>/index.php/profile/view/<?php echo $student['user_id'];?>">
 							
 						<?php				
 								echo $firstName.' ';
