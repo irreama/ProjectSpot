@@ -13,8 +13,23 @@ CREATE TABLE `ps_majors` (
 	PRIMARY KEY (`id`)
 );
 
-INSERT INTO `ps_majors` (major_text, ldap_name)
-VALUES ('Computer Science', 'CS');
+INSERT INTO `ps_majors` (`id`, `major_text`, `ldap_name`) VALUES (1, 'Computer Science', 'CS');
+INSERT INTO `ps_majors` (`id`, `major_text`, `ldap_name`) VALUES (2, 'Robotics Engineering', 'RBE');
+INSERT INTO `ps_majors` (`id`, `major_text`, `ldap_name`) VALUES (3, 'Interactive Media and Game Development', 'IMGD');
+INSERT INTO `ps_majors` (`id`, `major_text`, `ldap_name`) VALUES (4, 'BE', 'BE');
+INSERT INTO `ps_majors` (`id`, `major_text`, `ldap_name`) VALUES (5, 'ME', 'ME');
+INSERT INTO `ps_majors` (`id`, `major_text`, `ldap_name`) VALUES (6, 'Biology', 'BIO');
+INSERT INTO `ps_majors` (`id`, `major_text`, `ldap_name`) VALUES (7, 'Chemistry', 'CH');
+INSERT INTO `ps_majors` (`id`, `major_text`, `ldap_name`) VALUES (8, 'MIS', 'MIS');
+INSERT INTO `ps_majors` (`id`, `major_text`, `ldap_name`) VALUES (9, 'Math', 'MA');
+INSERT INTO `ps_majors` (`id`, `major_text`, `ldap_name`) VALUES (10, 'Civil Engineering', 'CE');
+INSERT INTO `ps_majors` (`id`, `major_text`, `ldap_name`) VALUES (11, 'Enviromental', 'EV');
+INSERT INTO `ps_majors` (`id`, `major_text`, `ldap_name`) VALUES (12, 'Aeorspace', 'AE');
+INSERT INTO `ps_majors` (`id`, `major_text`, `ldap_name`) VALUES (13, 'Biotech', 'BBT');
+INSERT INTO `ps_majors` (`id`, `major_text`, `ldap_name`) VALUES (14, 'ECE', 'ECE');
+INSERT INTO `ps_majors` (`id`, `major_text`, `ldap_name`) VALUES (15, 'Computers with Applications', 'CA');
+INSERT INTO `ps_majors` (`id`, `major_text`, `ldap_name`) VALUES (16, 'Biomedical Engineering', 'BME');
+INSERT INTO `ps_majors` (`id`, `major_text`, `ldap_name`) VALUES (17, 'Chemical Engineering', 'CM');
 
 --
 -- Table Structure for ps_users
@@ -41,21 +56,6 @@ CREATE TABLE `ps_users` (
 	FOREIGN KEY (`user_major2`) REFERENCES ps_majors(`id`)
 );
 
-INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_status, user_email, user_major1)
-VALUES ('bad', 'Anthony', 'Fisher', 'Student', 'afisher@wpi.edu', 1);
-
-INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_grad_year, user_status, user_email, user_major1)
-VALUES ('mcoryea14', 'Madalyn', 'Coryea', 2014, 'Student', 'mcoryea14@wpi.edu', 1);
-
-INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_grad_year, user_status, user_email, user_major1)
-VALUES ('dcb', 'David', 'Brown', 2014, 'Advisor', 'dcb@wpi.edu', 1);
-
-INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_grad_year, user_status, user_email, user_major1)
-VALUES ('test', 'Test', 'User', 2015, 'Student', 'test@wpi.edu', 1);
-
-INSERT INTO `ps_users` (user_login, user_first_name, user_last_name, user_grad_year, user_status, user_email, user_major1)
-VALUES ('pollice', 'Gary', 'Pollice', 2014, 'Advisor', 'pollice@wpi.edu', 1);
-
 --
 -- Table Structure for ps_groups
 --
@@ -77,9 +77,6 @@ CREATE TABLE `ps_groups` (
 	FOREIGN KEY (`group_creator`) REFERENCES ps_users(`id`)
 );
 
-INSERT INTO `ps_groups` (group_creator, group_name)
-VALUES (1, 'ProjectSpot');
-
 --
 -- Table Structure for ps_tags
 --
@@ -91,46 +88,45 @@ CREATE TABLE `ps_tags` (
 	PRIMARY KEY (`id`)
 );
 
-INSERT INTO `ps_tags` (tag_text) VALUES ('Algorithms');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Networks');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Network Security');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Operating Systems');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Programming Languages');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Artificial Intelligence');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Java');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Javascript');
-INSERT INTO `ps_tags` (tag_text) VALUES ('pHp');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Python');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Ruby');
-INSERT INTO `ps_tags` (tag_text) VALUES ('C/C++');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Web Development');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Human-Computer Interaction');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Software Security');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Computation');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Databases');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Theoretical Computer Science');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Applied Computer Science');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Graphics');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Visualization');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Architecture');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Software Engineering');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Parallel Systems');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Concurrent Systems');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Distributed Systems');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Code Theory');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Data Structures');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Formal Methods');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Cryptography');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Compilers');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Pattern Recognition');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Machine Learning');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Evolutionary Computation');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Natural Language Processing');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Data Mining');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Image Processing');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Information Security');
-INSERT INTO `ps_tags` (tag_text) VALUES ('Information Retrieval');
-
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (1, 'Algorithms');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (2, 'Networks');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (3, 'Network Security');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (4, 'Operating Systems');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (5, 'Programming Languages');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (6, 'Artificial Intelligence');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (7, 'Java');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (8, 'Javascript');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (9, 'pHp');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (10, 'Python');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (11, 'Ruby');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (12, 'C/C++');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (13, 'Web Development');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (14, 'Human-Computer Interaction');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (15, 'Software Security');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (16, 'Computation');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (17, 'Databases');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (18, 'Theoretical Computer Science');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (19, 'Applied Computer Science');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (20, 'Graphics');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (21, 'Visualization');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (22, 'Architecture');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (23, 'Software Engineering');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (24, 'Parallel Systems');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (25, 'Concurrent Systems');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (26, 'Distributed Systems');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (27, 'Code Theory');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (28, 'Data Structures');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (29, 'Formal Methods');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (30, 'Cryptography');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (31, 'Compilers');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (32, 'Pattern Recognition');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (33, 'Machine Learning');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (34, 'Evolutionary Computation');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (35, 'Natural Language Processing');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (36, 'Data Mining');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (37, 'Image Processing');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (38, 'Information Security');
+INSERT INTO `ps_tags` (`id`, `tag_text`) VALUES (39, 'Information Retrieval');
 
 --
 -- Table Structure for ps_group_user_rel
@@ -149,11 +145,6 @@ CREATE TABLE `ps_group_user_rel` (
 	FOREIGN KEY (`invited_by`) REFERENCES ps_users(`id`)
 );
 
-INSERT INTO `ps_group_user_rel` (group_id, user_id, invite_status)
-VALUES (1, 1, 'Accepted');
-
-INSERT INTO `ps_group_user_rel` (group_id, user_id, invite_status)
-VALUES (1, 3, 'Accepted');
 
 --
 -- Table Structure for ps_group_major_rel
@@ -169,9 +160,6 @@ CREATE TABLE `ps_group_major_rel` (
 	FOREIGN KEY (`major_id`) REFERENCES ps_majors(`id`)
 );
 
-INSERT INTO `ps_group_major_rel` (group_id, major_id)
-VALUES (1, 1);
-
 --
 -- Table Structure for ps_group_tag_rel
 --
@@ -185,9 +173,6 @@ CREATE TABLE `ps_group_tag_rel` (
 	FOREIGN KEY (`group_id`) REFERENCES ps_groups(`id`),
 	FOREIGN KEY (`tag_id`) REFERENCES ps_tags(`id`)
 );
-
-INSERT INTO `ps_group_tag_rel` (group_id, tag_id)
-VALUES (1, 1);
 
 --
 -- Table Structure for ps_user_tag_rel
@@ -203,8 +188,19 @@ CREATE TABLE `ps_user_tag_rel` (
 	FOREIGN KEY (`tag_id`) REFERENCES ps_tags(`id`)
 );
 
-INSERT INTO `ps_user_tag_rel` (user_id, tag_id)
-VALUES (1, 1);
+--
+-- Table Structure for ps_dates
+--
+DROP TABLE IF EXISTS `ps_dates`;
+
+CREATE TABLE `ps_dates` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`date_title` varchar(255) NOT NULL DEFAULT '',
+	`date_link` varchar(255) NOT NULL DEFAULT '',
+	`date_timestamp` TIMESTAMP NOT NULL,
+	PRIMARY KEY (`id`)
+);
+
 
 DROP TABLE IF EXISTS  `ci_sessions`;
 
