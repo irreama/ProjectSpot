@@ -95,6 +95,7 @@ class Group_user_rel_model extends CI_Model{
 		$this->db->from('ps_group_user_rel');
 		$this->db->where('group_id', $gid);
 		$this->db->where('ps_users.user_status !=', 'Advisor');
+		$this->db->where('invite_status', 'Accepted');
 		$this->db->join('ps_users', 'ps_users.id = ps_group_user_rel.user_id');
 		$sQuery = $this->db->get();
 		return $sQuery->result_array();
