@@ -27,7 +27,8 @@ $(function() {
 	
 	//properties for all tables
 	var generalOptions = {
-		sDom: 't'
+		sDom: 't',
+		bPaginate: false
 	};
 	
 	var studentsTable = $('#students').dataTable($.extend(generalOptions, {
