@@ -77,6 +77,7 @@ class User_model extends CI_Model{
 	public function getAllStudentsAndAdvisors(){
 		$this->db->from('ps_users');
 		$this->db->where('user_status <>', 'Other');
+		$this->db->order_by('user_last_name', 'asc');
 		$query = $this->db->get();
 		return $query->result_array();
 	}

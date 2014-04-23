@@ -56,7 +56,9 @@ class Group_model extends CI_Model{
 	}
 
 	public function get_all_groups(){
-		$query = $this->db->get('ps_groups');
+		$this->db->from('ps_groups');
+		$this->db->order_by('group_name', 'asc');
+		$query = $this->db->get();
 		return $query->result_array();
 	}
 	/**
